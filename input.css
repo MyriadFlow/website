@@ -4,6 +4,10 @@
 body {
     font-family: 'Barlow', sans-serif;
 }
+.link {
+    transition: all 0.3s linear;
+    height: 0;
+}
 .header-bg {
     background: url('./resources/background.jpg');
 }

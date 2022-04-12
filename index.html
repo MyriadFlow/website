@@ -9,25 +9,39 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
-    <title>Document</title>
+    <link
+      rel="shortcut icon"
+      href="./resources/new/Bwlogo.svg"
+      type="image/x-icon"
+    />
+    <title>MyraidFlow</title>
   </head>
   <body>
     <header>
       <nav
         class="min-w-full h-[88px] bg-black px-8 text-white fixed flex items-center justify-between z-50"
       >
-        <div>
+        <div class="flex justify-center items-center gap-x-2">
+          <div class="w-14">
+            <img src="./resources/new/Bwlogo.svg" alt="" />
+          </div>
           <h1>MyraidFlow</h1>
         </div>
-        <button class="lg:hidden text-2xl">
+        <button class="lg:hidden text-2xl" id="navbtn">
           <i class="fa-solid fa-bars"></i>
         </button>
         <div class="font-bold hidden lg:flex gap-x-8">
-          <a href="">Explore</a>
-          <a href="">Documentation</a>
-          <a href="">Contact Us</a>
+          <a href="https://demo.myriadflow.com/">Explore</a>
+          <a href="https://github.com/MyriadFlow">Github</a>
+          <a href="#connect">Connect</a>
         </div>
       </nav>
+      <ul id="links" class="fixed px-8 top-[88px] bg-black link text-white font-semibold text-xl w-full z-50 flex flex-col gap-4 text-right overflow-hidden lg:hidden h-[180px]">
+          <a href="https://demo.myriadflow.com/" class="block pt-8">Explore</a>
+          <a href="">Github</a>
+          <a href="#connect" class="block pb-8">Connect</a>
+
+      </ul>
       <div
         class="h-screen lg:h-[800px] tlg:h-screen header-bg bg-fixed bg-center text-white"
       >
@@ -128,13 +142,6 @@
           class="lg:flex max-w-[1580px] mx-auto items-center text-center lg:text-left"
         >
           <div class="lg:w-1/2">
-            <img
-              class="w-full"
-              src="./resources/SVG/61fd57e8106462620bb9fbe4_ic-gamig.svg"
-              alt=""
-            />
-          </div>
-          <div class="lg:w-1/2">
             <div class="mb-10">
               <h1
                 class="bg-gradient-to-r text-transparent bg-clip-text from-[#f4599e] via-[#9e75f5] to-[#5b72ff] text-3xl m48:text-4xl capitalize font-bold mb-4"
@@ -169,22 +176,21 @@
                 privacy & backup controls. Like a tattoo in cyberspace.
               </p>
             </div>
+          </div>
+          <div class="lg:w-1/2">
+            <img
+              class="w-full"
+              src="./resources/new/Electronic_Devices_62_Converted.svg"
+              alt=""
+            />
           </div>
         </div>
       </section>
 
       <section class="lg:h-screen bg-black text-white p-8">
-        <!-- <div class="mx-auto w-96 h-[2px] bg-gradient-to-r from-[#00ffbd] via-[#2300ab] to-[#c100ba]"></div> -->
         <div
           class="lg:flex justify-evenly max-w-[1580px] mx-auto items-center text-center lg:text-left"
         >
-          <div class="mb-4 lg:mb-0 lg:w-1/2">
-            <img
-              class="w-full"
-              src="./resources/SVG/security.svg"
-              alt=""
-            />
-          </div>
           <div class="lg:w-1/2">
             <div class="mb-10">
               <h1
@@ -220,6 +226,9 @@
                 privacy & backup controls. Like a tattoo in cyberspace.
               </p>
             </div>
+          </div>
+          <div class="mb-4 lg:mb-0 lg:w-1/2">
+            <img class="w-full" src="./resources/new/security.svg" alt="" />
           </div>
         </div>
       </section>
@@ -227,9 +236,6 @@
         <div
           class="lg:flex max-w-[1580px] mx-auto items-center text-center lg:text-left"
         >
-          <div class="lg:w-1/2">
-              <img class="w-full" src="./resources/SVG/community.svg" alt="" />
-          </div>
           <div class="lg:w-1/2">
             <div class="mb-10">
               <h1
@@ -265,6 +271,9 @@
                 privacy & backup controls. Like a tattoo in cyberspace.
               </p>
             </div>
+          </div>
+          <div class="lg:w-1/2">
+            <img class="w-full" src="./resources/new/community.svg" alt="" />
           </div>
         </div>
       </section>
@@ -309,22 +318,84 @@
           </p>
         </div>
       </section>
-      <section class="text-white bg-black p-4">
-        <div class="md:flex justify-between max-w-[1200px] gap-8 mx-auto lg:mt-32">
-          <div class="mb-8 lg:mb-0 lg:w-1/2">
-          <h1
-            class="text-3xl m41:text-4xl m48:text-5xl m48:leading-tight font-semibold m48:font-bold mb-6"
+      <section class="text-white bg-black p-4 md:h-screen">
+        <h1 class="text-3xl lg:text-5xl font-bold text-center mb-16">
+          MyraidFlow and NFT News
+        </h1>
+        <div
+          class="md:flex justify-between max-w-[1200px] mx-auto flex-grow-0 flex-shrink-0 gap-6"
+        >
+          <article
+            class="bg-[#141414] border-2 border-[#202020] rounded-3xl mb-4 pb-8 lg:w-[33%]"
           >
-            The MyraidFlow Protocol is powered by our strategic partnership with
-            Revotic Limited
-          </h1>
-          <p class="text-lg m41:text-xl text-[#6c757d] leading-5 font-medium">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-            quasi eum magni inventore incidunt fugiat cumque aut, sunt aliquam
-            id.
-          </p>
+            <div class="">
+              <img
+                src="./resources/monkey1.jpg"
+                class="rounded-t-3xl md:h-60 w-full object-cover"
+                alt=""
+              />
+            </div>
+            <div class="p-4">
+              <h4 class="text-[#6c757d] font-medium">Announcements</h4>
+              <h1 class="text-lg font-semibold m37:text-xl">
+                MyraidFlow Foundation Quarterly Report, Q1 2022
+              </h1>
+            </div>
+          </article>
+          <article
+            class="bg-[#141414] border-2 border-[#202020] rounded-3xl mb-4 pb-8 lg:w-[33%]"
+          >
+            <div class="">
+              <img
+                src="./resources/nft5.jpg"
+                class="rounded-t-3xl md:h-60 object-cover w-full"
+                alt=""
+              />
+            </div>
+            <div class="p-4">
+              <h4 class="text-[#6c757d] font-medium">Announcements</h4>
+              <h1 class="text-lg font-semibold m37:text-xl">
+                MyraidFlow Foundation Quarterly Report, Q1 2022
+              </h1>
+            </div>
+          </article>
+          <article
+            class="bg-[#141414] border-2 border-[#202020] rounded-3xl mb-4 pb-8 lg:w-[33%]"
+          >
+            <div class="">
+              <img
+                src="./resources/monkeyrainbow.jpg"
+                class="rounded-t-3xl w-full md:h-60 object-cover"
+                alt=""
+              />
+            </div>
+            <div class="p-4">
+              <h4 class="text-[#6c757d] font-medium">Announcements</h4>
+              <h1 class="text-lg font-semibold m37:text-xl">
+                MyraidFlow Foundation Quarterly Report, Q1 2022
+              </h1>
+            </div>
+          </article>
         </div>
-        <div class="lg:w-1/2 lg:grid grid-cols-2 gap-6">
+      </section>
+      <section class="text-white bg-black p-4">
+        <div
+          class="lg:flex justify-between max-w-[1200px] gap-8 mx-auto lg:mt-32"
+        >
+          <div class="mb-8 lg:mb-0 lg:w-1/2 text-center lg:text-left">
+            <h1
+              class="text-3xl m41:text-4xl m48:text-5xl m48:leading-tight font-semibold m48:font-bold mb-6"
+            >
+              The MyraidFlow Protocol is powered by our strategic partnership
+              with Revotic Limited
+            </h1>
+            <p class="text-lg m41:text-xl text-[#6c757d] leading-5 font-medium">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+              quasi eum magni inventore incidunt fugiat cumque aut, sunt aliquam
+              id.
+            </p>
+          </div>
+          <div class="lg:w-1/2 lg:grid grid-cols-2 gap-6">
             <div
               class="bg-[#141414] py-10 px-8 rounded-3xl mb-6 lg:mb-0 border-[1px] border-[#202020]"
             >
@@ -337,22 +408,23 @@
               <h1 class="text-7xl font-bold">500+</h1>
               <p class="text-[#6c757d]">INTEGRATIONS</p>
             </div>
-          <div
-            class="bg-[#141414] py-10 px-8 rounded-3xl mb-6 lg:mb-0 border-[1px] border-[#202020]"
-          >
-            <h1 class="text-7xl font-bold">9.8M</h1>
-            <p class="text-[#6c757d]">TOTAL SALES</p>
+            <div
+              class="bg-[#141414] py-10 px-8 rounded-3xl mb-6 lg:mb-0 border-[1px] border-[#202020]"
+            >
+              <h1 class="text-7xl font-bold">9.8M</h1>
+              <p class="text-[#6c757d]">TOTAL SALES</p>
+            </div>
+            <div
+              class="bg-[#141414] py-10 px-8 rounded-3xl mb-6 lg:mb-0 border-[1px] border-[#202020]"
+            >
+              <h1 class="text-7xl font-bold">$0</h1>
+              <p class="text-[#6c757d]">NO ADD-ON FEES</p>
+            </div>
           </div>
-          <div
-            class="bg-[#141414] py-10 px-8 rounded-3xl mb-6 lg:mb-0 border-[1px] border-[#202020]"
-          >
-            <h1 class="text-7xl font-bold">$0</h1>
-            <p class="text-[#6c757d]">NO ADD-ON FEES</p>
-          </div>
-        </div>
         </div>
       </section>
       <section
+        id="connect"
         class="h-screen py-16 px-2 bg-black text-white text-center m48:flex flex-col justify-center items-center"
       >
         <!-- <div class="inline-flex gap-x-4 mt-16 mb-8">
@@ -373,29 +445,30 @@
           class="mb-8 text-5xl flex flex-col m48:flex-row m48:justify-center gap-6 sm:gap-12 items-center"
         >
           <div
+            class="py-4 px-[14px] text-[36px] rounded-full bg-gradient-to-b from-[#5865f2] to-[#3a0ca3]"
+          >
+            <a href="https://discord.com/invite/S6g4ctv" target="_blank"><i class="fa-brands fa-discord"></i></a>
+          </div>
+          <div
             class="py-3 px-[13px] rounded-full bg-gradient-to-b from-[#4dfaf0] to-[#3856f2]"
           >
-            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://twitter.com/lazarusnetwork" target="_blank"><i class="fa-brands fa-twitter"></i></a>
           </div>
           <div
             class="py-3 px-4 rounded-full bg-gradient-to-tr from-[#F58529] via-[#FEDA77] via-[#DD2A7B] to-blue-500"
           >
-            <a href=""><i class="fa-brands fa-instagram"></i></a>
-          </div>
-          <div
-            class="py-4 px-[14px] text-[36px] rounded-full bg-gradient-to-b from-[#5865f2] to-[#3a0ca3]"
-          >
-            <a href=""><i class="fa-brands fa-discord"></i></a>
+            <a href="https://www.instagram.com/accounts/login/?next=/lazarusnetwork/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
           </div>
           <div
             class="py-4 px-[18px] text-[40px] rounded-full bg-gradient-to-b from-[#161a1d] to-[#0b090a]"
           >
-            <a href=""><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/MyriadFlow" target="_blank"><i class="fa-brands fa-github"></i></a>
           </div>
         </div>
 
         <p>©Copyright 2022 Lazarus Network inc.</p>
       </section>
     </main>
+    <script src="app.js"></script>
   </body>
 </html>
