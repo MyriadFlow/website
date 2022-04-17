@@ -14,3 +14,4 @@ deploy:
     manifests:
     - k8s/website-deploy.yml
     - k8s/website-service.yml
+    defaultNamespace: myriad-flow
