@@ -1,0 +1,18 @@
+apiVersion: skaffold/v2beta28
+kind: Config
+metadata:
+  name: website
+build:
+  artifacts:
+    - image: 560914023379.dkr.ecr.us-east-2.amazonaws.com/myriad-flow-website
+      docker:
+        dockerfile: Dockerfile
+  tagPolicy:
+    sha256: {}
+deploy:
+  kubectl:
+    manifests:
+      - k8s/website-deploy.yml
+      - k8s/website-service.yml
+      - k8s/website-ingress.yml
+    defaultNamespace: myriad-flow
