@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "vite build",
-    "start": "vite --host"
+    "sass": "npx tailwindcss -i ./input.css -o ./styles.css",
+    "start": "npm run sass && vite --host"
   },
   "repository": {
     "type": "git",
