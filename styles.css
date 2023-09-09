@@ -24,7 +24,22 @@ body {
 }
 
 .header-bg {
-  background: url('./resources/background.jpg');
+  background: url('./resources/Hero_section_design.png');
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
 }
 
 /* ! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com */
