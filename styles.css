@@ -42,6 +42,14 @@ body {
   color: white;
 }
 
+.subhero-text {
+  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, +10%);
+  color: white;
+}
+
 /* ! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com */
 
 /*
