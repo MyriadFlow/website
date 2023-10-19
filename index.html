@@ -158,6 +158,168 @@
 }
 </style>
 
+<style>
+
+  .padd3 {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+
+  /* Float four columns side by side */
+  .column {
+    float: left;
+    width: 50%;
+    padding: 0 50px;
+    margin-bottom: 50px;
+  }
+
+  /* Remove extra left and right margins, due to padding */
+  .row {
+    padding: 0 100px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  @media (min-width: 600px) and (max-width: 1000px) {
+    .row {
+      padding: 0 20px;
+    }
+    .column {
+    float: left;
+    width: 50%;
+    padding: 0 10px;
+    margin-bottom: 50px;
+  }
+  }
+
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .row {
+      padding: 0 0px;
+    }
+  }
+
+  /* Add your CSS styles here */
+.slideshow-container3 {
+    position: relative;
+}
+
+.mySlides3 {
+    display: none;
+}
+
+/* Style for previous and next buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+</style>
+
+<style>
+
+  .padd4 {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+
+  /* Float four columns side by side */
+  .column {
+    float: left;
+    width: 50%;
+    padding: 0 50px;
+    margin-bottom: 50px;
+  }
+
+  /* Remove extra left and right margins, due to padding */
+  .row {
+    padding: 0 100px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  @media (min-width: 600px) and (max-width: 1000px) {
+    .row {
+      padding: 0 20px;
+    }
+    .column {
+    float: left;
+    width: 50%;
+    padding: 0 10px;
+    margin-bottom: 50px;
+  }
+  }
+
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .row {
+      padding: 0 0px;
+    }
+  }
+
+  /* Add your CSS styles here */
+.slideshow-container4 {
+    position: relative;
+}
+
+.mySlides4 {
+    display: none;
+}
+
+/* Style for previous and next buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+</style>
+
 </head>
 
 <body>
@@ -277,9 +439,7 @@ live in seconds and prepare for business
             </div> -->
         </div>
         <div class="lg:w-1/3">
-          <!-- <img src="./resources/image9.png" class="w-full mx-auto" alt="" /> -->
-          <!-- <div id="custom-component-container"></div> -->
-          <div class="bg-black padd2">
+          <div class="bg-black">
             <div class="slideshow-container2">
           
               <div class="mySlides2 mx-auto" style="display: block;">
@@ -305,14 +465,28 @@ live in seconds and prepare for business
       <div class="mx-5 sm:mx-6 px-10 lg:flex gap-20 items-center justify-evenly">
         <div class="lg:w-1/3">
           <img src="./resources/image129.png" class="w-full mx-auto" alt="" />
+          <!-- <div class="bg-black">
+            <div class="slideshow-container3">
+          
+              <div class="mySlides3 mx-auto" style="display: block;">
+                   <img src="./resources/image9.png" class="w-full mx-auto" alt="" />
+              </div>
+            
+              <div class="mySlides3 mx-auto">
+                  <img src="./resources/image146.png" class="w-full mx-auto" alt="" /> 
+              </div>
+            
+              <div class="mySlides3 mx-auto">
+                  <img src="./resources/unsplash_W1B2LpQOBxA.png" class="w-full mx-auto" alt="" />    
+              </div>
+          
+              </div>
+            </div>
+          </div> -->
         </div>
         <div class="lg:w-1/2 text-right">
           <h1 class="text-3xl sm:text-5xl lg:text-5xl font-bold mb-7 sm:mb-12 leading-snug">
             Certificates<br />
-            <!-- <span
-                class="bg-gradient-to-r text-transparent bg-clip-text from-[#00ffbd] via-[#2300ab] to-[#c100ba]"
-                >Utility NFTs</span
-              > -->
           </h1>
           <p class="text-xl m48:text-2xl sm:text-3xl leading-tight mb-12 sm:mb-14 lg:max-w-lg lg:ml-20"
             style="font-family:'Times New Roman', Times, serif">
@@ -320,17 +494,6 @@ live in seconds and prepare for business
 as a public verification of an individual's 
 credentials, affiliations, and commitments
           </p>
-          <!-- <div
-              class="bg-gradient-to-r inline-block from-[#00ffbd] via-[#2300ab] to-[#c100ba] p-1 rounded-full"
-            >
-              <button
-                class="bg-black text-white py-3 px-10 m41:px-16 m41:text-lg font-medium rounded-full"
-              >
-                <a href="https://dev.webapp.myriadflow.com/" target="_blank"
-                  >Explore</a
-                >
-              </button>
-            </div> -->
         </div>
         
       </div>
@@ -365,7 +528,25 @@ creators
             </div> -->
         </div>
         <div class="lg:w-1/3">
-          <img src="./resources/image127.png" class="w-full mx-auto" alt="" />
+          <!-- <img src="./resources/image127.png" class="w-full mx-auto" alt="" /> -->
+          <div class="bg-black">
+            <div class="slideshow-container4">
+          
+              <div class="mySlides4 mx-auto" style="display: block;">
+                   <img src="./resources/image127.png" class="w-full mx-auto" alt="" />
+              </div>
+            
+              <div class="mySlides4 mx-auto">
+                  <img src="./resources/image146.png" class="w-full mx-auto" alt="" /> 
+              </div>
+            
+              <div class="mySlides4 mx-auto">
+                  <img src="./resources/unsplash_W1B2LpQOBxA.png" class="w-full mx-auto" alt="" />    
+              </div>
+          
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -927,6 +1108,50 @@ our NFT dreams to life”
   
   // Start the automatic slideshow immediately
   showSlides2();
+  </script>
+
+  <script>
+    let slideIndex3 = 1;
+    showSlides3();
+    
+    function showSlides3() {
+      let i;
+      let slides3 = document.getElementsByClassName("mySlides3");
+      for (i = 0; i < slides3.length; i++) {
+        slides3[i].style.display = "none";  
+      }
+      slideIndex3++;
+      if (slideIndex3 > slides3.length) {
+        slideIndex3 = 1;  // Reset slideIndex to 1 when it exceeds the number of slides
+      }
+      slides3[slideIndex3 - 1].style.display = "block";  
+      setTimeout(showSlides3, 3000); // Change slide every 3 seconds (adjust the timing as needed)
+    }
+    
+    // Start the automatic slideshow immediately
+    showSlides3();
+    </script>
+
+<script>
+  let slideIndex4 = 1;
+  showSlides4();
+  
+  function showSlides4() {
+    let i;
+    let slides4 = document.getElementsByClassName("mySlides4");
+    for (i = 0; i < slides4.length; i++) {
+      slides4[i].style.display = "none";  
+    }
+    slideIndex4++;
+    if (slideIndex4 > slides4.length) {
+      slideIndex4 = 1;  // Reset slideIndex to 1 when it exceeds the number of slides
+    }
+    slides4[slideIndex4 - 1].style.display = "block";  
+    setTimeout(showSlides4, 3000); // Change slide every 3 seconds (adjust the timing as needed)
+  }
+  
+  // Start the automatic slideshow immediately
+  showSlides4();
   </script>
 </body>
 
