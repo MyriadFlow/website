@@ -320,6 +320,87 @@
 }
 </style>
 
+<style>
+
+  .padd5 {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+
+  /* Float four columns side by side */
+  .column {
+    float: left;
+    width: 50%;
+    padding: 0 50px;
+    margin-bottom: 50px;
+  }
+
+  /* Remove extra left and right margins, due to padding */
+  .row {
+    padding: 0 100px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  @media (min-width: 600px) and (max-width: 1000px) {
+    .row {
+      padding: 0 20px;
+    }
+    .column {
+    float: left;
+    width: 50%;
+    padding: 0 10px;
+    margin-bottom: 50px;
+  }
+  }
+
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .row {
+      padding: 0 0px;
+    }
+  }
+
+  /* Add your CSS styles here */
+.slideshow-container5 {
+    position: relative;
+}
+
+.mySlides5 {
+    display: none;
+}
+
+/* Style for previous and next buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+</style>
+
 </head>
 
 <body>
@@ -552,8 +633,41 @@ creators
 
     <section class="2xl:h-screen bg-black text-white py-32">
       <!-- style="background-image: url(./resources/Capture.png); background-repeat: no-repeat; background-position: center; background-size: cover; margin-top:-20px;" -->
+      <div class="mx-5 sm:mx-6 px-10 lg:flex gap-20">
+        <div class="lg:w-1/3">
+          <!-- <img src="./resources/image129.png" class="w-full mx-auto" alt="" /> -->
+          <div class="bg-black">
+            <div class="slideshow-container5">
 
-      <div class="mx-5 sm:mx-6 px-10 lg:flex gap-20 items-center justify-evenly">
+              <div class="mySlides5 mx-auto" style="display: block;">
+                   <img src="./resources/image_10.png" class="w-full mx-auto" alt="" />
+              </div>
+
+              <div class="mySlides5 mx-auto">
+                  <img src="./resources/image150.png" class="w-full mx-auto" alt="" /> 
+              </div>
+
+              <div class="mySlides5 mx-auto">
+                  <img src="./resources/image151.png" class="w-full mx-auto" alt="" />
+              </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-1/2 text-right">
+            <h1 class="text-3xl sm:text-5xl lg:text-5xl font-bold mb-7 sm:mb-12 leading-snug">
+              Phygital NFTs<br />
+            </h1>
+            <p class="text-xl m48:text-2xl sm:text-3xl leading-tight mb-12 sm:mb-14 lg:max-w-lg lg:ml-20"
+              style="font-family:'Times New Roman', Times, serif">
+              Discover the Fusion of Physical and Digital 
+              worlds with Myriadflow, from <span style="color:#44FFD2">VR Shopping</span> to 
+              <span style="color:#44FFD2">Phygital NFTs</span>
+            </p>
+          </div>
+
+        </div>
+      <!-- <div class="mx-5 sm:mx-6 px-10 lg:flex gap-20 items-center justify-evenly">
         <div class="lg:w-1/3">
           <img src="./resources/image_10.png" class="w-full mx-auto" alt="" />
         </div>
@@ -569,7 +683,7 @@ worlds with Myriadflow, from <span style="color:#44FFD2">VR Shopping</span> to
           </p>
         </div>
         
-      </div>
+      </div> -->
     </section>
 
 
@@ -1151,6 +1265,28 @@ our NFT dreams to life”
   
   // Start the automatic slideshow immediately
   showSlides4();
+  </script>
+
+<script>
+  let slideIndex5 = 1;
+  showSlides5();
+  
+  function showSlides5() {
+    let i;
+    let slides5 = document.getElementsByClassName("mySlides5");
+    for (i = 0; i < slides5.length; i++) {
+      slides5[i].style.display = "none";  
+    }
+    slideIndex5++;
+    if (slideIndex5 > slides5.length) {
+      slideIndex5 = 1;  // Reset slideIndex to 1 when it exceeds the number of slides
+    }
+    slides5[slideIndex5 - 1].style.display = "block";  
+    setTimeout(showSlides5, 3000); // Change slide every 3 seconds (adjust the timing as needed)
+  }
+  
+  // Start the automatic slideshow immediately
+  showSlides5();
   </script>
 </body>
 
