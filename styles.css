@@ -169,10 +169,16 @@ body {
 }
 
 .imgfit{
-  width: 60%;
+  width: 50%;
   height: 100%;
   float: right;
-  position: relative;
+  position: absolute;
+}
+
+@media (max-width: 1023px) {
+  .imgfit {
+      visibility: hidden;
+  }
 }
 
 .absol{
