@@ -63,6 +63,32 @@ body {
   }
 }
 
+.carousel-container2 {
+  width: 80%;
+  overflow: hidden;
+  /* border: 2px solid #ccc; */
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel2 {
+  display: flex;
+  justify-content: space-between;
+  animation: scroll 15s linear infinite;
+}
+
+.carousel-item2 {
+  min-width: 20%;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.carousel-item2 img {
+  max-width: 100%;
+  /* border-radius: 10px; */
+}
+
 .header-bg {
   background: linear-gradient( #630A8C, #250F5E);
   background-color: #cccccc;
