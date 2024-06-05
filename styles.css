@@ -23,6 +23,41 @@ body {
   height: 0;
 }
 
+.carousel-container {
+  width: 80%;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+  display: flex;
+  justify-content: space-between;
+  animation: scroll 15s linear infinite;
+}
+
+.carousel-item {
+  min-width: 15%;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.carousel-item img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
 .header-bg {
   background: linear-gradient( #630A8C, #250F5E);
   background-color: #cccccc;
