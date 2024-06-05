@@ -28,6 +28,47 @@ body {
   height: 0;
 }
 
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  /* padding: 10px; */
+  text-decoration: none;
+  color: #C1ACF6;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.nav-link .overlay {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position below the link */
+  left: 0;
+  width: 100%;
+  background: #2E0F65;
+  color: #C1ACF6;
+  text-align: center;
+  padding: 2px;
+  font-size: 14px;
+}
+
+.nav-link:hover .overlay {
+  display: block;
+}
+
+.join-button {
+  padding: 4px 40px; /* Adjusting padding for consistent look */
+  border: 2px solid #C1ACF6;
+  margin-top: -6px;
+  text-transform: capitalize;
+}
+
+.join-button a {
+  text-decoration: none;
+  color: #C1ACF6;
+  font-weight: bold;
+}
+
 .carousel-container {
   width: 80%;
   overflow: hidden;
