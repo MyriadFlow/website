@@ -24,7 +24,7 @@ body {
 }
 
 .header-bg {
-  background: url('./resources/Hero_section_design.png');
+  background: linear-gradient( #630A8C, #250F5E);
   background-color: #cccccc;
   height: 500px;
   background-position: center;
@@ -34,10 +34,10 @@ body {
 }
 
 .hero-text {
-  text-align: center;
+  /* text-align: center; */
   position: relative;
-  top: 50%;
-  left: 50%;
+  top: 55%;
+  left: 40%;
   transform: translate(-50%, -50%);
   color: white;
 }
