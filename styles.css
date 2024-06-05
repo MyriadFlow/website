@@ -6,16 +6,21 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 body {
-  font-family: 'Barlow', sans-serif;
+  /* font-family: 'Barlow', sans-serif; */
+     font-family: 'Bai Jamjuree', sans-serif;
 }
 
 .inter {
-  font-family: 'Inter', sans-serif;
+  /* font-family: 'Inter', sans-serif; */
+  font-family: 'Bai Jamjuree', sans-serif;
 }
 
 .myfont {
-  font-family: 'Commissioner', sans-serif;
+  /* font-family: 'Commissioner', sans-serif; */
+  font-family: 'Bai Jamjuree', sans-serif;
 }
 
 .link {
@@ -324,7 +329,8 @@ footer {
   display: flex;
   flex-direction: column;
   background-color: black;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  /* font-family: 'Plus Jakarta Sans', sans-serif; */
+  font-family: 'Bai Jamjuree', sans-serif;
 }
 
 .footer {
