@@ -406,7 +406,7 @@ footer {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 3vw;
-  padding: 72px 8vw;
+  padding: 45px 14vw;
   color: white;
 
   .h5 {
