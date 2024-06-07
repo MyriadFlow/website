@@ -28,6 +28,37 @@ body {
   height: 0;
 }
 
+.hero-content {
+  margin-top: 130px;
+}
+
+.hero-image {
+  width: 50%;
+}
+
+/* Ensure the hero image positioning */
+.hero-image-container {
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+}
+
+
+/* Styles for large screens */
+@media (min-width: 1024px) {
+  .hero-content {
+      margin-top: 150px;
+  }
+
+  .hero-image {
+      width: 70%;
+  }
+
+  .hero-image-container {
+    left: 50%;
+  }
+}
+
 
 .nav-link {
   position: relative;
