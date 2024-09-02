@@ -126,6 +126,23 @@ body {
   border-radius: 10px;
 }
 
+@media (max-width: 767px) { 
+  .carousel-item {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+
+
 @keyframes scroll {
   0% {
       transform: translateX(0);
@@ -423,47 +440,6 @@ body {
   to {opacity: 1}
 }
 
-footer {
-  display: flex;
-  flex-direction: column;
-  background-color: black;
-  /* font-family: 'Plus Jakarta Sans', sans-serif; */
-  font-family: 'Bai Jamjuree', sans-serif;
-}
-
-.footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 3vw;
-  padding: 45px 14vw;
-  color: white;
-
-  .h5 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 12px;
-  }
-  .brand .h5 {
-    display: flex;
-    text-transform: uppercase;
-    gap: 16px;
-  }
-
-  > div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .brand {
-    max-width: 500px;
-    gap: 24px;
-    line-height: 1.5;
-  }
-}
 
 .newsletter {
   position: relative;
@@ -546,72 +522,6 @@ footer {
   }
 }
 
-footer a {
-  position: relative;
-
-  &:not(.social-icon)::before {
-    background-color: black;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    border-radius: 4px;
-    bottom: 0;
-    left: 0;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform .3s ease-in-out;
-  }
-
-  &:hover::before {
-    transform-origin: left;
-    transform: scaleX(1);
-  }
-}
-
-@media (max-width: 960px) {
-  .footer {
-    gap: 72px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-
-    .brand {
-      max-width: 400px !important;
-    }
-  }
-
-  .subscribe {
-    display: block;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    .newsletter {
-      width: 100%;
-      max-width: 370px;
-    }
-    .newsletter input {
-      width: calc(100% - 22px);
-    }
-  }
-
-  .copyright {
-    padding: 32px 5vw;
-    p, a {
-      font-size: 14px;
-    }
-  }
-
-  .footer {
-    padding: 72px 8vw;
-  }
-}
-
-@media (max-width: 360px) {
-
-  .footer .h5 {
-    font-size: 16px;
-  }
-}
 
 
 /*
@@ -2089,3 +1999,105 @@ Ensure the default browser behavior of the `hidden` attribute.
          column-gap: 20rem;
   }
 }
+
+.footer {
+  background: linear-gradient(to right, #30D8FF, #A32CC4, #C243FE);
+  color: white;
+  padding: 40px ;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+.footer .brand img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.footer .brand p {
+  max-width: 300px;
+  font-size: 14px;
+  margin: 0 auto;
+}
+
+.footer .brand .copy {
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.footer .links,
+.footer .platform {
+  margin: 20px 0;
+}
+
+.footer .links a,
+.footer .platform a {
+  color: white;
+  display: block;
+  margin: 10px 0;
+  text-decoration: none;
+}
+
+.footer .links h3,
+.footer .platform h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.footer .social-links {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.footer .social-links .social-icon {
+  border: 2px solid #0E46A3;
+  background-color: #15063C;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .social-links img {
+  width: 20px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .footer .container {
+    flex-direction: column;
+    /* align-items: center;
+    text-align: center; */
+  }
+
+  .footer .brand img {
+    margin-bottom: 20px;
+  }
+
+  .footer .brand p,
+  .footer .links,
+  .footer .platform {
+    max-width: 100%;
+  }
+
+  .footer .links h3,
+  .footer .platform h3 {
+    font-size: 18px;
+  }
+
+  .footer .social-links {
+    justify-content: center;
+  }
+}
+
