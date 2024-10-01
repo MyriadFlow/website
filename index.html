@@ -143,8 +143,17 @@
   width: 20px;
   height: auto;
 }
-
+body, html {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
 @media (max-width: 768px) {
+  body, html {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
   .footer .container {
     flex-direction: column;
     /* align-items: center;
