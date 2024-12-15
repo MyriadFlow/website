@@ -615,35 +615,44 @@
   <div class="hidden h-screen header-bg bg-center text-white lg:flex items-center w-full" id="home" style="
         position: relative;
         padding: 0px 7vw;
-        background-image: url(&quot;./resources/bg.svg&quot;);
+        
         background-position: top;
         background-size: cover;
       ">
-    <div class="w-2/2 ">
-      <h1 class="text-7xl lg:text-9xl font-black mb-8 hero-content" style="line-height: 1">
-        Discover NFT <br> Xperiences<br />
+      <video autoplay muted loop playsinline poster="/resources/bgBig.png" style="
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;">
+    <source src="https://gateway.pinata.cloud/ipfs/bafybeibmj2q5cpyg763gulptv7rb3hd7o2jbmp5apqhdutq5gdbtw34eqe" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Gradient overlay -->
+  <div style="
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    z-index: 2;">
+  </div>
+    <div class="w-2/2" style="position: relative; z-index: 3;">
+      <h1 class="text-6xl lg:text-9xl font-black mb-8 hero-content" style="line-height: 1">
+        Discover AI-Powered  <br> NFT Experiences<br />
       </h1>
-      <p class="text-2xl text-gray-50 font-thin mb-10">
-        Step into a universe of limitless possibilities, where <br />
-        brand activation opens a portal to extraordinary <br />
-        storytelling and unforgettable NFT experiences.
+      <p class="text-2xl1 text-gray-50 font-thin mb-10">
+        Step into a Digital Cosmos where creativity <br> meets technology. We empower brands and <br> creators to embrace cutting-edge Web3 and AI <br>  innovations, unlocking endless possibilities in <br> the digital world.
       </p>
       <div class="inline-block rounded-full">
-        <!-- <div class="capitalize font-bold text-xl" style="color: #13d5dc66">
-            Stay tuned
-          </div>
-          <div class="capitalize font-bold text-xl" style="color: #13d5dc99">
-            Coming Soon
-          </div>
-          <div class="font-bold text-xl mb-10" style="color: #13d5dc">
-            Prepare to Launch!
-          </div> -->
-
         <button class="py-3 px-8 m41:px-16 m41:text-lg font-medium mb-4" style="border: 2px solid white">
           <a href="https://discord.gg/38jktRtuY7" target="_blank" style="color: white" class="flex gap-4">
             <img src="/resources/readyimages/Vector.png" style="width: 30px; border-radius: 100%" />
             Join
-
           </a>
         </button>
       </div>
@@ -659,9 +668,55 @@
     </div>
 
     <!-- Image Section -->
-    <div class="flex-1 mt-40 mb-10 relative">
+    <!-- <div class="flex-1 mt-40 mb-10 relative">
       <img src="./resources/bg.svg" alt="NFT Experience" class="w-full h-full object-cover" />
-    </div>
+    </div> -->
+    <div class=" header-bg bg-center text-white lg:flex items-center w-full" id="home" style="
+    position: relative;
+    padding: 0px 7vw;
+    
+    background-position: top;
+    background-size: cover;
+  ">
+  <video autoplay muted loop playsinline poster="/resources/bgBig.png" style="
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+z-index: 1;">
+<source src="https://gateway.pinata.cloud/ipfs/bafybeibmj2q5cpyg763gulptv7rb3hd7o2jbmp5apqhdutq5gdbtw34eqe" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+<!-- Gradient overlay -->
+<div style="
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+z-index: 2;">
+</div>
+<div class="w-2/2" style="position: relative; z-index: 3;">
+  <h1 class="text-6xl lg:text-9xl font-black mb-8 hero-content2" style="line-height: 1">
+    Discover AI-Powered  <br> NFT Experiences<br />
+  </h1>
+  <p class="text-2xl1 text-gray-50 font-thin mb-10">
+    Step into a Digital Cosmos where creativity <br> meets technology. We empower brands and <br> creators to embrace cutting-edge Web3 and AI <br>  innovations, unlocking endless possibilities in <br> the digital world.
+  </p>
+  <div class="inline-block rounded-full">
+    <button class="py-3 px-8 m41:px-16 m41:text-lg font-medium mb-4" style="border: 2px solid white">
+      <a href="https://discord.gg/38jktRtuY7" target="_blank" style="color: white" class="flex gap-4">
+        <img src="/resources/readyimages/Vector.png" style="width: 30px; border-radius: 100%" />
+        Join
+      </a>
+    </button>
+  </div>
+</div>
+</div>
 
     <!-- Text and Button Section -->
     <div class="px-7 py-8 mt-10 mb-10 z-10 flex items-center flex-col">
