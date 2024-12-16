@@ -37,7 +37,7 @@ html {
   margin-top: 130px;
 }
 .hero-content2 {
-  margin-top: 50px;
+  margin-top: 70px;
 }
 
 .hero-image {
@@ -1064,6 +1064,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-6 {
   margin-bottom: 1.5rem;
 }
+.mt-6 {
+  margin-top: 1.5rem;
+}
+.mt-7 {
+  margin-top: 2rem;
+}
+.mt-8 {
+  margin-top: 3rem;
+}
 
 .block {
   display: block;
@@ -1449,6 +1458,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+}
+.py-8 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .py-20 {
