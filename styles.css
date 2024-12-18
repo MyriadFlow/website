@@ -1352,11 +1352,31 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-10 {
   margin-top: 4rem;
 }
+.-z-10 {
+  z-index: -10;
+}
+.z-10 {
+  z-index: 10;
+}
 
+.cursor-pointer {
+  cursor: pointer;
+}
+.py-12 {
+  padding-top: 3rem /* 48px */;
+  padding-bottom: 3rem /* 48px */;
+}
+.px-6 {
+  padding-left: 1.5rem /* 24px */;
+  padding-right: 1.5rem /* 24px */;
+}
+.mr-16 {
+  margin-right: 4rem /* 80px */;
+}
 .card2 {
   position: relative;
   border: 10px solid transparent;
-  background: #f2f2f2;
+  background: #fff;
   background-clip: padding-box;
   border-radius: 20px;
 }
@@ -1371,6 +1391,38 @@ Ensure the default browser behavior of the `hidden` attribute.
   background: linear-gradient(to bottom, #fd1aff, #a312bb);
   z-index: -1;
   border-radius: 12px;
+}
+.card3 {
+  position: relative;
+  border: 10px solid transparent;
+  background: #fff;
+  background-clip: padding-box;
+  border-radius: 20px;
+}
+
+.card3::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  background: linear-gradient(-50deg, #00ddeb, #5b42f3, #af40ff);
+  z-index: -1;
+  border-radius: 15px;
+}
+
+.card3::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 10%;
+  right: 10%;
+  height: 15px;
+  background: linear-gradient(-50deg, #00ddeb, #5b42f3, #af40ff);
+  z-index: -2;
+  border-radius: 10px;
+  filter: blur(10px);
 }
 
 .border {
@@ -1645,7 +1697,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
-
+.gap-2 {
+  gap: 0.5rem /* 8px */;
+}
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
@@ -1714,6 +1768,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-\[200px\] {
   width: 200px;
+}
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem /* 8px */ * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem /* 8px */ * calc(1 - var(--tw-space-x-reverse)));
 }
 .h-\[200px\] {
   height: 200px;
@@ -2119,6 +2178,13 @@ Ensure the default browser behavior of the `hidden` attribute.
     column-gap: 4rem;
   }
 }
+@media (max-width: 768px) {
+  #futureready {
+    background-image: url("./resources/mobile_futureready_bg.svg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
 
 @media (max-width: 648px) {
   .text-6xl {
@@ -2128,6 +2194,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   .text-2xl1 {
     font-size: 1.01rem;
     line-height: 2rem;
+  }
+  #futureready_bg {
+    background-image: url("./resources/mobile_futureready_bg.svg");
   }
 }
 
@@ -2191,5 +2260,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   .sm\:text-4xl {
     font-size: 2.25rem /* 36px */;
     line-height: 2.5rem /* 40px */;
+  }
+  .sm\:gap-4 {
+    gap: 1rem /* 16px */;
   }
 }
