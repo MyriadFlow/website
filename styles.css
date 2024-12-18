@@ -149,7 +149,10 @@ html {
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
+.py-24 {
+  padding-top: 6rem /* 40px */;
+  padding-bottom: 6rem /* 40px */;
+}
 .carousel2 {
   display: flex;
   justify-content: space-between;
