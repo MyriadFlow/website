@@ -86,6 +86,27 @@ navPanel?.addEventListener("click", (e) => {
   if (e.target.closest("a")) setNav(false);
 });
 
+/* ---------- legal pages: highlight the section being read ---------- */
+
+const toc = document.querySelector(".legal-toc");
+if (toc) {
+  const links = new Map([...toc.querySelectorAll("a")].map((a) => [a.hash.slice(1), a]));
+  const spy = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        links.forEach((a) => a.removeAttribute("aria-current"));
+        links.get(e.target.id)?.setAttribute("aria-current", "true");
+      }
+    },
+    { rootMargin: "-30% 0px -60% 0px" },
+  );
+  links.forEach((_, id) => {
+    const section = document.getElementById(id);
+    if (section) spy.observe(section);
+  });
+}
+
 /* ---------- sections: intro choreography ---------- */
 
 const sections = [];

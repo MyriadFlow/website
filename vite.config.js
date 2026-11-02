@@ -9,6 +9,10 @@ export default defineConfig({
       input: {
         main: page("./index.html"),
         contact: page("./contact.html"),
+        terms: page("./legal/terms.html"),
+        privacy: page("./legal/privacy.html"),
+        "creator-terms": page("./legal/creator-terms.html"),
+        "community-guidelines": page("./legal/community-guidelines.html"),
       },
     },
   },

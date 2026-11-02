@@ -137,9 +137,15 @@ production-ready.
 
 ## Get involved
 
-- **Have an idea?** Email [contact@myriadflow.com](mailto:contact@myriadflow.com) — a sentence is enough to start.
+- **Have an idea?** MyriadFlow is in private beta — [join the Discord](https://discord.gg/38jktRtuY7) to start a project. A sentence is enough.
 - **Run printers, a makerspace or a factory?** Become a manufacturing partner.
 - **Follow along:** [Discord](https://discord.gg/38jktRtuY7) · [Telegram](https://t.me/MyriadFlow) · [X](https://x.com/0xMyriadFlow) · [Instagram](https://www.instagram.com/0xmyriadflow)
+
+## Company
+
+**MyriadFlow LLC** · Identification number 405818227<br />
+Bakhtrioni Street N22, Apartment N75, Saburtalo District, Tbilisi, Georgia<br />
+[contact@myriadflow.com](mailto:contact@myriadflow.com)
 
 ---
 
