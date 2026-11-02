@@ -1,1421 +1,825 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyriadFlow — The Vibe Manufacturing launchpad</title>
     <meta
       name="description"
-      content="MyriadFlow is an all-in-one no-code platform for AI-powered NFT experiences, empowering brands and creators to embrace Web3 and AI innovations that unlock limitless possibilities in the digital world"
+      content="Describe a product in a sentence and carry it to a working prototype, a community that backs it, and a finished product made to your taste. MyriadFlow is the Vibe Manufacturing launchpad."
     />
     <meta
       name="keywords"
-      content="buy matic from inr, buy bnb from inr, onramp in india, buy crypto from fiat, buy crypto from inr, buy crypto from rupee, crypto, 
-        crypto market cap, crypto prices,best crypto wallet, crypto currencies, crypto market, crypto trader, bitcoin, crypto site"
+      content="vibe manufacturing, idea to product, AI product design, parametric CAD, 3D printing, hardware prototyping, custom products, hardware launchpad, TVASTR, MyriadFlow"
     />
-    <meta property="og:image" content="https://myriadflow.com/resources/bg.webp" />
-    <meta property="og:title" content="MyriadFlow" />
-    <meta property="og:url" content="https://www.myriadflow.com/" />
-    <meta
-      property="og:description"
-      content="MyriadFlow is an all-in-one no-code platform for AI-powered NFT experiences, empowering brands and creators to embrace Web3 and AI innovations that unlock limitless possibilities in the digital world"
-    />
-    <meta property="og:image" itemprop="image" content="https://myriadflow.com/resources/bg.webp" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_GB" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
-    <script
-      async
-      defer
-      data-website-id="e56d6cc6-9b0d-46db-b074-704f242dc50a"
-      src="https://umami.lazarus.network/umami.js"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
-    <link rel="shortcut icon" href="./resources/readyimages/logo_meta.png" type="image/x-icon" />
-    <title>MyriadFlow</title>
+    <meta name="theme-color" content="#07050f" />
+    <link rel="canonical" href="https://myriadflow.com/" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <!-- Primary Meta Tags -->
-    <title>MyriadFlow NFT Platform</title>
-    <meta name="title" content="MyriadFlow NFT Platform" />
-    <meta
-      name="description"
-      content="MyriadFlow is an all-in-one no-code platform for AI-powered NFT experiences, empowering brands and creators to embrace Web3 and AI innovations that unlock limitless possibilities in the digital world"
-    />
-    <meta name="image" content="https://myriadflow.com/resources/bg.webp" />
-
-    <!-- Facebook Meta Tags -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://myriadflow.com/" />
-    <meta property="og:title" content="MyriadFlow NFT Platform" />
+    <meta property="og:title" content="MyriadFlow — The Vibe Manufacturing launchpad" />
     <meta
       property="og:description"
-      content="MyriadFlow is an all-in-one no-code platform for AI-powered NFT experiences, empowering brands and creators to embrace Web3 and AI innovations that unlock limitless possibilities in the digital world."
+      content="Many ideas. One flow from first sketch to finished product."
     />
-    <meta property="og:image" content="https://myriadflow.com/resources/bg.webp" />
-
-    <!-- Twitter Meta Tags -->
+    <meta property="og:image" content="https://myriadflow.com/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content="myriadflow.com" />
-    <meta property="twitter:url" content="https://myriadflow.com/" />
-    <meta name="twitter:title" content="MyriadFlow NFT Platform" />
+    <meta name="twitter:site" content="@0xMyriadFlow" />
+    <meta name="twitter:title" content="MyriadFlow — The Vibe Manufacturing launchpad" />
     <meta
       name="twitter:description"
-      content="MyriadFlow is an all-in-one no-code platform for AI-powered NFT experiences, empowering brands and creators to embrace Web3 and AI innovations that unlock limitless possibilities in the digital world."
+      content="Many ideas. One flow from first sketch to finished product."
     />
-    <meta
-      name="twitter:image"
-      content="https://opengraph.b-cdn.net/production/images/3f55f0cf-50cb-476f-b3f9-9994f867e84a.jpg?token=ujyykynFTqAgW36NnNygS6EeKfuIY5UbJgsjhA9g_Bg&height=694&width=1200&expires=33264933233"
+    <meta name="twitter:image" content="https://myriadflow.com/og-image.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Commissioner:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
     />
-
-    <!-- Meta Tags Generated with https://metatags.io -->
-
+    <link rel="stylesheet" href="/src/styles.css" />
     <script>
-      let slideIndex = 1;
-      showSlides(slideIndex);
-
-      // Next/previous controls
-      function plusSlides(n) {
-        showSlides((slideIndex += n));
-      }
-
-      function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        if (n > slides.length) {
-          slideIndex = 1;
-        }
-        if (n < 1) {
-          slideIndex = slides.length;
-        }
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        slides[slideIndex - 1].style.display = "block";
-      }
+      document.documentElement.classList.add("js");
     </script>
-
-    <style>
-      /* Add your CSS styles here */
-      .footer {
-        background: linear-gradient(to right, #30d8ff, #a32cc4, #c243fe);
-        color: white;
-        padding: 40px;
-      }
-
-      .footer .container {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
-        text-align: left;
-        flex-wrap: wrap;
-      }
-
-      .footer .brand img {
-        width: 200px;
-        height: auto;
-        margin-bottom: 20px;
-      }
-
-      .footer .brand p {
-        max-width: 300px;
-        font-size: 14px;
-        margin: 0 auto;
-      }
-
-      .footer .brand .copy {
-        margin-top: 20px;
-        font-size: 12px;
-      }
-
-      .footer .links,
-      .footer .platform {
-        margin: 20px 0;
-      }
-
-      .footer .links a,
-      .footer .platform a {
-        color: white;
-        display: block;
-        margin: 10px 0;
-        text-decoration: none;
-      }
-
-      .footer .links h3,
-      .footer .platform h3 {
-        font-size: 20px;
-        font-weight: 600;
-        margin-bottom: 15px;
-      }
-
-      .footer .social-links {
-        display: flex;
-        justify-content: flex-start;
-        gap: 20px;
-        margin-top: 20px;
-      }
-
-      .footer .social-links .social-icon {
-        border: 2px solid #0e46a3;
-        background-color: #15063c;
-        border-radius: 50%;
-        padding: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .footer .social-links img {
-        width: 20px;
-        height: auto;
-      }
-
-      body,
-      html {
-        margin: 0;
-        /* Remove default margin */
-        padding: 0;
-        /* Remove default padding */
-        overflow-x: hidden;
-        /* Prevent horizontal overflow */
-      }
-
-      @media (max-width: 768px) {
-        body,
-        html {
-          margin: 0;
-          /* Remove default margin */
-          padding: 0;
-          /* Remove default padding */
-          overflow-x: hidden;
-          /* Prevent horizontal overflow */
-        }
-
-        .footer .container {
-          flex-direction: column;
-          /* align-items: center;
-    text-align: center; */
-        }
-
-        .footer .brand img {
-          margin-bottom: 20px;
-        }
-
-        .footer .brand p,
-        .footer .links,
-        .footer .platform {
-          max-width: 100%;
-        }
-
-        .footer .links h3,
-        .footer .platform h3 {
-          font-size: 18px;
-        }
-
-        .footer .social-links {
-          justify-content: center;
-        }
-      }
-
-      @media (max-width: 767px) {
-        .carousel-item {
-          height: 100px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .carousel-item img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 10px;
-        }
-      }
-
-      .slideshow-container {
-        position: relative;
-      }
-
-      .mySlides {
-        display: none;
-      }
-
-      /* Style for previous and next buttons */
-      .prev,
-      .next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        padding: 16px;
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-      }
-
-      .prev {
-        left: 0;
-      }
-
-      .next {
-        right: 0;
-      }
-    </style>
-
-    <style>
-      .padd2 {
-        padding-top: 120px;
-        padding-bottom: 40px;
-      }
-
-      /* Float four columns side by side */
-      .column {
-        float: left;
-        width: 50%;
-        padding: 0 50px;
-        margin-bottom: 50px;
-      }
-
-      /* Remove extra left and right margins, due to padding */
-      .row {
-        padding: 0 100px;
-      }
-
-      /* Clear floats after the columns */
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-
-      @media (min-width: 600px) and (max-width: 1000px) {
-        .row {
-          padding: 0 20px;
-        }
-
-        .column {
-          float: left;
-          width: 50%;
-          padding: 0 10px;
-          margin-bottom: 50px;
-        }
-      }
-
-      /* Responsive columns */
-      @media screen and (max-width: 600px) {
-        .column {
-          width: 100%;
-          display: block;
-          margin-bottom: 20px;
-        }
-
-        .row {
-          padding: 0 0px;
-        }
-      }
-
-      /* Add your CSS styles here */
-      .slideshow-container2 {
-        position: relative;
-      }
-
-      .mySlides2 {
-        display: none;
-      }
-
-      /* Style for previous and next buttons */
-      .prev,
-      .next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        padding: 16px;
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-      }
-
-      .prev {
-        left: 0;
-      }
-
-      .next {
-        right: 0;
-      }
-    </style>
-
-    <style>
-      .padd3 {
-        padding-top: 120px;
-        padding-bottom: 40px;
-      }
-
-      /* Float four columns side by side */
-      .column {
-        float: left;
-        width: 50%;
-        padding: 0 50px;
-        margin-bottom: 50px;
-      }
-
-      /* Remove extra left and right margins, due to padding */
-      .row {
-        padding: 0 100px;
-      }
-
-      /* Clear floats after the columns */
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-
-      @media (min-width: 600px) and (max-width: 1000px) {
-        .row {
-          padding: 0 20px;
-        }
-
-        .column {
-          float: left;
-          width: 50%;
-          padding: 0 10px;
-          margin-bottom: 50px;
-        }
-      }
-
-      /* Responsive columns */
-      @media screen and (max-width: 600px) {
-        .column {
-          width: 100%;
-          display: block;
-          margin-bottom: 20px;
-        }
-
-        .row {
-          padding: 0 0px;
-        }
-      }
-
-      /* Add your CSS styles here */
-      .slideshow-container3 {
-        position: relative;
-      }
-
-      .mySlides3 {
-        display: none;
-      }
-
-      /* Style for previous and next buttons */
-      .prev,
-      .next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        padding: 16px;
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-      }
-
-      .prev {
-        left: 0;
-      }
-
-      .next {
-        right: 0;
-      }
-    </style>
-
-    <style>
-      .padd4 {
-        padding-top: 120px;
-        padding-bottom: 40px;
-      }
-
-      /* Float four columns side by side */
-      .column {
-        float: left;
-        width: 50%;
-        padding: 0 50px;
-        margin-bottom: 50px;
-      }
-
-      /* Remove extra left and right margins, due to padding */
-      .row {
-        padding: 0 100px;
-      }
-
-      /* Clear floats after the columns */
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-
-      @media (min-width: 600px) and (max-width: 1000px) {
-        .row {
-          padding: 0 20px;
-        }
-
-        .column {
-          float: left;
-          width: 50%;
-          padding: 0 10px;
-          margin-bottom: 50px;
-        }
-      }
-
-      /* Responsive columns */
-      @media screen and (max-width: 600px) {
-        .column {
-          width: 100%;
-          display: block;
-          margin-bottom: 20px;
-        }
-
-        .row {
-          padding: 0 0px;
-        }
-      }
-
-      /* Add your CSS styles here */
-      .slideshow-container4 {
-        position: relative;
-      }
-
-      .mySlides4 {
-        display: none;
-      }
-
-      /* Style for previous and next buttons */
-      .prev,
-      .next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        padding: 16px;
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-      }
-
-      .prev {
-        left: 0;
-      }
-
-      .next {
-        right: 0;
-      }
-    </style>
-
-    <style>
-      .padd5 {
-        padding-top: 120px;
-        padding-bottom: 40px;
-      }
-
-      /* Float four columns side by side */
-      .column {
-        float: left;
-        width: 50%;
-        padding: 0 50px;
-        margin-bottom: 50px;
-      }
-
-      /* Remove extra left and right margins, due to padding */
-      .row {
-        padding: 0 100px;
-      }
-
-      /* Clear floats after the columns */
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-
-      @media (min-width: 600px) and (max-width: 1000px) {
-        .row {
-          padding: 0 20px;
-        }
-
-        .column {
-          float: left;
-          width: 50%;
-          padding: 0 10px;
-          margin-bottom: 50px;
-        }
-      }
-
-      /* Responsive columns */
-      @media screen and (max-width: 600px) {
-        .column {
-          width: 100%;
-          display: block;
-          margin-bottom: 20px;
-        }
-
-        .row {
-          padding: 0 0px;
-        }
-      }
-
-      /* Add your CSS styles here */
-      .slideshow-container5 {
-        position: relative;
-      }
-
-      .mySlides5 {
-        display: none;
-      }
-
-      /* Style for previous and next buttons */
-      .prev,
-      .next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        padding: 16px;
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-      }
-
-      .prev {
-        left: 0;
-      }
-
-      .next {
-        right: 0;
-      }
-    </style>
   </head>
 
   <body>
-    <header>
-      <nav
-        class="min-w-full bg-black h-[88px] px-4 m37:px-8 text-white fixed flex items-center justify-between z-50"
-      >
-        <div class="flex justify-center items-center gap-x-2 sm:gap-x-4">
-          <a href="#"
-            ><img src="./resources/readyimages/Rectangle.png" width="40" height="40" alt="logo"
-          /></a>
-          <a href="#"
-            ><img src="./resources/myriadflow.png" width="200" height="200" alt="logo"
-          /></a>
-        </div>
-        <button class="lg:hidden text-2xl" id="navbtn">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-        <div class="font-bold hidden lg:flex gap-x-8" style="text-transform: capitalize">
-          <!-- <a href="https://myriadflow.com" class="nav-link">Home</a> -->
-          <a href="https://discover.myriadflow.com" target="_blank" class="nav-link">
-            <span style="margin-left: 10px">Discover</span>
-          </a>
-          <a href="https://studio.myriadflow.com" target="_blank" class="nav-link">Studio</a>
-          <a href="https://webxr.myriadflow.com" target="_blank" class="nav-link">WebXR</a>
-          <div class="join-button">
-            <a href="https://studio.myriadflow.com" target="_blank">LAUNCH</a>
-          </div>
-        </div>
-      </nav>
-      <ul
-        id="links"
-        class="hidden fixed h-screen px-8 top-[88px] bg-black link text-white font-semibold text-xl w-full z-50 flex flex-col gap-4 text-right overflow-hidden lg:hidden translate-x-full transition-transform duration-300"
-      >
-        <!-- <a href="https://myriadflow.com">Home</a> -->
-        <a href="https://discover.myriadflow.com" target="_blank">Discover</a>
-        <a href="https://studio.myriadflow.com" target="_blank">Studio</a>
-        <a href="https://webxr.myriadflow.com" target="_blank">WebXR</a>
-        <div style="border: 2px solid white">
-          <a href="https://studio.myriadflow.com" target="_blank">LAUNCH</a>
-        </div>
-      </ul>
-    </header>
-    <div
-      class="hidden h-screen header-bg bg-center text-white lg:flex items-center w-full"
-      id="home"
-      style="
-        position: relative;
-        padding: 0px 7vw;
+    <a class="skip" href="#main">Skip to content</a>
 
-        background-position: top;
-        background-size: cover;
-      "
-    >
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="/resources/bgBig.png"
-        style="
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          z-index: 1;
-        "
-      >
-        <source
-          src="https://gateway.pinata.cloud/ipfs/bafybeibmj2q5cpyg763gulptv7rb3hd7o2jbmp5apqhdutq5gdbtw34eqe"
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
+    <!-- Shared product drawing: the hex focus object from the Vibe Manufacturing walkthrough -->
+    <svg width="0" height="0" class="sr-only" aria-hidden="true">
+      <defs>
+        <symbol id="hexobj" viewBox="0 0 320 240">
+          <polygon points="270,100 215,147.6 215,191.6 270,144" fill="var(--o-s1)" />
+          <polygon points="215,147.6 105,147.6 105,191.6 215,191.6" fill="var(--o-s2)" />
+          <polygon points="105,147.6 50,100 50,144 105,191.6" fill="var(--o-s3)" />
+          <polygon points="270,100 215,147.6 105,147.6 50,100 105,52.4 215,52.4" fill="var(--o-top)" />
+          <polyline points="50,100 105,52.4 215,52.4 270,100" fill="none" stroke="var(--o-edge)" stroke-width="1.5" stroke-linejoin="round" />
+          <polyline points="50,100 105,147.6 215,147.6 270,100" fill="none" stroke="var(--o-edge)" stroke-opacity=".45" stroke-width="1" stroke-linejoin="round" />
+          <ellipse cx="160" cy="100" rx="64" ry="32" fill="none" stroke="var(--o-groove)" stroke-width="10" />
+          <ellipse cx="160" cy="104" rx="36" ry="18" fill="var(--o-dial-side)" />
+          <ellipse cx="160" cy="98" rx="36" ry="18" fill="var(--o-dial)" />
+          <line x1="160" y1="98" x2="160" y2="84" stroke="var(--o-notch)" stroke-width="3" stroke-linecap="round" />
+        </symbol>
+        <filter id="ledglow" x="-30%" y="-60%" width="160%" height="220%">
+          <feGaussianBlur stdDeviation="6" />
+        </filter>
+        <radialGradient id="floorglow">
+          <stop offset="0" stop-color="#30d8ff" stop-opacity=".35" />
+          <stop offset="1" stop-color="#30d8ff" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+    </svg>
 
-      <!-- Gradient overlay -->
-      <div
-        style="
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-          z-index: 2;
-        "
-      ></div>
-      <div class="w-2/2" style="position: relative; z-index: 3">
-        <h1 class="text-6xl lg:text-9xl font-black mb-8 hero-content" style="line-height: 1">
-          Discover AI-Powered <br />
-          NFT Experiences<br />
-        </h1>
-        <p class="text-2xl1 text-gray-50 font-thin mb-10">
-          Step into a Digital Cosmos where creativity <br />
-          meets technology. We empower brands and <br />
-          creators to embrace cutting-edge Web3 and AI <br />
-          innovations, unlocking endless possibilities in <br />
-          the digital world.
-        </p>
-        <div class="inline-block rounded-full">
-          <button
-            class="py-3 px-8 m41:px-16 m41:text-lg font-medium mb-4"
-            style="border: 2px solid white"
-          >
-            <a
-              href="https://discord.gg/38jktRtuY7"
-              target="_blank"
-              style="color: white"
-              class="flex gap-4"
-            >
-              <img
-                src="/resources/readyimages/Vector.png"
-                style="width: 30px; border-radius: 100%"
-              />
-              Join
-            </a>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="flex flex-col text-white lg:hidden w-full" id="home">
-      <!-- Image Section -->
-      <!-- <div class="flex-1 mt-40 mb-10 relative">
-      <img src="./resources/bg.svg" alt="NFT Experience" class="w-full h-full object-cover" />
-    </div> -->
-      <div
-        class="mt-8 header-bg bg-center text-white lg:flex items-center w-full"
-        id="home"
-        style="
-          position: relative;
-          padding: 0px 7vw;
-
-          background-position: top;
-          background-size: cover;
-        "
-      >
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          poster="/resources/bgBig.png"
-          style="
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 1;
-          "
-        >
-          <source
-            src="https://gateway.pinata.cloud/ipfs/bafybeifdkgi4h4cckwltiqwhwj7bpcr477wlntb4zutietszyly6ykwz3u"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
-
-        <!-- Gradient overlay -->
-        <div
-          style="
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-            z-index: 2;
-          "
-        ></div>
-        <div class="w-2/2" style="position: relative; z-index: 3">
-          <h1
-            class="text-6xl lg:text-9xl font-black mb-8 hero-content2 text-center"
-            style="line-height: 1"
-          >
-            Discover AI-Powered <br />
-            NFT Experiences<br />
-          </h1>
-        </div>
-      </div>
-
-      <!-- Text and Button Section -->
-      <div class="px-7 py-8 mt-10 mb-10 z-10 flex items-center flex-col">
-        <p class="text-md px-4 text-center font-semibold mb-6" style="color: black">
-          Step into a Digital Cosmos where creativity meets technology. We empower brands and
-          creators to embrace cutting-edge Web3 and AI innovations, unlocking endless possibilities
-          in the digital world.
-        </p>
-        <button
-          class="py-3 px-8 font-medium w-[200px] text-center flex items-center justify-center mt-6"
-          style="border: 2px solid black"
-        >
-          <a
-            href="https://discord.gg/38jktRtuY7"
-            target="_blank"
-            style="color: black"
-            class="flex items-center gap-4"
-          >
-            <svg width="30" height="30" viewBox="0 0 24 24">
-              <path
-                fill="#333"
-                d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"
-              />
-            </svg>
-            Join
-          </a>
-        </button>
-      </div>
-      <div class="mt-20 bg-black px-6 py-4 flex justify-center items-center gap-2">
-        <a
-          href="https://discover.myriadflow.com/"
-          target="_blank"
-          class="text-2xl"
-          style="color: #c243fe"
-        >
-          Discover MarketPlace
+    <header class="nav" id="nav">
+      <div class="wrap nav-in">
+        <a class="brand" href="/" aria-label="MyriadFlow home">
+          <img src="/brand/mf-mark.png" width="34" height="38" alt="" />
+          <img class="brand-word" src="/brand/wordmark.png" width="150" height="15" alt="MyriadFlow" />
         </a>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#c243fe"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#why">Why now</a>
+          <a href="#flow">The flow</a>
+          <a href="#launchpad">Launchpad</a>
+          <a href="#culture">Music &amp; Art</a>
+          <a href="/contact">Contact</a>
+        </nav>
+        <a class="btn btn-sm btn-primary nav-cta" href="mailto:contact@myriadflow.com?subject=I%20want%20to%20make%20something">Start a project</a>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navPanel" aria-label="Open menu">
+          <span></span><span></span>
+        </button>
       </div>
-    </div>
-
-    <div class="carousel-container w-full" style="padding-top: 80px; padding-bottom: 80px">
-      <div class="carousel" id="carousel">
-        <!-- JavaScript will insert carousel items here -->
+      <div class="nav-panel" id="navPanel" hidden>
+        <a href="#why">Why now</a>
+        <a href="#flow">The flow</a>
+        <a href="#launchpad">Launchpad</a>
+        <a href="#culture">Music &amp; Art</a>
+        <a href="/contact">Contact</a>
+        <a class="btn btn-primary" href="mailto:contact@myriadflow.com?subject=I%20want%20to%20make%20something">Start a project</a>
       </div>
-    </div>
+    </header>
 
-    <section id="no-code" style="background: linear-gradient(to bottom, #9f15e0, #3bcdff)">
-      <div class="mx-auto" style="padding: 8px 0vw">
-        <h1
-          class="pt-14 m28:text-2xl text-3xl m48:text-5xl m28:font-extrabold font-black lg:font-extrabold mb-4 w-1/2 text-center text-white"
-        >
-          All-in-one no-code platform
-        </h1>
-        <p class="m28:text-2xl text-3xl m48:text-3xl mb-4 w-1/2 text-center text-white">
-          Empowering brands with cutting-edge tools.
-        </p>
+    <main id="main">
+      <!-- HERO ------------------------------------------------------------ -->
+      <section class="hero sec" id="top">
+        <div class="hero-bg" aria-hidden="true">
+          <i class="glow g1"></i><i class="glow g2"></i><i class="glow g3"></i>
+          <i class="grid"></i>
+        </div>
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow" data-a="up"><i class="pip"></i>The Vibe Manufacturing launchpad</p>
+            <h1 class="display" data-a="up">Describe it.<br /><span class="grad-text">Hold it.</span></h1>
+            <p class="lede" data-a="up">
+              Vibe coding turned the first draft of software into a sentence. MyriadFlow does the
+              same for things you can hold — carrying one idea from a prompt to a printed prototype,
+              a community that backs it, and a product made for the people who wanted it.
+            </p>
+            <div class="cta-row" data-a="up">
+              <a class="btn btn-primary" href="mailto:contact@myriadflow.com?subject=I%20want%20to%20make%20something">Start a project</a>
+              <a class="btn btn-ghost" href="#flow">See the flow <span aria-hidden="true">→</span></a>
+            </div>
+            <ol class="verbs" data-a="up" aria-label="The promise">
+              <li>Describe</li><li>Shape</li><li>Prove</li><li>Back</li><li>Make</li><li>Ship</li>
+            </ol>
+          </div>
 
-        <div
-          style="padding: 8px 12vw"
-          class="sm:flex justify-center items-center sm:space-x-8 space-y-16 sm:space-y-0 mt-16"
-        >
-          <div
-            class="w-full sm:w-1/3 rounded-xl border border-white p-6 min-h-15"
-            style="background: linear-gradient(to bottom, #a713bd, #5b0292)"
-          >
-            <a
-              target="_blank"
-              href="https://studio.myriadflow.com/"
-              class="flex items-end justify-center space-x-2"
-            >
-              <div class="text-white text-3xl font-semibold text-center">Studio Launchpad</div>
-              <div class="pb-2">
-                <img src="./resources/pink_arrow.svg" width="20" height="20" alt="logo" />
+          <div class="hero-visual">
+            <div class="console" data-a="card" data-story="hero">
+              <div class="console-bar">
+                <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="console-title">tvastr · new project</span>
+                <span class="console-ver">v0.3</span>
               </div>
-            </a>
-            <div class="text-white text-base mt-4">
-              Launch phygital NFTs and immersive AI-powered experiences effortlessly with our
-              user-friendly, no-code tools.
-            </div>
-          </div>
-          <div
-            class="w-full sm:w-1/3 rounded-xl border border-white p-6 min-h-15"
-            style="background: linear-gradient(to bottom, #a713bd, #5b0292)"
-          >
-            <a
-              target="_blank"
-              href="https://discover.myriadflow.com/"
-              class="flex items-end justify-center space-x-2"
-            >
-              <div class="text-white text-3xl font-semibold text-center">Discover Marketplace</div>
-              <div class="pb-2">
-                <img src="./resources/pink_arrow.svg" width="20" height="20" alt="logo" />
+              <div class="prompt">
+                <span class="prompt-mark" aria-hidden="true">›</span>
+                <p class="prompt-text"><span class="typed" data-full="make a palm-sized desk object that shows my focus mode">make a palm-sized desk object that shows my focus mode</span><i class="caret" aria-hidden="true"></i></p>
               </div>
-            </a>
-            <div class="text-white text-base mt-4">
-              Go-to-marketplace for phygital NFTs that connects brands, creators, and users with
-              unique digital and physical collectibles.
-            </div>
-          </div>
-          <div
-            class="w-full sm:w-1/3 rounded-xl border border-white p-6 min-h-15"
-            style="background: linear-gradient(to bottom, #a713bd, #5b0292)"
-          >
-            <a
-              target="_blank"
-              href="https://webxr.myriadflow.com/"
-              class="flex items-end justify-center space-x-2"
-            >
-              <div class="text-white text-3xl font-semibold text-center">
-                AI-Powered Experiences
-              </div>
-              <div class="pb-2">
-                <img src="./resources/pink_arrow.svg" width="20" height="20" alt="logo" />
-              </div>
-            </a>
-            <div class="text-white text-base mt-4">
-              Immerse users and customers in engaging digital worlds with AI-powered interactive
-              experiences.
-            </div>
-          </div>
-        </div>
-
-        <div class="hidden sm:flex justify-between items-end -mt-24">
-          <div class="-mb-16 mt-2">
-            <img src="./resources/studiotranspbg.svg" width="200" height="200" alt="logo" />
-          </div>
-          <div class="mb-4">
-            Phygital (physical + digital) NFTs are blockchain-based tokens that ensure verified
-            ownership and product authenticity.
-          </div>
-          <div class="-mb-2">
-            <img src="./resources/ReadyPlayerMeAvatar.svg" width="200" height="200" alt="logo" />
-          </div>
-        </div>
-
-        <div class="sm:hidden">
-          <div class="flex justify-between items-end -mt-24">
-            <div class="ml-8">
-              <img src="./resources/studiotranspbg.svg" width="100" height="100" alt="logo" />
-            </div>
-
-            <div class="-mb-2">
-              <img src="./resources/ReadyPlayerMeAvatar.svg" width="200" height="200" alt="logo" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="sm:hidden flex items-center justify-start px-4 py-6 space-x-4"
-        style="background: linear-gradient(to bottom, #d9f3ff, #edd0f9)"
-      >
-        <div class="">
-          <img src="./resources/info.svg" width="180" height="180" alt="info" />
-        </div>
-        <div class=""></div>
-        Phygital (physical + digital) NFTs are blockchain-based tokens that ensure verified
-        ownership and product authenticity.
-      </div>
-    </section>
-
-    <section id="empower">
-      <div class="mx-auto" style="padding: 4rem 0vw 10rem 0vw">
-        <h1
-          class="pt-14 m28:text-2xl text-3xl m48:text-5xl m28:font-extrabold font-black lg:font-extrabold mb-4 w-1/2 text-center text-black mx-4"
-        >
-          We Empower Fashion Brands and Artists
-        </h1>
-        <p class="text-lg sm:text-3xl mb-4 w-1/2 text-center text-black mx-4">
-          Sign up today and take the first step into the future of your brand.
-        </p>
-
-        <div class="text-center mt-16 mb-20">
-          <a
-            href="https://docs.google.com/forms/d/1_ocaHYRLnJ-3jY7eNolT_uwRNzV_fGom07y0321jae0/edit"
-          >
-            <button class="card2 text-4xl px-8 py-4">Sign Up</button>
-          </a>
-        </div>
-        <div
-          style="padding: 8px 12vw"
-          class="sm:flex justify-center items-center sm:space-x-8 space-y-16 sm:space-y-0 mt-16"
-        >
-          <div class="w-full sm:w-1/3">
-            <div class="text-center flex items-center justify-center -mb-8">
-              <img src="./resources/pink_tick.svg" width="60" height="60" alt="logo" />
-            </div>
-            <div
-              class="rounded-xl border p-6 min-h-15"
-              style="background: linear-gradient(to bottom, #a713bd, #5b0292)"
-            >
-              <div class="flex items-end justify-center mt-6">
-                <div class="text-white text-3xl font-semibold text-center">
-                  Simplified Web3 Adoption
+              <ol class="pipeline" aria-label="TVASTR pipeline">
+                <li class="pstep" data-a="pop"><i class="pstep-on"></i><b class="tick" aria-hidden="true">✓</b>Brief</li>
+                <li class="pstep" data-a="pop"><i class="pstep-on"></i><b class="tick" aria-hidden="true">✓</b>PartSpec</li>
+                <li class="pstep" data-a="pop"><i class="pstep-on"></i><b class="tick" aria-hidden="true">✓</b>CAD</li>
+                <li class="pstep" data-a="pop"><i class="pstep-on"></i><b class="tick" aria-hidden="true">✓</b>DFM</li>
+                <li class="pstep" data-a="pop"><i class="pstep-on"></i><b class="tick" aria-hidden="true">✓</b>Print</li>
+              </ol>
+              <div class="obj-stage" data-a="fade" role="img" aria-label="A hexagonal desk object with a glowing light ring, printed by TVASTR">
+                <svg class="obj-floor" viewBox="0 0 320 240" aria-hidden="true"><ellipse cx="160" cy="200" rx="130" ry="22" fill="url(#floorglow)" /></svg>
+                <div class="obj-solid">
+                  <svg viewBox="0 0 320 240" class="mat-petg" aria-hidden="true">
+                    <use href="#hexobj" />
+                    <g class="leds">
+                      <g class="led" style="--c: #30d8ff"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g>
+                      <g class="led" style="--c: #f3f1fa"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g>
+                      <g class="led" style="--c: #f45ec1"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g>
+                    </g>
+                  </svg>
                 </div>
+                <svg class="obj-wire" viewBox="0 0 320 240" aria-hidden="true">
+                  <path pathLength="1" d="M270 100 L215 52.4 L105 52.4 L50 100 L50 144 L105 191.6 L215 191.6 L270 144 Z M50 100 L105 147.6 L215 147.6 L270 100 M105 147.6 V191.6 M215 147.6 V191.6" />
+                </svg>
+                <i class="nozzle" aria-hidden="true"></i>
               </div>
-              <div class="text-white text-base mt-4">
-                No-code tools, lazy minting, and Web2 login integrations make it easy to embrace new
-                innovative technology.
-              </div>
-            </div>
-          </div>
-          <div class="w-full sm:w-1/3">
-            <div class="text-center flex items-center justify-center -mb-8">
-              <img src="./resources/pink_tick.svg" width="60" height="60" alt="logo" />
-            </div>
-            <div
-              class="rounded-xl border p-6 min-h-15"
-              style="background: linear-gradient(to bottom, #a713bd, #5b0292)"
-            >
-              <div class="flex items-end justify-center mt-6">
-                <div class="text-white text-3xl font-semibold text-center">
-                  Immersive Engagement
-                </div>
-              </div>
-              <div class="text-white text-base mt-4">
-                Create interactive AI-powered experiences that captivate audiences without any
-                coding knowledge.
+              <div class="console-foot">
+                <span class="spec">72 × 72 × 28 mm · PETG · ESP32-C3</span>
+                <span class="modes" aria-label="Modes">
+                  <span class="mode" style="--c: #30d8ff"><i></i>Focus</span>
+                  <span class="mode" style="--c: #f3f1fa"><i></i>Break</span>
+                  <span class="mode" style="--c: #f45ec1"><i></i>DND</span>
+                </span>
               </div>
             </div>
-          </div>
-          <div class="w-full sm:w-1/3">
-            <div class="text-center flex items-center justify-center -mb-8">
-              <img src="./resources/pink_tick.svg" width="60" height="60" alt="logo" />
-            </div>
-            <div
-              class="rounded-xl border p-6 min-h-15"
-              style="background: linear-gradient(to bottom, #a713bd, #5b0292)"
-            >
-              <div class="flex items-end justify-center mt-6">
-                <div class="text-white text-3xl font-semibold text-center">No Upfront Costs</div>
+            <div class="sat sat-a" data-a="pop" aria-hidden="true">
+              <div class="sat-in">
+                <span class="sat-k">PrintReport #12</span>
+                <span class="sat-v"><b class="ok">✓</b> lid fit · 0.2 mm</span>
               </div>
-              <div class="text-white text-base mt-4">
-                Emerging brands can get started with Web3 tech, AI and extended reality experiences
-                without financial risk.
+            </div>
+            <div class="sat sat-b" data-a="pop" aria-hidden="true">
+              <div class="sat-in">
+                <span class="sat-k">Project page</span>
+                <span class="sat-v">Prototype → Campaign</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="brand-signup-form">
-      <div class="px-10" style="background: linear-gradient(to right, #3fb2f0, #df1fdd)">
-        <div class="sm:flex justify-between items-center mt-2 sm:h-48">
-          <img
-            src="./resources/brand_signup_form.svg"
-            class="w-[200px] sm:w-[250px] h-[200px] sm:h-[250px]"
-            alt="brand_signup_form"
-          />
-          <a
-            href="https://docs.google.com/forms/d/1_ocaHYRLnJ-3jY7eNolT_uwRNzV_fGom07y0321jae0/edit"
-            class="text-white text-center text-2xl sm:text-4xl font-semibold pb-4"
-          >
-            Go to Brand Sign Up Form
-          </a>
-          <div class="sm:w-[250px]"></div>
+      <!-- MYRIAD MARQUEE --------------------------------------------------- -->
+      <section class="marquee sec" aria-label="Kinds of products made with MyriadFlow">
+        <div class="marquee-track" data-story="marquee">
+          <ul class="marquee-set">
+            <li>Wearables</li><li>Assistive devices</li><li>Home objects</li><li>Robotics</li><li>Tools</li><li>Climate hardware</li><li>Furniture</li><li>Lighting</li><li>Instruments</li><li>Desk companions</li><li>Things no one has named yet</li>
+          </ul>
+          <ul class="marquee-set" aria-hidden="true">
+            <li>Wearables</li><li>Assistive devices</li><li>Home objects</li><li>Robotics</li><li>Tools</li><li>Climate hardware</li><li>Furniture</li><li>Lighting</li><li>Instruments</li><li>Desk companions</li><li>Things no one has named yet</li>
+          </ul>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="unique">
-      <div class="mx-auto" style="padding: 4rem 0vw 5rem 0vw">
-        <h1
-          class="pt-14 m28:text-2xl text-3xl m48:text-5xl m28:font-extrabold font-black lg:font-extrabold mb-4 w-1/2 text-center text-black mx-4"
-        >
-          Need something unique?
-        </h1>
-        <p class="text-lg sm:text-3xl mb-4 w-1/2 text-center text-black mx-4">
-          Let’s create a custom solution tailored to your business needs.
-        </p>
+      <!-- WHY NOW ---------------------------------------------------------- -->
+      <section class="sec block" id="why">
+        <div class="wrap">
+          <header class="sec-head">
+            <p class="eyebrow" data-a="up"><i class="pip"></i>01 / Why now</p>
+            <h2 class="h2" data-a="up">The idea is finally allowed to <span class="grad-text">leave the screen.</span></h2>
+            <p class="sec-lede" data-a="up">
+              None of these shifts is new on its own. All three at once turn idea-to-object from a
+              decade-long privilege into a weekend — and make a world of products shaped around
+              individual taste possible.
+            </p>
+          </header>
 
-        <div class="text-center mt-16 mb-16">
-          <a href="https://myriadflow.com/contact">
-            <button class="card2 text-4xl px-8 py-4">Contact us</button>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="relative z-10 py-10" style="background-color: #f2f2f3">
-      <div class="mx-auto" style="padding: 8px 14vw">
-        <div class="flex items-center justify-start space-x-4 mb-10">
-          <img src="./resources/line2.svg" class="pt-14" />
-          <h1
-            class="pt-14 m28:text-2xl text-3xl m48:text-5xl m28:font-extrabold font-black lg:font-extrabold mb-4 w-1/2"
-            id="possibilities"
-          >
-            <span style="color: #4b4b4b"
-              >Drive Your Brand with <br />
-              Cutting-Edge Technology</span
-            >
-          </h1>
-        </div>
-
-        <div class="lg:flex gap-20 relative py-10">
-          <div class="lg:w-1/2">
-            <div class="lg:w-1/3">
-              <div class="mx-auto">
-                <img
-                  src="./resources/readyimages/features1.svg"
-                  class="w-full mx-auto mb-4"
-                  alt=""
-                />
-
-                <div class="text-3xl text-black font-semibold mb-4 py-5">
-                  Supercharge Your Brand with AI Agents and NFTs
-                </div>
-                <div class="text-lg text-black mb-10">
-                  With MyriadFlow you can go beyond the ordinary and impress your audience with
-                  cutting-edge Web3 and AI innovations. Enhance customer loyalty, create
-                  unforgettable experiences, and unlock unique opportunities that elevate your brand
-                  in the digital age. Lead the way in innovation and set your brand apart!
-                </div>
-                <div class="mt-16 mb-16">
-                  <a
-                    href="https://docs.google.com/forms/d/1_ocaHYRLnJ-3jY7eNolT_uwRNzV_fGom07y0321jae0/edit"
-                  >
-                    <button class="cursor-pointer card3 text-xl px-4 py-2">Sign up</button>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="lg:w-1/2">
-            <div class="lg:w-1/3">
-              <div class="mx-auto">
-                <div class="slideshow-container3 w-full mx-auto mb-4">
-                  <div class="mx-auto" style="display: block">
-                    <img
-                      src="./resources/readyimages/features3.svg"
-                      class="w-full mx-auto"
-                      alt=""
-                    />
+          <div class="bento bento-3">
+            <article class="card" data-a="card">
+              <div class="viz" data-story="term">
+                <div class="term">
+                  <div class="term-head"><span>pio device monitor</span><span class="live"><i></i>live</span></div>
+                  <div class="term-win">
+                    <div class="term-lines">
+                      <p class="tl"><span class="tg">[boot]</span> focus-c3 v0.3 ready</p>
+                      <p class="tl"><span class="tg">[mode]</span> FOCUS · led <i class="sw" style="--c: #30d8ff"></i></p>
+                      <p class="tl"><span class="tg">[btn ]</span> press → BREAK</p>
+                      <p class="tl"><span class="tg">[mode]</span> BREAK · led <i class="sw" style="--c: #f3f1fa"></i></p>
+                      <p class="tl"><span class="tg">[btn ]</span> long-press → DND</p>
+                      <p class="tl"><span class="tg">[mode]</span> DND · led <i class="sw" style="--c: #f45ec1"></i></p>
+                      <p class="tl" aria-hidden="true"><span class="tg">[boot]</span> focus-c3 v0.3 ready</p>
+                      <p class="tl" aria-hidden="true"><span class="tg">[mode]</span> FOCUS · led <i class="sw" style="--c: #30d8ff"></i></p>
+                      <p class="tl" aria-hidden="true"><span class="tg">[btn ]</span> press → BREAK</p>
+                      <p class="tl" aria-hidden="true"><span class="tg">[mode]</span> BREAK · led <i class="sw" style="--c: #f3f1fa"></i></p>
+                    </div>
                   </div>
                 </div>
+              </div>
+              <div class="card-body">
+                <h3 class="h3" data-a="up">Agents got hands</h3>
+                <p data-a="up">They don't just suggest code. They build, flash the board, read the serial log and try again.</p>
+              </div>
+            </article>
 
-                <!-- <img src="./resources/readyimages/features2.jpg" class="w-full mx-auto mb-4" alt="" /> -->
-                <div class="text-3xl text-black font-semibold mb-4 py-5">
-                  Craft Your Vision: Customized Solutions
+            <article class="card" data-a="card">
+              <div class="viz" data-story="board">
+                <svg class="board" viewBox="0 0 320 200" role="img" aria-label="A small microcontroller board sending signals to a light ring and antenna">
+                  <rect x="36" y="34" width="250" height="132" rx="16" class="b-pcb" />
+                  <g class="b-holes"><circle cx="52" cy="50" r="4" /><circle cx="270" cy="50" r="4" /><circle cx="52" cy="150" r="4" /><circle cx="270" cy="150" r="4" /></g>
+                  <path id="tr-usb" class="b-trace" d="M58 100 H128" />
+                  <path id="tr-led" class="b-trace" d="M188 100 H206 Q212 100 212 106 V112 Q212 118 218 118 H222" />
+                  <path id="tr-ant" class="b-trace" d="M158 70 V56 Q158 50 164 50 H226" />
+                  <rect x="26" y="88" width="32" height="24" rx="6" class="b-usb" />
+                  <rect x="128" y="70" width="60" height="60" rx="8" class="b-chip" />
+                  <rect x="128" y="70" width="60" height="60" rx="8" class="b-chip-on" />
+                  <text x="158" y="98" class="b-chip-t">C3</text>
+                  <text x="158" y="112" class="b-chip-s">RISC-V</text>
+                  <g class="b-pins">
+                    <path d="M136 70 V64 M146 70 V64 M170 70 V64 M180 70 V64 M136 130 V136 M146 130 V136 M158 130 V136 M170 130 V136 M180 130 V136" />
+                  </g>
+                  <path class="b-ant" d="M226 50 h8 l4 -6 l6 12 l6 -12 l6 12 l4 -6 h6" />
+                  <g class="b-waves"><path d="M268 34 q8 10 0 20" /><path d="M276 28 q13 16 0 32" /></g>
+                  <g class="b-ring" transform="translate(244 118)">
+                    <circle r="20" class="b-ring-base" />
+                    <g class="b-leds"></g>
+                  </g>
+                  <g class="b-pulses"><g class="pulse"><circle r="9" class="halo" /><circle r="3.6" /></g><g class="pulse"><circle r="9" class="halo" /><circle r="3.6" /></g><g class="pulse"><circle r="9" class="halo" /><circle r="3.6" /></g></g>
+                </svg>
+                <div class="viz-tags"><span class="chip">160 MHz</span><span class="chip">Wi-Fi + BLE 5</span></div>
+              </div>
+              <div class="card-body">
+                <h3 class="h3" data-a="up">Chips got capable</h3>
+                <p data-a="up">A thumb-sized board with Wi-Fi and Bluetooth is now an everyday, low-cost part.</p>
+              </div>
+            </article>
+
+            <article class="card" data-a="card">
+              <div class="viz" data-story="fab">
+                <div class="fab">
+                  <div class="file">
+                    <span class="file-ic">STEP</span>
+                    <span class="file-meta"><b>focus_shell.step</b><span class="bar"><i class="bar-fill"></i></span></span>
+                    <span class="file-pct">100%</span>
+                  </div>
+                  <ul class="quotes">
+                    <li><i class="q-hl"></i><span>FDM print · PETG</span><span class="q-t">2 days</span><b class="q-tick">✓</b></li>
+                    <li><i class="q-hl"></i><span>PCB assembly</span><span class="q-t">6 days</span><b class="q-tick">✓</b></li>
+                    <li><i class="q-hl"></i><span>CNC dial · aluminium</span><span class="q-t">4 days</span><b class="q-tick">✓</b></li>
+                  </ul>
+                  <p class="fab-status"><i class="dot"></i>Parts on the way</p>
                 </div>
-                <div class="text-lg text-black mb-10">
-                  With MyriadFlow you can create tailored NFT solutions that match your brand’s
-                  unique needs. We provide fully customizable options to help you launch digital
-                  assets, create immersive experiences, and engage your audience, all designed to
-                  fit your specific business model. We make it easy to bring your vision to life!
-                </div>
-                <div class="mt-16 mb-16">
-                  <a href="https://myriadflow.com/contact">
-                    <button class="cursor-pointer card3 text-xl px-4 py-2">Contact us</button>
-                  </a>
-                </div>
+              </div>
+              <div class="card-body">
+                <h3 class="h3" data-a="up">Factories got upload buttons</h3>
+                <p data-a="up">Upload a file, get a quote, receive parts. Printing, PCBs, CNC and assembly now run as services.</p>
+              </div>
+            </article>
+          </div>
+
+          <article class="card frontier" data-a="card">
+            <div class="frontier-copy">
+              <p class="eyebrow" data-a="up">Two frontiers</p>
+              <h3 class="h3 big" data-a="up">Software was the first frontier.</h3>
+              <p data-a="up">Same creative intent, different constraints. Closing that gap is what MyriadFlow is built for.</p>
+            </div>
+            <div class="frontier-pair">
+              <div class="fr" data-a="up">
+                <span class="fr-k">Digital</span>
+                <p class="fr-v">Undo is a keystroke.</p>
+                <span class="fr-t">screen · code · interaction</span>
+              </div>
+              <div class="fr fr-phys" data-a="up">
+                <span class="fr-k">Physical</span>
+                <p class="fr-v">Undo is a reprint, a re-order, a redesign.</p>
+                <span class="fr-t">geometry · components · materials · assembly</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- DEFINITION ------------------------------------------------------- -->
+      <section class="sec block block-alt" id="vibe">
+        <div class="wrap">
+          <header class="sec-head center">
+            <p class="eyebrow" data-a="up"><i class="pip"></i>02 / Vibe manufacturing</p>
+            <h2 class="h2 quote" data-a="up">
+              Intent-led, agent-assisted creation of <span class="grad-text">physical products.</span>
+            </h2>
+            <p class="sec-lede" data-a="up">A definition worth keeping — and a flow you can actually walk.</p>
+          </header>
+
+          <div class="stages" data-story="stages">
+            <div class="stages-rail" aria-hidden="true"><i class="stages-line" data-a="line"></i><i class="stages-pulse"></i></div>
+            <ol>
+              <li class="stage" data-a="up"><span class="stage-dot"><i></i>01</span><b>Imagine</b><span>A sentence, a sketch, a photo or a STEP file.</span></li>
+              <li class="stage" data-a="up"><span class="stage-dot"><i></i>02</span><b>Specify</b><span>Intent becomes requirements and acceptance tests.</span></li>
+              <li class="stage" data-a="up"><span class="stage-dot"><i></i>03</span><b>Source</b><span>Build around parts that exist, in stock, today.</span></li>
+              <li class="stage" data-a="up"><span class="stage-dot"><i></i>04</span><b>Design</b><span>Parametric CAD and firmware an agent can edit.</span></li>
+              <li class="stage" data-a="up"><span class="stage-dot"><i></i>05</span><b>Make</b><span>Slice, print, assemble. Your first factory can be local.</span></li>
+              <li class="stage" data-a="up"><span class="stage-dot"><i></i>06</span><b>Test</b><span>Form, fit, function — and five honest people.</span></li>
+              <li class="stage" data-a="up"><span class="stage-dot"><i></i>07</span><b>Scale</b><span>Pilot batch, design for manufacture, production.</span></li>
+            </ol>
+          </div>
+
+          <div class="honest">
+            <div class="honest-col" data-a="card">
+              <p class="honest-k">Agents are great at</p>
+              <ul class="ticks">
+                <li>Turning intent into requirements</li>
+                <li>Comparing datasheets and options</li>
+                <li>Drafting firmware and CAD code</li>
+                <li>Writing test plans and checklists</li>
+                <li>Keeping decisions documented</li>
+              </ul>
+            </div>
+            <div class="honest-col real" data-a="card">
+              <p class="honest-k">Only the real world can</p>
+              <ul class="ticks">
+                <li>Enforce physics and tolerances</li>
+                <li>Confirm real stock and price</li>
+                <li>Tell you how a click feels</li>
+                <li>Prove that it's safe</li>
+              </ul>
+            </div>
+            <p class="honest-foot" data-a="up">
+              The real world still gets the final vote — so every project on MyriadFlow states what
+              is verified, what is estimated, and what still needs testing.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- JOURNEY ---------------------------------------------------------- -->
+      <section class="sec block" id="flow">
+        <div class="wrap">
+          <header class="sec-head">
+            <p class="eyebrow" data-a="up"><i class="pip"></i>03 / The creator journey</p>
+            <h2 class="h2" data-a="up">From spark <span class="grad-text">to proof.</span></h2>
+            <p class="sec-lede" data-a="up">
+              It begins with an idea, not an empty engineering canvas. MyriadFlow asks only the
+              questions that change the outcome — who uses it, what it must do, where it lives, what
+              it should cost, and how many might one day be made.
+            </p>
+          </header>
+
+          <div class="journey card" data-a="card" data-story="journey">
+            <div class="j-tabs" role="tablist" aria-label="Creator journey">
+              <button class="j-tab" role="tab" aria-selected="true" aria-controls="jp0" id="jt0"><span class="j-n">01</span>Start<i class="j-prog"></i></button>
+              <button class="j-tab" role="tab" aria-selected="false" aria-controls="jp1" id="jt1" tabindex="-1"><span class="j-n">02</span>Shape<i class="j-prog"></i></button>
+              <button class="j-tab" role="tab" aria-selected="false" aria-controls="jp2" id="jt2" tabindex="-1"><span class="j-n">03</span>Build<i class="j-prog"></i></button>
+              <button class="j-tab" role="tab" aria-selected="false" aria-controls="jp3" id="jt3" tabindex="-1"><span class="j-n">04</span>Learn<i class="j-prog"></i></button>
+              <button class="j-tab" role="tab" aria-selected="false" aria-controls="jp4" id="jt4" tabindex="-1"><span class="j-n">05</span>Launch<i class="j-prog"></i></button>
+              <button class="j-tab" role="tab" aria-selected="false" aria-controls="jp5" id="jt5" tabindex="-1"><span class="j-n">06</span>Fulfill<i class="j-prog"></i></button>
+            </div>
+            <div class="j-panels">
+              <div class="j-panel is-on" role="tabpanel" id="jp0" aria-labelledby="jt0">
+                <p class="j-k">What you see</p>
+                <p class="j-v">Describe an idea. Attach a sketch, a photo, or an existing STEP file.</p>
+                <p class="j-k">What it leaves behind</p>
+                <ul class="j-files"><li>brief.md</li><li>open-questions</li><li>intended-user</li></ul>
+              </div>
+              <div class="j-panel" role="tabpanel" id="jp1" aria-labelledby="jt1" hidden>
+                <p class="j-k">What you see</p>
+                <p class="j-v">Compare possible product approaches and choose a first testable form.</p>
+                <p class="j-k">What it leaves behind</p>
+                <ul class="j-files"><li>requirements · v2</li><li>prototype-plan</li></ul>
+              </div>
+              <div class="j-panel" role="tabpanel" id="jp2" aria-labelledby="jt2" hidden>
+                <p class="j-k">What you see</p>
+                <p class="j-v">Review a model, materials, feasibility checks, costs and a prototype job.</p>
+                <p class="j-k">What it leaves behind</p>
+                <ul class="j-files"><li>focus_shell.step</li><li>BOM</li><li>estimate</li><li>build-record</li></ul>
+              </div>
+              <div class="j-panel" role="tabpanel" id="jp3" aria-labelledby="jt3" hidden>
+                <p class="j-k">What you see</p>
+                <p class="j-v">Handle the prototype, record what worked, invite feedback, revise.</p>
+                <p class="j-k">What it leaves behind</p>
+                <ul class="j-files"><li>PrintReport #12</li><li>test-evidence</li><li>risk-list</li></ul>
+              </div>
+              <div class="j-panel" role="tabpanel" id="jp4" aria-labelledby="jt4" hidden>
+                <p class="j-k">What you see</p>
+                <p class="j-v">Publish the story, the funding goal, milestones and the offer to supporters.</p>
+                <p class="j-k">What it leaves behind</p>
+                <ul class="j-files"><li>project-page</li><li>campaign-plan</li></ul>
+              </div>
+              <div class="j-panel" role="tabpanel" id="jp5" aria-labelledby="jt5" hidden>
+                <p class="j-k">What you see</p>
+                <p class="j-v">Confirm demand, then coordinate suppliers, a pilot run, production and shipping.</p>
+                <p class="j-k">What it leaves behind</p>
+                <ul class="j-files"><li>production-status</li><li>orders</li><li>creator-updates</li></ul>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section
-      id="futureready"
-      class=""
-      style="
-        background-image: url('./resources/futureready_bg.svg');
-        background-repeat: no-repeat;
-        background-size: 100% auto;
-      "
-    >
-      <div class="mx-auto py-24" style="padding-left: 14vw; padding-right: 14vw">
-        <div class="sm:flex justify-center items-center">
-          <img
-            class="mr-16"
-            src="./resources/MyriadFlowtokensmall.svg"
-            width="250"
-            height="250"
-            alt="coin"
-          />
-          <div
-            class="w-full text-white text-4xl rounded-2xl px-6 py-8"
-            style="
-              background: linear-gradient(to bottom, #c243fe, #47aaef);
-              text-align: center;
-              line-height: 50px;
-            "
-          >
-            Ready for the Future? Let's go!
-          </div>
-          <img src="./resources/rocket.svg" width="300" height="300" alt="coin" />
-        </div>
-      </div>
-    </section>
-
-    <main>
-      <div class="flex justify-center mx-5 text-center">
-        <h1
-          class="text-2xl sm:text-4xl m28:font-extrabold font-black lg:font-extrabold mb-4 w-1/2 flex justify-center items-center gap-2 sm:gap-4"
-          id="possibilities"
-          style="margin-top: 150px; margin-bottom: 150px"
-        >
-          <span style="color: #4b4b4b"
-            ><img src="./resources/readyimages/line.png" height="50px"
-          /></span>
-          <span style="color: #4b4b4b"> Stay Tuned for More Details in This Space</span>
-        </h1>
-      </div>
-      <!-- 
-      <div class="carousel-container2 w-full" style="padding-top: 80px; padding-bottom: 150px">
-        <div class="carousel2" id="carousel2">
-          JavaScript will insert carousel items here
-        </div>
-      </div> -->
-
-      <footer class="footer">
-        <section class="container">
-          <div class="brand">
-            <a href="https://myriadflow.com/" target="_blank">
-              <img src="./resources/MFlogo.png" alt="logo" />
-            </a>
-            <p>
-              Innovative next-gen platform for exploring and launching NFT Xperiences with
-              AI-powered brand ambassadors and no-code tools.
+      <!-- TVASTR ----------------------------------------------------------- -->
+      <section class="sec block block-alt" id="tvastr">
+        <div class="wrap">
+          <header class="sec-head">
+            <p class="eyebrow" data-a="up"><i class="pip"></i>04 / TVASTR · manufacturing intelligence</p>
+            <h2 class="h2" data-a="up">The engine that turns <span class="grad-text">a brief into a build.</span></h2>
+            <p class="sec-lede" data-a="up">
+              Named for the Vedic maker and fashioner of forms, TVASTR turns a brief into structured
+              specifications, parametric design, feasibility checks, prototype jobs, test reports and
+              a production handoff. Every physical test leaves a report the next revision can use.
             </p>
-            <p class="copy">© Copyright 2024 MyriadFlow. All rights reserved</p>
+          </header>
+
+          <div class="bento bento-2">
+            <article class="card" data-a="card">
+              <div class="viz viz-tall" data-story="loop">
+                <svg class="loop" viewBox="0 0 520 400" role="img" aria-label="The TVASTR prototype loop: brief, PartSpec, parametric CAD, DFM checks, manufacturing plan, slice, print, PrintReport, revision">
+                  <circle cx="260" cy="200" r="128" class="loop-ring" />
+                  <circle cx="260" cy="200" r="128" class="loop-tail" pathLength="1" transform="rotate(-90 260 200)" />
+                  <g class="loop-nodes"></g>
+                  <g class="loop-pulse"><circle r="12" class="halo" /><circle r="5" /></g>
+                  <text x="260" y="198" class="loop-title">TVASTR</text>
+                  <text x="260" y="224" class="loop-sub">the prototype loop</text>
+                </svg>
+              </div>
+              <div class="card-body">
+                <h3 class="h3" data-a="up">One narrow loop, run honestly</h3>
+                <p data-a="up">brief → PartSpec → parametric CAD → DFM checks → manufacturing plan → slice → print → PrintReport → revision.</p>
+              </div>
+            </article>
+
+            <article class="card" data-a="card">
+              <div class="viz viz-tall" data-story="cad">
+                <div class="cad">
+                  <pre class="code" aria-label="CadQuery code for the hex shell"><span class="c-k">import</span> cadquery <span class="c-k">as</span> cq
+D, H, WALL = <span class="c-n">72</span>, <span class="c-n">28</span>, <span class="c-n c-wall"><i class="c-sel"></i><span class="c-val">2.4</span><i class="caret"></i></span>  <span class="c-c"># mm</span>
+shell = (
+  cq.Workplane(<span class="c-s">"XY"</span>)
+  .polygon(<span class="c-n">6</span>, D)   <span class="c-c"># hex footprint</span>
+  .extrude(H)
+  .edges(<span class="c-s">"&gt;Z"</span>).fillet(<span class="c-n">4</span>)
+  .faces(<span class="c-s">"&gt;Z"</span>).shell(-WALL)
+)</pre>
+                  <div class="section-view">
+                    <svg viewBox="0 0 220 180" aria-hidden="true">
+                      <polygon class="sv-outer" points="200,90 155,12 65,12 20,90 65,168 155,168" />
+                      <g class="sv-inner-g"><polygon class="sv-inner" points="200,90 155,12 65,12 20,90 65,168 155,168" /></g>
+                      <path class="sv-dim" d="M20 90 H44" />
+                    </svg>
+                    <i class="sv-sweep"></i>
+                    <span class="sv-label"><span class="sv-a">wall 2.4 mm</span><span class="sv-b">wall 2.0 mm</span></span>
+                    <span class="sv-badge"><b>✓</b> DFM · min wall 1.2 mm</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3 class="h3" data-a="up">CAD as code</h3>
+                <p data-a="up">Not a render — a parametric model with dimensions, constraints and history. Change one number, regenerate, re-check, export STEP, STL or 3MF.</p>
+              </div>
+            </article>
           </div>
 
-          <div class="links">
-            <h3 style="font-size: 24px; font-weight: 600; color: white">About</h3>
-            <a href="./resources/MyriadFlow_Terms_of_Service.pdf" target="_blank"
-              >Terms of Service</a
-            >
-            <a href="./resources/MyriadFlow_Creator_Terms_and_Conditions.pdf" target="_blank"
-              >Creator Terms and Conditions</a
-            >
-            <a href="./resources/MyriadFlow_Privacy_Policy.pdf" target="_blank">Privacy Policy</a>
-            <a href="./resources/MyriadFlow_Community_Guidelines.pdf" target="_blank"
-              >Community Guidelines</a
-            >
+          <div class="bounds">
+            <div class="bounds-col" data-a="card">
+              <p class="bounds-k"><i class="pip"></i>TVASTR can</p>
+              <ul>
+                <li>Ask clarifying questions</li><li>Draft a spec</li><li>Generate parametric parts</li>
+                <li>Check geometry and materials</li><li>Prepare a print job</li><li>Observe results and propose revisions</li>
+              </ul>
+            </div>
+            <div class="bounds-col you" data-a="card">
+              <p class="bounds-k"><i class="pip"></i>You approve</p>
+              <ul>
+                <li>Designs</li><li>Spending</li><li>Machine starts</li><li>Production commitments</li><li>Campaign terms</li><li>Major changes</li>
+              </ul>
+            </div>
+            <p class="bounds-foot" data-a="up">
+              <b>Beyond a print.</b> As projects mature, the right path may be CNC, sheet metal,
+              electronics assembly, injection moulding, textiles or a manufacturing partner. Printers and
+              suppliers plug in as structured capabilities; price, quality and schedule come from real
+              quotes and tests.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- LAUNCHPAD -------------------------------------------------------- -->
+      <section class="sec block" id="launchpad">
+        <div class="wrap launch-grid">
+          <div class="launch-copy">
+            <p class="eyebrow" data-a="up"><i class="pip"></i>05 / The launchpad</p>
+            <h2 class="h2" data-a="up">Build momentum <span class="grad-text">around the proof.</span></h2>
+            <p class="sec-lede" data-a="up">
+              A good project page shows more than a polished render. It makes the promise, the
+              prototype, the remaining risks and the path to delivery legible — so supporters back
+              evidence, not hype.
+            </p>
+            <ol class="states">
+              <li data-a="left"><b>Idea</b><span>Problem, intended user, concept.</span><em>Follow · join the waitlist</em></li>
+              <li data-a="left"><b>Prototype</b><span>Working demo, photos, test notes, revisions.</span><em>Give feedback · request a pilot unit</em></li>
+              <li data-a="left"><b>Campaign</b><span>Funding goal, unit economics, timeline, risks.</span><em>Back the project</em></li>
+              <li data-a="left"><b>Pilot run</b><span>Supplier quotes, design freeze, sample checks.</span><em>Track milestones</em></li>
+              <li data-a="left"><b>Product</b><span>Availability, delivery and support.</span><em>Order · review · recommend</em></li>
+            </ol>
           </div>
 
-          <div class="platform">
-            <h3 style="font-size: 24px; font-weight: 600; color: white">Platform</h3>
-            <a href="https://studio.myriadflow.com">Studio</a>
-            <a href="https://discover.myriadflow.com">Discover</a>
-            <a href="https://webxr.myriadflow.com">WebXR</a>
+          <div class="launch-visual">
+            <article class="proj card" data-a="card" data-story="proj">
+              <div class="proj-cover">
+                <svg viewBox="0 0 320 240" class="mat-petg" aria-hidden="true">
+                  <ellipse cx="160" cy="200" rx="130" ry="22" fill="url(#floorglow)" />
+                  <use href="#hexobj" />
+                  <g class="led" style="--c: #30d8ff; opacity: 1"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g>
+                </svg>
+                <span class="proj-tag">Prototype v3 · tested</span>
+              </div>
+              <div class="proj-body">
+                <p class="proj-kicker">Home &amp; desk · by Studio Kiln</p>
+                <h3 class="proj-title">Focus Object</h3>
+                <p class="proj-desc">A palm-sized dial that tells the room when you're in deep work.</p>
+                <div class="rail" aria-label="Project stage: Campaign">
+                  <i class="rail-line"></i><i class="rail-fill"></i>
+                  <span class="rail-dot"><i></i></span><span class="rail-dot"><i></i></span><span class="rail-dot is-now"><i></i><em class="ring"></em></span><span class="rail-dot"><i></i></span><span class="rail-dot"><i></i></span>
+                </div>
+                <div class="rail-labels" aria-hidden="true"><span>Idea</span><span>Proto</span><span>Campaign</span><span>Pilot</span><span>Product</span></div>
+                <div class="fund">
+                  <p class="fund-row"><b class="fund-pct">72%</b> of the pilot run backed</p>
+                  <span class="bar bar-lg"><i class="bar-fill"></i></span>
+                  <p class="fund-meta"><span><b class="backers">318</b> backers</span><span>120-unit batch</span><span>Preorder</span></p>
+                </div>
+                <ul class="miles">
+                  <li><b class="m-tick">✓</b>Design freeze</li>
+                  <li><b class="m-tick">✓</b>Supplier quotes</li>
+                  <li class="todo"><b class="m-tick">○</b>Sample checks</li>
+                </ul>
+              </div>
+            </article>
           </div>
 
-          <section class="social-links">
-            <div class="social-icon">
-              <a href="https://discord.gg/38jktRtuY7" target="_blank">
-                <img src="./resources/Vector3.png" alt="Discord" />
-              </a>
+          <div class="launch-notes">
+            <div class="note" data-a="card">
+              <h3 class="h3">Funding is a launch tool, not a default.</h3>
+              <p>
+                Preorders, reservations, rewards or community backing — chosen per project. Before a
+                campaign opens, the creator states the minimum viable batch, per-unit cost, tooling and
+                test needs, contingency and timing. If a goal is missed or a prototype fails, the page
+                says what happens next.
+              </p>
             </div>
-            <div class="social-icon">
-              <a href="https://t.me/MyriadFlow" target="_blank">
-                <img src="./resources/Vector4.png" alt="Telegram" />
-              </a>
+            <div class="note" data-a="card">
+              <h3 class="h3">The flywheel.</h3>
+              <p>
+                More ideas bring more builders. Visible prototypes bring better feedback. Better
+                evidence helps supporters judge a launch. Finished products build trust — and reusable
+                manufacturing knowledge for the next wave of creators.
+              </p>
             </div>
-            <div class="social-icon">
-              <a href="https://x.com/0xMyriadFlow" target="_blank">
-                <img src="./resources/Vector2.png" alt="X" />
-              </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ONE RECORD ------------------------------------------------------- -->
+      <section class="sec block block-alt" id="record">
+        <div class="wrap record-grid">
+          <div class="record-copy">
+            <p class="eyebrow" data-a="up"><i class="pip"></i>06 / One record</p>
+            <h2 class="h2" data-a="up">One record across <span class="grad-text">the whole lifecycle.</span></h2>
+            <p class="sec-lede" data-a="up">
+              Not a chat here, a CAD folder there, a campaign page and a supplier spreadsheet
+              somewhere else. Every project keeps a versioned record that ties intent to decisions
+              and deliverables — so a change in size, material, price or process traces forward on
+              its own.
+            </p>
+          </div>
+          <div class="layers card" data-a="card" data-story="layers">
+            <i class="layers-rail" aria-hidden="true"></i>
+            <i class="layers-pulse" aria-hidden="true"></i>
+            <div class="layer"><i class="layer-on"></i><span class="layer-n">Project</span><span class="layer-o">Brief · users · constraints · milestones · updates</span><span class="layer-note"></span></div>
+            <div class="layer"><i class="layer-on"></i><span class="layer-n">Design</span><span class="layer-o">PartSpec · CAD · assemblies · revision history</span><span class="layer-note change">material · PLA → PETG</span></div>
+            <div class="layer"><i class="layer-on"></i><span class="layer-n">Prototype</span><span class="layer-o">Manufacturing plan · machine profile · PrintReport</span><span class="layer-note">reprint queued</span></div>
+            <div class="layer"><i class="layer-on"></i><span class="layer-n">Launch</span><span class="layer-o">Story · evidence · campaign · disclosures</span><span class="layer-note">unit cost updated</span></div>
+            <div class="layer"><i class="layer-on"></i><span class="layer-n">Production</span><span class="layer-o">BOM · supplier quotes · QA · fulfilment</span><span class="layer-note">BOM rev C</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MADE TO YOUR TASTE ----------------------------------------------- -->
+      <section class="sec block taste" id="taste">
+        <div class="wrap taste-grid">
+          <div class="config card" data-a="card" data-story="config">
+            <div class="cfg-stage">
+              <svg viewBox="0 0 320 240" role="img" aria-label="The same object rendered in PLA, PETG, TPU and translucent material">
+                <ellipse cx="160" cy="200" rx="130" ry="22" fill="url(#floorglow)" />
+                <g class="mat mat-pla"><use href="#hexobj" /></g>
+                <g class="mat mat-petg"><use href="#hexobj" /></g>
+                <g class="mat mat-tpu"><use href="#hexobj" /></g>
+                <g class="mat mat-clear"><use href="#hexobj" /><g class="led" style="--c: #30d8ff; opacity: 1"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g></g>
+              </svg>
             </div>
-            <div class="social-icon">
-              <a href="https://www.instagram.com/0xmyriadflow" target="_blank">
-                <img src="resources/Vector5.png" alt="Instagram" />
-              </a>
+            <div class="cfg-controls">
+              <div class="cfg-row">
+                <span class="cfg-k">Material</span>
+                <div class="seg" role="radiogroup" aria-label="Material">
+                  <i class="seg-thumb" aria-hidden="true"></i>
+                  <button role="radio" aria-checked="true">PLA</button>
+                  <button role="radio" aria-checked="false">PETG</button>
+                  <button role="radio" aria-checked="false">TPU</button>
+                  <button role="radio" aria-checked="false">Clear</button>
+                </div>
+              </div>
+              <div class="cfg-notes" aria-live="polite">
+                <p class="cfg-note is-on">PLA · quick form studies</p>
+                <p class="cfg-note">PETG · tougher, practical enclosures</p>
+                <p class="cfg-note">TPU · soft, flexible grip</p>
+                <p class="cfg-note">Translucent · beautiful light diffusion</p>
+              </div>
             </div>
-          </section>
-        </section>
-      </footer>
+          </div>
+          <div class="taste-copy">
+            <p class="eyebrow" data-a="up"><i class="pip"></i>07 / Made to your taste</p>
+            <h2 class="h2" data-a="up">A world of products made for <span class="grad-text">one person at a time.</span></h2>
+            <p class="sec-lede" data-a="up">
+              For a century, factories decided what we could own: one design, a million copies,
+              close enough for most. Vibe manufacturing flips the order. A product can start from your
+              hands, your desk, your colour and your problem — and still be made properly.
+            </p>
+            <ul class="taste-list">
+              <li data-a="up"><b>Your fit.</b> Sized to the hand, the shelf, the body that uses it.</li>
+              <li data-a="up"><b>Your material.</b> Matte, soft, tough or glowing — the right material in the right place.</li>
+              <li data-a="up"><b>Your run.</b> One prototype, a pilot batch, or a product for everyone who wanted what you wanted.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- MUSIC & PHYGITAL ART --------------------------------------------- -->
+      <section class="sec block block-alt" id="culture">
+        <div class="wrap">
+          <header class="sec-head">
+            <p class="eyebrow" data-a="up"><i class="pip"></i>08 / Also in the flow</p>
+            <h2 class="h2" data-a="up">Music and phygital art, <span class="grad-text">made physical.</span></h2>
+            <p class="sec-lede" data-a="up">
+              The flow that ships a desk object can ship a pressing, a print or a sculpture. Artists
+              use MyriadFlow to design and produce physical editions — each paired with a digital
+              companion that carries its story, process and provenance.
+            </p>
+          </header>
+
+          <div class="bento bento-2">
+            <article class="card" data-a="card">
+              <div class="viz viz-tall" data-story="player">
+                <div class="player">
+                  <div class="cover" aria-hidden="true">
+                    <svg viewBox="0 0 120 120"><defs><linearGradient id="cv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#30d8ff" /><stop offset=".55" stop-color="#a32cc4" /><stop offset="1" stop-color="#f45ec1" /></linearGradient></defs><rect width="120" height="120" rx="14" fill="url(#cv)" /><circle cx="60" cy="60" r="34" fill="#07050f" opacity=".85" /><circle cx="60" cy="60" r="22" fill="none" stroke="#f3f1fa" stroke-opacity=".25" /><circle cx="60" cy="60" r="5" fill="#f3f1fa" /></svg>
+                  </div>
+                  <div class="p-meta">
+                    <span class="p-k">Side A · 03</span>
+                    <b>Low Tide</b>
+                    <span class="p-ed">Limited pressing · 300 numbered</span>
+                  </div>
+                  <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  <div class="p-bar" aria-hidden="true"><i class="p-fill"></i><i class="p-handle"></i></div>
+                  <div class="p-times" aria-hidden="true"><span class="p-cur">1:12</span><span>3:48</span></div>
+                  <span class="p-play" aria-hidden="true"><i class="ring"></i><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg></span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3 class="h3" data-a="up">Music, with a physical heartbeat</h3>
+                <p data-a="up">Pressings, custom merch and playable objects for a release — prototyped and produced through the same flow, backed by the fans who want them.</p>
+              </div>
+            </article>
+
+            <article class="card" data-a="card">
+              <div class="viz viz-tall" data-story="art">
+                <div class="art">
+                  <div class="frame">
+                    <svg viewBox="0 0 160 200" aria-hidden="true">
+                      <defs><linearGradient id="artg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1236" /><stop offset="1" stop-color="#0c0918" /></linearGradient></defs>
+                      <rect width="160" height="200" fill="url(#artg)" />
+                      <circle cx="104" cy="62" r="26" fill="#f45ec1" opacity=".9" />
+                      <path d="M0 132 C30 112 50 140 80 124 S130 104 160 120 V200 H0Z" fill="#a32cc4" opacity=".85" />
+                      <path d="M0 152 C34 136 60 160 92 146 S140 132 160 142 V200 H0Z" fill="#30d8ff" opacity=".8" />
+                      <path d="M0 172 C40 160 70 180 104 168 S146 160 160 166 V200 H0Z" fill="#07050f" opacity=".7" />
+                    </svg>
+                    <i class="scan" aria-hidden="true"></i>
+                    <i class="corner c1"></i><i class="corner c2"></i><i class="corner c3"></i><i class="corner c4"></i>
+                  </div>
+                  <i class="art-link" aria-hidden="true"></i>
+                  <div class="twin">
+                    <span class="twin-k">Digital companion</span>
+                    <ul>
+                      <li><i class="twin-hl"></i>Edition <b>07 / 50</b></li>
+                      <li><i class="twin-hl"></i>Signed <b>studio proof</b></li>
+                      <li><i class="twin-hl"></i>Process log <b>14 entries</b></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3 class="h3" data-a="up">Phygital art</h3>
+                <p data-a="up">Physical pieces paired with a living digital companion — edition, signature, process log and story — so the work carries its history wherever it goes.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ROADMAP ---------------------------------------------------------- -->
+      <section class="sec block" id="roadmap">
+        <div class="wrap">
+          <header class="sec-head">
+            <p class="eyebrow" data-a="up"><i class="pip"></i>09 / Execution</p>
+            <h2 class="h2" data-a="up">Start with <span class="grad-text">one reliable flow.</span></h2>
+            <p class="sec-lede" data-a="up">
+              The destination is a launchpad for hardware ideas of every kind. The first build proves
+              one complete path through the hard middle: turning an ambiguous request into a physical
+              test and an honest public project.
+            </p>
+          </header>
+          <ol class="phases">
+            <li data-a="card"><span class="ph-l">A</span><b>Compile</b><p>PartSpec → valid parametric enclosure → STEP/STL preview.</p><em>Dimensions and features survive revisions.</em></li>
+            <li data-a="card"><span class="ph-l">B</span><b>Make</b><p>Manufacturing plan, DFM, slicing, a reference printer connection.</p><em>A real enclosure prints with the right material and profile.</em></li>
+            <li data-a="card"><span class="ph-l">C</span><b>Learn</b><p>Job status, PrintReport, test notes, guided redesign.</p><em>Failure or feedback leads to a traceable, improved part.</em></li>
+            <li data-a="card"><span class="ph-l">D</span><b>Share</b><p>Creator workspace, project page, waitlist, updates and feedback.</p><em>A visitor understands the proof and what remains.</em></li>
+            <li data-a="card"><span class="ph-l">E</span><b>Launch</b><p>Campaign configuration, milestones, supporter tracking.</p><em>A vetted pilot run with explicit terms and progress.</em></li>
+            <li data-a="card"><span class="ph-l">F</span><b>Scale</b><p>Supplier handoff, production QA, orders and fulfilment.</p><em>A completed batch reaches buyers with visible status.</em></li>
+          </ol>
+          <p class="boundary" data-a="up">
+            <b>Early boundaries.</b> Prove an enclosure before arbitrary assemblies. Production
+            electronics, certification, tooling and high-volume manufacturing go through specialist
+            review and partner processes. A first print is never presented as proof that a device is
+            safe, certified or production-ready.
+          </p>
+        </div>
+      </section>
+
+      <!-- CTA -------------------------------------------------------------- -->
+      <section class="sec cta" id="start">
+        <div class="cta-bg" aria-hidden="true"><i class="glow g1"></i><i class="glow g2"></i></div>
+        <div class="wrap cta-in">
+          <p class="eyebrow" data-a="up"><i class="pip"></i>Many ideas. One flow.</p>
+          <h2 class="display cta-title" data-a="up">What will <span class="grad-text">you make?</span></h2>
+          <div class="cta-prompt" data-a="card" data-story="ideas">
+            <span class="prompt-mark" aria-hidden="true">›</span>
+            <p class="prompt-text"><span class="typed">a palm-sized desk object that shows my focus mode</span><i class="caret" aria-hidden="true"></i></p>
+          </div>
+          <p class="sec-lede center" data-a="up">Bring a sentence, a sketch, a photo or a STEP file. We'll bring the flow.</p>
+          <div class="cta-row center" data-a="up">
+            <a class="btn btn-primary btn-lg" href="mailto:contact@myriadflow.com?subject=I%20want%20to%20make%20something">Start a project</a>
+            <a class="btn btn-ghost btn-lg" href="https://discord.gg/38jktRtuY7" target="_blank" rel="noopener">Join the Discord</a>
+          </div>
+        </div>
+      </section>
     </main>
-    <script type="module" src="/app.js"></script>
 
-    <script>
-      const navBtn = document.getElementById("navbtn");
-      const links = document.getElementById("links");
-      let isOpen = false;
+    <footer class="footer">
+      <div class="wrap foot-grid">
+        <div class="foot-brand">
+          <img src="/brand/mf-logo.png" width="200" height="58" alt="MyriadFlow" />
+          <p>Many ideas. One flow — from imagination to prototypes to products.</p>
+        </div>
+        <nav class="foot-col" aria-label="Product">
+          <h4>Product</h4>
+          <a href="#why">Why now</a><a href="#flow">The flow</a><a href="#tvastr">TVASTR</a><a href="#launchpad">Launchpad</a><a href="#culture">Music &amp; Art</a>
+        </nav>
+        <nav class="foot-col" aria-label="Company">
+          <h4>Company</h4>
+          <a href="/contact">Contact</a><a href="mailto:contact@myriadflow.com">contact@myriadflow.com</a>
+        </nav>
+        <nav class="foot-col" aria-label="Legal">
+          <h4>Legal</h4>
+          <a href="/resources/MyriadFlow_Terms_of_Service.pdf" target="_blank" rel="noopener">Terms of Service</a>
+          <a href="/resources/MyriadFlow_Creator_Terms_and_Conditions.pdf" target="_blank" rel="noopener">Creator Terms</a>
+          <a href="/resources/MyriadFlow_Privacy_Policy.pdf" target="_blank" rel="noopener">Privacy Policy</a>
+          <a href="/resources/MyriadFlow_Community_Guidelines.pdf" target="_blank" rel="noopener">Community Guidelines</a>
+        </nav>
+      </div>
+      <div class="wrap foot-base">
+        <p>© 2026 MyriadFlow. All rights reserved.</p>
+        <div class="socials">
+          <a href="https://discord.gg/38jktRtuY7" target="_blank" rel="noopener" aria-label="Discord"><img src="/brand/social-discord.png" alt="" width="20" height="16" /></a>
+          <a href="https://t.me/MyriadFlow" target="_blank" rel="noopener" aria-label="Telegram"><img src="/brand/social-telegram.png" alt="" width="18" height="14" /></a>
+          <a href="https://x.com/0xMyriadFlow" target="_blank" rel="noopener" aria-label="X"><img src="/brand/social-x.png" alt="" width="16" height="15" /></a>
+          <a href="https://www.instagram.com/0xmyriadflow" target="_blank" rel="noopener" aria-label="Instagram"><img src="/brand/social-instagram.png" alt="" width="16" height="16" /></a>
+        </div>
+      </div>
+    </footer>
 
-      navBtn.addEventListener("click", () => {
-        isOpen = !isOpen;
-
-        // First make the menu visible if it's being opened
-        if (isOpen) {
-          links.style.display = "flex";
-          // Small delay to ensure display:flex is applied before transform
-          setTimeout(() => {
-            links.style.transform = "translateX(0)";
-          }, 10);
-        } else {
-          links.style.transform = "translateX(100%)";
-          // Wait for transition to finish before hiding
-          setTimeout(() => {
-            links.style.display = "none";
-          }, 300); // Match this with your transition duration
-        }
-
-        // Change hamburger icon
-        navBtn.innerHTML = isOpen
-          ? '<i class="fa-solid fa-xmark"></i>'
-          : '<i class="fa-solid fa-bars"></i>';
-      });
-    </script>
-
-    <script>
-      const images = [
-        { src: "./resources/readyimages/carousel7.png", name: "Image 1" },
-        { src: "./resources/readyimages/carousel1.png", name: "Image 1" },
-        { src: "./resources/readyimages/carousel2.png", name: "Image 2" },
-        { src: "./resources/readyimages/carousel3.png", name: "Image 3" },
-        { src: "./resources/readyimages/carousel4.png", name: "Image 4" },
-        { src: "./resources/readyimages/carousel5.png", name: "Image 5" },
-        { src: "./resources/readyimages/carousel6.png", name: "Image 6" },
-        { src: "./resources/readyimages/carousel8.png", name: "Image 1" },
-      ];
-
-      const carousel = document.getElementById("carousel");
-
-      function createCarouselItem(image) {
-        const item = document.createElement("div");
-        item.className = "carousel-item";
-
-        const img = document.createElement("img");
-        img.src = image.src;
-        img.alt = image.name;
-
-        const caption = document.createElement("p");
-        caption.textContent = image.name;
-
-        item.appendChild(img);
-        // item.appendChild(caption);
-
-        return item;
-      }
-
-      // Add the images to the carousel
-      images.forEach((image) => {
-        carousel.appendChild(createCarouselItem(image));
-      });
-
-      // Duplicate the images for continuous effect
-      images.forEach((image) => {
-        carousel.appendChild(createCarouselItem(image));
-      });
-    </script>
-
-    <script>
-      const images2 = [
-        { src: "./resources/readyimages/slider4.jpg", name: "Image 4" },
-        { src: "./resources/readyimages/slider1.jpg", name: "Image 1" },
-        { src: "./resources/readyimages/slider2.jpg", name: "Image 2" },
-        { src: "./resources/readyimages/slider3.jpg", name: "Image 3" },
-        { src: "./resources/readyimages/slider5.jpg", name: "Image 5" },
-        // { src: './resources/readyimages/slider5.jpg', name: 'Image 6' }
-      ];
-
-      const carousel2 = document.getElementById("carousel2");
-
-      function createCarouselItem2(image) {
-        const item = document.createElement("div");
-        item.className = "carousel-item2";
-
-        const img = document.createElement("img");
-        img.src = image.src;
-        img.alt = image.name;
-
-        const caption = document.createElement("p");
-        caption.textContent = image.name;
-
-        item.appendChild(img);
-        // item.appendChild(caption);
-
-        return item;
-      }
-
-      // Add the images to the carousel
-      images2.forEach((image) => {
-        carousel2.appendChild(createCarouselItem2(image));
-      });
-
-      // Duplicate the images for continuous effect
-      images2.forEach((image) => {
-        carousel2.appendChild(createCarouselItem2(image));
-      });
-    </script>
-
-    <script>
-      let slideIndex2 = 1;
-      showSlides2();
-
-      function showSlides2() {
-        let i;
-        let slides2 = document.getElementsByClassName("mySlides2");
-        for (i = 0; i < slides2.length; i++) {
-          slides2[i].style.display = "none";
-        }
-        slideIndex2++;
-        if (slideIndex2 > slides2.length) {
-          slideIndex2 = 1; // Reset slideIndex to 1 when it exceeds the number of slides
-        }
-        slides2[slideIndex2 - 1].style.display = "block";
-        setTimeout(showSlides2, 3000); // Change slide every 3 seconds (adjust the timing as needed)
-      }
-
-      // Start the automatic slideshow immediately
-      showSlides2();
-    </script>
-
-    <script>
-      let slideIndex3 = 1;
-      showSlides3();
-
-      function showSlides3() {
-        let i;
-        let slides3 = document.getElementsByClassName("mySlides3");
-        for (i = 0; i < slides3.length; i++) {
-          slides3[i].style.display = "none";
-        }
-        slideIndex3++;
-        if (slideIndex3 > slides3.length) {
-          slideIndex3 = 1; // Reset slideIndex to 1 when it exceeds the number of slides
-        }
-        slides3[slideIndex3 - 1].style.display = "block";
-        setTimeout(showSlides3, 3000); // Change slide every 3 seconds (adjust the timing as needed)
-      }
-
-      // Start the automatic slideshow immediately
-      showSlides3();
-    </script>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
