@@ -22,16 +22,27 @@ let scrollSpy = null;
 
 /* ---------- build: footers, reveal delays, slide list ---------- */
 
+// The talk itself runs until the first appendix slide; appendix slides count as A1, A2…
+const firstAppendix = slides.findIndex((s) => s.hasAttribute("data-appendix"));
+const mainTotal = firstAppendix < 0 ? total : firstAppendix;
+const label = (n) => (n < mainTotal ? String(n + 1).padStart(2, "0") : `A${n - mainTotal + 1}`);
+
 slides.forEach((slide, n) => {
   const foot = document.createElement("footer");
   foot.className = "s-foot";
-  foot.innerHTML = `<span>Vibe Manufacturing · MyriadFlow</span><span>${String(n + 1).padStart(2, "0")} / ${total}</span>`;
+  foot.innerHTML = `<span>Vibe Manufacturing · MyriadFlow${n >= mainTotal ? " · Appendix" : ""}</span><span>${n < mainTotal ? `${label(n)} / ${mainTotal}` : label(n)}</span>`;
   slide.append(foot);
   slide.id = `s${n + 1}`;
   [...slide.querySelectorAll("[data-a]")].forEach((el, k) => el.style.setProperty("--d", `${(0.08 + Math.min(k * 0.07, 1)).toFixed(2)}s`));
 
+  if (n === mainTotal) {
+    const head = document.createElement("li");
+    head.className = "toc-sep";
+    head.textContent = "Appendix";
+    tocList.append(head);
+  }
   const li = document.createElement("li");
-  li.innerHTML = `<a href="#${n + 1}"><span>${String(n + 1).padStart(2, "0")}</span>${slide.dataset.title || "Slide"}</a>`;
+  li.innerHTML = `<a href="#${n + 1}"><span>${label(n)}</span>${slide.dataset.title || "Slide"}</a>`;
   tocList.append(li);
 });
 
@@ -84,6 +95,7 @@ function setOn(slide, on) {
   slide.classList.toggle("on", on);
   if (on) startTyping(slide);
   else slide.querySelectorAll("[data-type]").forEach(stopTyping);
+  slide.dispatchEvent(new CustomEvent(on ? "slide:on" : "slide:off"));
 }
 
 /* ---------- presenting ---------- */
@@ -101,8 +113,8 @@ function go(n, force = false) {
     setOn(s, k === n);
   });
   index = n;
-  bar.style.width = `${((n + 1) / total) * 100}%`;
-  count.textContent = `${n + 1} / ${total}`;
+  bar.style.width = `${Math.min(1, (n + 1) / mainTotal) * 100}%`;
+  count.textContent = n < mainTotal ? `${n + 1} / ${mainTotal}` : `${label(n)} · appendix`;
   history.replaceState(null, "", `#${n + 1}`);
   tocList.querySelectorAll("a").forEach((a, k) => a.toggleAttribute("aria-current", k === n));
 }
@@ -150,10 +162,12 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "m") openToc();
     return;
   }
+  // Space and Enter press a focused control (the teardown buttons) instead of advancing
+  if ((e.key === " " || e.key === "Enter") && e.target.closest("button, a")) return;
   const keys = {
     ArrowRight: next, ArrowDown: next, PageDown: next, " ": next, Enter: next,
     ArrowLeft: prev, ArrowUp: prev, PageUp: prev, Backspace: prev,
-    Home: () => go(0), End: () => go(total - 1),
+    Home: () => go(0), End: () => go(mainTotal - 1),
     f: toggleFullscreen, m: openToc,
   };
   const fn = keys[e.key];
@@ -165,7 +179,8 @@ document.addEventListener("keydown", (e) => {
 });
 
 let touchX = null;
-stage.addEventListener("touchstart", (e) => (touchX = e.touches[0].clientX), { passive: true });
+// dragging a 3D model orbits it; it shouldn't also swipe to another slide
+stage.addEventListener("touchstart", (e) => (touchX = e.target.closest(".td-canvas") ? null : e.touches[0].clientX), { passive: true });
 stage.addEventListener("touchend", (e) => {
   if (touchX === null || !root.classList.contains("present")) return;
   const dx = e.changedTouches[0].clientX - touchX;

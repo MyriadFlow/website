@@ -5,6 +5,8 @@ const page = (file) => fileURLToPath(new URL(file, import.meta.url));
 
 export default defineConfig({
   build: {
+    // the pitch deck bundles three.js for its 3D teardown slides
+    chunkSizeWarningLimit: 800,
     rollupOptions: {
       input: {
         main: page("./index.html"),

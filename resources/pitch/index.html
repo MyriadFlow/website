@@ -84,8 +84,6 @@
 
     <div class="deck" id="deck">
       <main class="stage" id="stage">
-        <!-- ============================== ACT I ============================== -->
-
         <section class="slide grid-bg" data-title="Vibe Manufacturing">
           <div class="title-in">
             <div class="stack start">
@@ -125,49 +123,57 @@
           </div>
         </section>
 
-        <section class="slide" data-title="Two frontiers">
+        <section class="slide" data-tone="p" data-title="Software was the first frontier">
           <p class="kicker">Two frontiers</p>
           <h2>Software was the first frontier</h2>
           <div class="body">
-            <div class="g g2">
-              <div class="card" data-a>
-                <div class="ic"><svg><use href="#i-screen" /></svg></div>
-                <span class="k">Digital</span>
-                <h3 class="big3">Undo is a keystroke.</h3>
+            <div class="meme two">
+              <div class="panel" data-a>
+                <span class="who">Digital · software</span>
+                <div class="keys"><span class="key">Ctrl</span>+<span class="key">Z</span><span class="timer">0.2 s</span></div>
+                <p class="cap">Undo is a keystroke.</p>
                 <div class="chips"><span class="chip">screen</span><span class="chip">code</span><span class="chip">interaction</span></div>
+                <p class="note">Cost: nothing. Dignity: intact.</p>
               </div>
-              <div class="card hl-p" data-a>
-                <div class="ic"><svg><use href="#i-cube" /></svg></div>
-                <span class="k">Physical</span>
-                <h3 class="big3">Undo is a reprint, a re-order, a redesign.</h3>
+              <div class="panel" data-a>
+                <span class="who">Physical · hardware</span>
+                <div class="keys"><span class="key">Ctrl</span>+<span class="key">Z</span><span class="timer grad-text">6 h 14 min</span></div>
+                <p class="cap">Undo is a reprint, a re-order, a redesign.</p>
                 <div class="chips"><span class="chip">geometry</span><span class="chip">components</span><span class="chip">materials</span><span class="chip">assembly</span></div>
+                <p class="note">Cost: 38 g of filament, one shipping delay, one small existential crisis.</p>
+                <span class="stamp corner">Not an undo</span>
               </div>
             </div>
             <p class="take" data-a>Same creative intent. <em class="p">Different constraints.</em></p>
           </div>
         </section>
 
-        <section class="slide" data-tone="p" data-title="Intermission: Ctrl+Z in both worlds">
-          <p class="kicker">Intermission · a field guide</p>
-          <h2>Ctrl+Z, in both worlds</h2>
+        <section class="slide" data-title="What agents can do, and what they can't">
+          <p class="kicker">Honest expectations</p>
+          <h2>What agents can do, and what they can't</h2>
           <div class="body">
-            <div class="meme two">
-              <div class="panel" data-a>
-                <span class="who">Software</span>
-                <div class="keys"><span class="key">Ctrl</span>+<span class="key">Z</span></div>
-                <p class="timer">0.2 s</p>
-                <p class="cap">Fixed it.</p>
-                <p class="note">Cost: nothing. Dignity: intact.</p>
+            <div class="g g2">
+              <div class="card" data-a>
+                <span class="k">Agents are great at</span>
+                <ul class="ticks c">
+                  <li>Turning intent into requirements</li>
+                  <li>Comparing datasheets and options</li>
+                  <li>Drafting firmware and CAD code</li>
+                  <li>Writing test plans and checklists</li>
+                  <li>Keeping decisions documented</li>
+                </ul>
               </div>
-              <div class="panel" data-a>
-                <span class="who">Hardware</span>
-                <div class="keys"><span class="key">Ctrl</span>+<span class="key">Z</span></div>
-                <p class="timer grad-text">6 h 14 min</p>
-                <p class="cap">Reprinting…</p>
-                <p class="note">Cost: 38 g of filament, one shipping delay, one small existential crisis.</p>
-                <span class="stamp corner">Not an undo</span>
+              <div class="card hl-p" data-a>
+                <span class="k">Only the real world can</span>
+                <ul class="ticks p">
+                  <li>Enforce physics and tolerances</li>
+                  <li>Confirm real stock and price</li>
+                  <li>Tell you how a click feels</li>
+                  <li>Prove that it's safe</li>
+                </ul>
               </div>
             </div>
+            <p class="take" data-a>The real world still gets <em>the final vote.</em></p>
           </div>
         </section>
 
@@ -213,37 +219,6 @@
             <p class="lede" data-a>We'll walk through all seven with one tiny product.</p>
           </div>
         </section>
-
-        <section class="slide" data-title="What agents can do, and what they can't">
-          <p class="kicker">Honest expectations</p>
-          <h2>What agents can do, and what they can't</h2>
-          <div class="body">
-            <div class="g g2">
-              <div class="card" data-a>
-                <span class="k">Agents are great at</span>
-                <ul class="ticks c">
-                  <li>Turning intent into requirements</li>
-                  <li>Comparing datasheets and options</li>
-                  <li>Drafting firmware and CAD code</li>
-                  <li>Writing test plans and checklists</li>
-                  <li>Keeping decisions documented</li>
-                </ul>
-              </div>
-              <div class="card hl-p" data-a>
-                <span class="k">Only the real world can</span>
-                <ul class="ticks p">
-                  <li>Enforce physics and tolerances</li>
-                  <li>Confirm real stock and price</li>
-                  <li>Tell you how a click feels</li>
-                  <li>Prove that it's safe</li>
-                </ul>
-              </div>
-            </div>
-            <p class="take" data-a>The real world still gets <em>the final vote.</em></p>
-          </div>
-        </section>
-
-        <!-- ============================== ACT II ============================== -->
 
         <section class="slide act grid-bg" data-title="Act II · Build one object, end to end">
           <div class="body">
@@ -315,143 +290,106 @@
           </div>
         </section>
 
-        <section class="slide" data-title="Prompt for a process, not an object">
-          <p class="kicker">Stage 1 · ADLC</p>
-          <h2>Prompt for a process, not an object</h2>
+        <section class="slide" data-tone="c" data-title="What the agent actually hands you">
+          <p class="kicker">Stage 1 · ADLC in practice</p>
+          <h2>What the agent actually hands you</h2>
+          <div class="body">
+            <div class="chain">
+              <div class="art" data-a><span class="fn">brief.md</span><pre class="code"><span class="cp"># Focus object · brief v2</span>
+<span class="cp">user:</span>  desk worker, one hand free
+<span class="cp">job:</span>   show focus / break / DND
+       to the room
+<span class="cp">must:</span>  readable at 2 m · no app
+       USB-C power
+<span class="cp">won't:</span> batteries, cloud, screen
+<span class="cp">open:</span>  dial or button?</pre><span class="why">Who, what, must, won't — and the open questions</span></div>
+              <div class="art" data-a><span class="fn">acceptance.yaml</span><pre class="code">- <span class="cp">id:</span> <span class="cs">UX-01</span>
+  <span class="cp">test:</span> 5 people, no instructions
+  <span class="cp">pass:</span> ≥ 4 find all 3 modes
+        in &lt; 30 s
+- <span class="cp">id:</span> <span class="cs">VIS-02</span>
+  <span class="cp">test:</span> read mode at 2 m, daylight
+  <span class="cp">pass:</span> 5 / 5 correct</pre><span class="why">Pass/fail, written before the first print</span></div>
+              <div class="art" data-a><span class="fn">decisions/ADR-004.md</span><pre class="code"><span class="cp">ADR-004 · Button over dial (v1)</span>
+<span class="cp">status:</span>  accepted
+<span class="cp">why:</span>     one moving part,
+         cheaper than detents
+<span class="cp">trade:</span>   less tactile "feel"
+<span class="cp">revisit:</span> after UX-01 results</pre><span class="why">Why we chose — and what we traded away</span></div>
+              <div class="art" data-a><span class="fn">test-log.md</span><pre class="code"><span class="cp">2026-10-12 · v0.3 · print #4</span>
+UX-01   3/5   <span class="ck">✗</span>
+  2 people never found
+  long-press for DND
+<span class="cn">fix →</span> pulse the ring once
+      on first boot (v0.4)</pre><span class="why">Evidence the next loop can use</span></div>
+            </div>
+            <p class="take" data-a>Chats forget. Files don't. <em>Every loop must leave something you can diff.</em></p>
+          </div>
+        </section>
+
+        <section class="slide" data-title="PartSpec: the contract between intent and geometry">
+          <p class="kicker">TVASTR · PartSpec</p>
+          <h2>PartSpec: the contract between intent and geometry</h2>
           <div class="body">
             <div class="split">
-              <div class="code prompt-card" data-a><div class="win-bar"><i></i><i></i><i></i></div><span class="cp">prompt</span>
-<span class="cn">›</span> Act as a product-design collaborator. Turn this
-  idea into a minimal product requirements document,
-  list unknowns, propose three physical
-  implementation paths, and define measurable
-  prototype tests. Prioritize a non-connected version
-  first. Do not invent part specifications; flag
-  every assumption.</div>
+              <pre class="code" data-a><span class="cc">focus_shell.partspec.yaml</span>
+<span class="cp">part:</span> <span class="cs">focus_shell</span>          <span class="cp">version:</span> <span class="cn">4</span>
+<span class="cp">envelope:</span>
+  <span class="cp">footprint:</span> <span class="cs">hex</span>
+  <span class="cp">across_corners:</span> <span class="cn">72 mm</span>
+  <span class="cp">height:</span> <span class="cn">28 mm</span>
+<span class="cp">wall:</span> <span class="cn">2.4 mm</span>               <span class="cc"># 6 × 0.4 mm lines</span>
+<span class="cp">fillet:</span> { <span class="cp">top_edges:</span> <span class="cn">4 mm</span> }
+<span class="cp">material:</span> <span class="cs">PETG</span>
+<span class="cp">fit:</span>
+  <span class="cp">lid:</span> { <span class="cp">type:</span> <span class="cs">slip</span>, <span class="cp">clearance:</span> <span class="cn">0.25 mm/side</span> }
+<span class="cp">features:</span>
+  - <span class="cp">heat_set_insert:</span> { <span class="cp">size:</span> <span class="cs">M2</span>, <span class="cp">count:</span> <span class="cn">3</span> }
+  - <span class="cp">usb_c_exit:</span> { <span class="cp">keepout:</span> <span class="cn">9 × 4 mm</span> }
+<span class="cp">intent:</span>
+  - <span class="cs">one-hand operation</span>
+  - <span class="cs">no visible LED hotspots</span>
+<span class="cp">acceptance:</span> [<span class="cs">UX-01</span>, <span class="cs">VIS-02</span>, <span class="cs">FIT-03</span>]</pre>
               <div class="stack">
-                <div class="card" data-a><span class="k">Requirement</span><h3>Comfortably operable with one hand.</h3></div>
-                <div class="card hl-c" data-a><span class="k">Acceptance test</span><h3>Five people find all three modes without instructions.</h3></div>
-                <div data-a>
-                  <span class="k">Artifacts that survive a new chat</span>
-                  <div class="chips"><span class="chip">Brief</span><span class="chip">Acceptance criteria</span><span class="chip">Versioned CAD + code</span><span class="chip">Test log</span><span class="chip">Decision record</span></div>
-                </div>
+                <span class="k" data-a>Checked before anything prints</span>
+                <ul class="gates" data-a>
+                  <li><b>Wall ≥ 3 × line width</b><span>2.4 mm ≥ 1.2 mm</span></li>
+                  <li><b>Overhangs ≤ 45° or chamfered</b><span>fillets face up · underside chamfered</span></li>
+                  <li><b>Fits the reference printer</b><span>72 × 72 × 28 mm inside the build volume</span></li>
+                  <li><b>Clearance &gt; measured printer error</b><span>0.25 mm/side vs ±0.10 mm</span></li>
+                  <li class="warn"><b>Insert holes match the supplier</b><span>no part number yet → ask the human</span></li>
+                </ul>
+                <p class="take" data-a>Geometry, fit, material and intent — <em>one versioned file the next revision can trust.</em></p>
               </div>
             </div>
           </div>
         </section>
 
-        <section class="slide" data-title="Three paths, one design language">
-          <p class="kicker">Stage 1 · Choosing a path</p>
-          <h2>Three paths, one design language</h2>
+        <section class="slide" data-tone="c" data-title="Electronics: the anatomy of a smart object">
+          <p class="kicker">Stage 3 · Electronics</p>
+          <h2>Electronics: the anatomy of a smart object</h2>
           <div class="body">
-            <div class="g g3">
-              <div class="card" data-a><span class="k">01</span><h3>Mechanical</h3><ul class="ticks plus"><li>Printed shell</li><li>Rotating dial</li><li>Magnet detents</li><li>Grip feet</li></ul></div>
-              <div class="card hl-c" data-a><span class="k">02</span><h3>Electronic</h3><ul class="ticks plus"><li>Shell &amp; dial</li><li>Push-button</li><li>LED ring</li><li>Controller board</li><li>USB-C power</li></ul></div>
-              <div class="card" data-a><span class="k">03</span><h3>Connected</h3><ul class="ticks plus"><li>Everything in 02</li><li>Wi-Fi / Bluetooth</li><li>Pairing &amp; updates</li><li>Security &amp; privacy</li></ul></div>
-            </div>
-            <p class="take" data-a>Choose the simplest version that <em>proves the design insight.</em></p>
-          </div>
-        </section>
-
-        <section class="slide" data-title="Your idea becomes a BOM">
-          <p class="kicker">Stage 2 · BOM — Bill of Materials</p>
-          <h2>Your idea becomes a BOM</h2>
-          <div class="body">
-            <p class="lede" data-a>Every part, in a format someone else can actually buy and assemble.</p>
-            <div class="tw" data-a>
-              <table class="t">
-                <thead><tr><th>What?</th><th>How many?</th><th>Which exact part?</th><th>From where?</th><th>At what cost?</th></tr></thead>
-                <tbody>
-                  <tr><td>LED ring</td><td>1</td><td>Manufacturer part no.</td><td>Distributor + datasheet</td><td>Price, checked today</td></tr>
-                  <tr><td>Printed shell</td><td>1</td><td>Print file v3 · STEP</td><td>Local print service</td><td>Quote, checked today</td></tr>
-                  <tr><td>M2 screws</td><td>4</td><td>Size, length, head</td><td>Hardware supplier</td><td>Unit cost + spares</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <p class="note" data-a>Mechanical parts count too: shell, dial, diffuser, feet, screws, packaging.</p>
-            <div class="callout" data-a><svg class="ic-svg"><use href="#i-shield" /></svg>An agent can draft the BOM. <b>A human verifies every critical part.</b></div>
-          </div>
-        </section>
-
-        <section class="slide light" data-title="An illustrative BOM slice">
-          <p class="kicker">Stage 2 · BOM</p>
-          <h2>An illustrative BOM slice</h2>
-          <div class="body">
-            <div class="tw" data-a>
-              <table class="t">
-                <thead><tr><th>Component</th><th>Passive</th><th>Electronic</th><th>What to verify</th></tr></thead>
-                <tbody>
-                  <tr><td>Printed shell and rotary dial</td><td>Yes</td><td>Adapted</td><td>Dimensions, tolerances, finish</td></tr>
-                  <tr><td>Colour / icon insert</td><td>Yes</td><td>Optional</td><td>Legibility, adhesion, alignment</td></tr>
-                  <tr><td>Non-slip feet / flexible grip</td><td>Yes</td><td>Yes</td><td>Material, fit, wear</td></tr>
-                  <tr><td>Microcontroller dev board</td><td>No</td><td>Yes</td><td>Exact board size, voltage, pins, USB</td></tr>
-                  <tr><td>LED module or ring</td><td>No</td><td>Yes</td><td>Supply, current draw, signal level, size</td></tr>
-                  <tr><td>Button, wiring, fasteners</td><td>Optional</td><td>Yes</td><td>Physical fit, connector type, assembly</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <p class="note" data-a>Illustrative design targets, not a shopping list. Verify every line before you buy.</p>
-          </div>
-        </section>
-
-        <section class="slide" data-tone="p" data-title="Intermission: it's just a tiny desk object">
-          <p class="kicker">Intermission · scope creep, a love story</p>
-          <h2>"It's just a tiny desk object"</h2>
-          <div class="body">
-            <div class="meme two">
-              <div class="panel" data-a>
-                <span class="who">Me, on Monday</span>
-                <p class="cap big-cap">It's just a tiny desk object.</p>
-                <div class="obj small-obj"><svg viewBox="0 0 320 240" class="mat-dark" aria-hidden="true"><use href="#hexobj" /><g class="cycle"><g class="led" style="--c: #30d8ff"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g><g class="led" style="--c: #f3f1fa"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g><g class="led" style="--c: #f45ec1"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g></g></svg></div>
+            <div class="split r-wide">
+              <div class="dia blocks" data-a="pop">
+                <svg viewBox="0 0 560 400" role="img" aria-label="Block diagram: USB-C power feeds a 3.3 V regulator and the brain; the brain reads inputs, drives outputs and talks over radio; the LEDs take 5 V directly">
+                  <path class="bk-5v" d="M80 158 V116 H480 V146" />
+                  <text x="280" y="108" text-anchor="middle" class="v5">5 V straight to the LEDs</text>
+                  <rect class="bk" x="190" y="12" width="180" height="74" rx="12" /><text x="280" y="43" text-anchor="middle" class="lbl" font-size="20">Inputs</text><text x="280" y="68" text-anchor="middle" font-size="14">button · sensors</text>
+                  <rect class="bk" x="10" y="158" width="140" height="88" rx="12" /><text x="80" y="192" text-anchor="middle" class="lbl" font-size="20">Power</text><text x="80" y="218" text-anchor="middle" font-size="14">USB-C → 3.3 V</text>
+                  <rect class="bk brain" x="190" y="146" width="180" height="112" rx="14" /><text x="280" y="186" text-anchor="middle" class="lbl" style="fill: #fff" font-size="22">Brain</text><text x="280" y="212" text-anchor="middle" style="fill: #fff" font-size="14">ESP32-C3 · RISC-V</text><text x="280" y="234" text-anchor="middle" style="fill: #fff" font-size="14">160 MHz · 3.3 V</text>
+                  <rect class="bk" x="410" y="146" width="140" height="112" rx="12" /><text x="480" y="186" text-anchor="middle" class="lbl" font-size="20">Outputs</text><text x="480" y="212" text-anchor="middle" font-size="14">LED ring</text><text x="480" y="234" text-anchor="middle" font-size="14">OLED · buzzer</text>
+                  <rect class="bk" x="170" y="312" width="220" height="76" rx="12" /><text x="280" y="344" text-anchor="middle" class="lbl" font-size="20">Radio</text><text x="280" y="368" text-anchor="middle" font-size="14">Wi-Fi · BLE · LoRa add-on</text>
+                  <path class="bk-ln" d="M150 202 H186" marker-end="url(#arrow)" /><text x="168" y="194" text-anchor="middle" font-size="12">3.3 V</text>
+                  <path class="bk-ln" d="M280 86 V142" marker-end="url(#arrow)" /><text x="290" y="134" font-size="12">GPIO</text>
+                  <path class="bk-ln" d="M370 202 H406" marker-end="url(#arrow)" /><text x="388" y="194" text-anchor="middle" font-size="12">data</text>
+                  <path class="bk-ln" d="M280 262 V308" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+                </svg>
               </div>
-              <div class="panel" data-a>
-                <span class="who">The BOM, on Friday</span>
-                <div class="bom-scroll">
-                  <ol>
-                    <li><b>Printed shell</b><span>×1</span></li>
-                    <li><b>Rotary dial</b><span>×1</span></li>
-                    <li><b>Diffuser</b><span>×1</span></li>
-                    <li><b>Colour inserts</b><span>×3</span></li>
-                    <li><b>Magnets for detents</b><span>×3</span></li>
-                    <li><b>Non-slip feet</b><span>×4</span></li>
-                    <li><b>ESP32-C3 dev board</b><span>×1</span></li>
-                    <li><b>Addressable LED ring</b><span>×1</span></li>
-                    <li><b>Push-button</b><span>×1</span></li>
-                    <li><b>Jumper wires</b><span>×8</span></li>
-                    <li><b>USB-C cable</b><span>×1</span></li>
-                    <li><b>Heat-set inserts</b><span>×4</span></li>
-                    <li><b>M2 screws</b><span>×4 (+20 — the floor eats them)</span></li>
-                    <li><b>Spare dev board</b><span>×1 (you will need it)</span></li>
-                    <li><b>Packaging</b><span>×1</span></li>
-                    <li><b>Instructions card</b><span>×1</span></li>
-                    <li><b>Patience</b><span>×∞</span></li>
-                  </ol>
-                </div>
-                <span class="stamp">Scope: crept</span>
+              <div class="stack">
+                <div class="card hl-p" data-a><span class="k">The current budget</span><h3>12 LEDs × 60 mA = 720 mA</h3><p>Full white draws up to ~60 mA per LED; a USB 2.0 port promises 500 mA. So the firmware caps brightness.</p></div>
+                <div class="card" data-a><span class="k">The logic level</span><h3>3.3 V brain, 5 V lights</h3><p>5 V LEDs want data near 3.5 V; a 3.3 V chip is marginal. Add a level shifter, or run the ring lower.</p></div>
+                <div class="card" data-a><span class="k">The brain</span><h3>Start from the behaviour</h3><p>No behaviour → passive. OS or camera → single-board computer. Wireless or battery → ESP32 (our pick: C3).</p></div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="slide" data-tone="c" data-title="Don't invent what you can source">
-          <p class="kicker">Stage 3 · Sourcing</p>
-          <h2>Don't invent what you can source</h2>
-          <div class="body">
-            <p class="lede" data-a>COTS = Commercial Off-The-Shelf. Build around what exists.</p>
-            <div class="flow" data-a>
-              <div class="st"><span class="n">01</span><b>Search</b><span>datasheets, not marketing pages</span></div>
-              <div class="st"><span class="n">02</span><b>Compare</b><span>size, power, pins, libraries</span></div>
-              <div class="st"><span class="n">03</span><b>Verify</b><span>stock and price, today</span></div>
-              <div class="st"><span class="n">04</span><b>Substitute</b><span>list approved alternates</span></div>
-              <div class="st"><span class="n">05</span><b>Order</b><span>plus a few spares</span></div>
-            </div>
-            <div class="split">
-              <div data-a>
-                <span class="k">Where to look</span>
-                <div class="chips"><span class="chip">DigiKey</span><span class="chip">Mouser</span><span class="chip">LCSC</span><span class="chip">Octopart</span><span class="chip">Your fab's parts library</span></div>
-                <p class="note" style="margin-top: 0.8em">"Ultra-low power*" &nbsp;<span class="hl p">*while switched off.</span> Read the datasheet.</p>
-              </div>
-              <div class="card hl-c" data-a><h3>The first real-world surprise usually comes from sourcing, not coding.</h3></div>
             </div>
           </div>
         </section>
@@ -493,155 +431,38 @@
           </div>
         </section>
 
-        <section class="slide" data-title="Microcontroller or single-board computer?">
-          <p class="kicker">Choosing the brain</p>
-          <h2>Microcontroller or single-board computer?</h2>
-          <div class="body">
-            <div class="g g2">
-              <div class="card" data-a>
-                <span class="k">Microcontroller · MCU</span>
-                <h3>Runs one program, forever.</h3>
-                <ul class="ticks c"><li>Starts in milliseconds</li><li>Sips power — battery-friendly</li><li>Precise, real-time input and output</li><li>No operating system to update</li></ul>
-                <div class="chips mt"><span class="chip">Arduino</span><span class="chip">ESP32</span><span class="chip">Raspberry Pi Pico</span></div>
-              </div>
-              <div class="card" data-a>
-                <span class="k">Single-board computer · SBC</span>
-                <h3>Runs an operating system.</h3>
-                <ul class="ticks p"><li>Linux, Python, cameras, screens</li><li>Room for local AI models</li><li>Boots in seconds; needs a clean shutdown</li><li>More power, more heat</li></ul>
-                <div class="chips mt"><span class="chip">Raspberry Pi 5</span><span class="chip">Raspberry Pi Zero 2 W</span></div>
-              </div>
-            </div>
-            <p class="take" data-a>A microcontroller is a light switch with a brain. <em class="p">A single-board computer is a tiny laptop without a screen.</em></p>
-          </div>
-        </section>
-
-        <section class="slide" data-tone="c" data-title="Meet the brains">
-          <p class="kicker">Choosing the brain · the usual suspects</p>
-          <h2>Meet the brains</h2>
-          <div class="body">
-            <div class="g g3">
-              <div class="card" data-a>
-                <span class="k">Arduino · where most makers start</span>
-                <h3>A board, an IDE and a framework</h3>
-                <p>The framework is the quiet superpower: the same sketch style runs on ESP32 and Pico too.</p>
-                <div class="g g2 mt stats">
-                  <div class="stat"><b>2 KB</b><span>RAM · Uno R3, 16 MHz</span></div>
-                  <div class="stat"><b>32 KB</b><span>RAM · Uno R4, 48 MHz</span></div>
-                </div>
-                <p class="mt">Watch out: classic boards use 5 V logic; no wireless on basic boards.</p>
-              </div>
-              <div class="card hl-c" data-a>
-                <span class="k">ESP32 · Wi-Fi + Bluetooth on a chip</span>
-                <h3>Pick the radio, then the chip</h3>
-                <ul class="fam">
-                  <li><b>C3</b><span>RISC-V 160 MHz · Wi-Fi 4 + BLE 5 · low cost</span><em>our pick</em></li>
-                  <li><b>S3</b><span>2×240 MHz · native USB · on-device AI</span></li>
-                  <li><b>C6</b><span>Wi-Fi 6 + Thread / Zigbee / Matter</span></li>
-                  <li><b>H2</b><span>BLE + 802.15.4 · no Wi-Fi</span></li>
-                </ul>
-              </div>
-              <div class="card" data-a>
-                <span class="k">Raspberry Pi · one name, two species</span>
-                <h3>Pi 5 / Zero 2 W</h3>
-                <p>A Linux computer: cameras, displays, local AI, home hubs. Needs a solid 5 V supply.</p>
-                <h3 class="mt">Pico / Pico 2</h3>
-                <p>A microcontroller: RP2040 / RP2350, no OS. Pico W adds Wi-Fi.</p>
-                <p class="mt hl p">The Pico is not a Pi. Check which one a tutorial means.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="slide light" data-title="Four brains, side by side">
-          <p class="kicker">Choosing the brain</p>
-          <h2>Four brains, side by side</h2>
-          <div class="body">
-            <div class="tw" data-a>
-              <table class="t">
-                <thead><tr><th></th><th>Arduino Uno R4</th><th>ESP32-C3</th><th>Pi Pico 2 W</th><th>Raspberry Pi 5</th></tr></thead>
-                <tbody>
-                  <tr><td>Kind</td><td>Microcontroller</td><td>Microcontroller</td><td>Microcontroller</td><td>Linux computer</td></tr>
-                  <tr><td>Wireless</td><td>None (WiFi model: yes)</td><td>Wi-Fi + BLE</td><td>Wi-Fi + Bluetooth</td><td>Wi-Fi + Bluetooth</td></tr>
-                  <tr><td>Starts up</td><td>Instantly</td><td>Instantly</td><td>Instantly</td><td>In seconds</td></tr>
-                  <tr><td>Power</td><td>Low</td><td>Low · deep sleep</td><td>Low</td><td>Watts, needs cooling</td></tr>
-                  <tr><td>Program in</td><td>Arduino C++</td><td>Arduino · IDF · ESPHome</td><td>C SDK · MicroPython</td><td>Python · Node · Linux</td></tr>
-                  <tr><td>Best for</td><td>Learning, simple I/O</td><td class="pick">Connected objects</td><td>Cheap, precise I/O</td><td>Vision, UI, local AI</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <p class="note" data-a>Specs vary by board variant. Check the exact board you buy.</p>
-          </div>
-        </section>
-
-        <section class="slide" data-title="Which brain? Start from the behavior">
-          <p class="kicker">Choosing the brain</p>
-          <h2>Which brain? Start from the behavior</h2>
-          <div class="body">
-            <div class="tree" data-a>
-              <div class="row"><p class="q">Does it need any behavior at all?</p><span class="yn">NO →</span><p class="a">Stay passive: shell, dial, magnets</p></div>
-              <p class="down">↓ yes</p>
-              <div class="row"><p class="q">Does it need an OS, a camera or a rich screen?</p><span class="yn">YES →</span><p class="a">Raspberry Pi 5 / Zero 2 W</p></div>
-              <p class="down">↓ no</p>
-              <div class="row"><p class="q">Does it need wireless or long battery life?</p><span class="yn">YES →</span><p class="a">ESP32 (C3, S3, C6) or Pico 2 W</p></div>
-              <p class="down">↓ no</p>
-              <div class="row"><p class="q">Otherwise</p><span class="yn">→</span><p class="a">Arduino or Raspberry Pi Pico</p></div>
-            </div>
-            <p class="take" data-a><span class="chip solid">Focus object</span>&nbsp; ESP32-C3: <em>offline today, wireless-ready tomorrow.</em></p>
-          </div>
-        </section>
-
-        <section class="slide" data-title="Firmware, when the object needs behavior">
-          <p class="kicker">Stage 4 · Firmware</p>
-          <h2>Firmware, when the object needs behavior</h2>
+        <section class="slide" data-tone="c" data-title="Firmware an agent can actually test">
+          <p class="kicker">Stage 4 · Firmware, in depth</p>
+          <h2>Firmware an agent can actually test</h2>
           <div class="body">
             <div class="split">
               <div class="stack">
-                <div class="io" data-a><span class="k">Input</span><p>Press button</p></div>
-                <div class="io" data-a><span class="k">Decision</span><p>Change mode</p></div>
-                <div class="io" data-a><span class="k">Output</span><p>Update light</p></div>
-                <p class="take" data-a><em>Keep it local first.</em></p>
-                <p class="mono-line" data-a>button → state machine → LED</p>
-              </div>
-              <div class="dia" data-a="pop">
-                <svg viewBox="0 0 420 330" role="img" aria-label="State machine: Focus to Break on press, Break to Do not disturb on long press, back to Focus on press">
-                  <g class="sm-node"><polygon points="210,26 248,48 248,92 210,114 172,92 172,48" /><polygon class="glow" points="210,26 248,48 248,92 210,114 172,92 172,48" fill="#30d8ff" /></g>
-                  <g class="sm-node"><polygon points="345,206 383,228 383,272 345,294 307,272 307,228" /><polygon class="glow" points="345,206 383,228 383,272 345,294 307,272 307,228" fill="#f3f1fa" /></g>
-                  <g class="sm-node"><polygon points="75,206 113,228 113,272 75,294 37,272 37,228" /><polygon class="glow" points="75,206 113,228 113,272 75,294 37,272 37,228" fill="#f45ec1" /></g>
-                  <path class="sm-arrow" d="M254 78 Q 330 118 342 196" marker-end="url(#arrow)" />
-                  <path class="sm-arrow" d="M300 284 Q 210 318 122 284" marker-end="url(#arrow)" />
-                  <path class="sm-arrow" d="M76 196 Q 88 118 166 78" marker-end="url(#arrow)" />
-                  <text x="210" y="138" text-anchor="middle" class="lbl" font-size="16">Focus</text>
-                  <text x="345" y="320" text-anchor="middle" class="lbl" font-size="16">Break</text>
-                  <text x="75" y="320" text-anchor="middle" class="lbl" font-size="16">Do not disturb</text>
-                  <text x="318" y="128" font-size="12">press</text>
-                  <text x="210" y="292" text-anchor="middle" font-size="12">long-press</text>
-                  <text x="66" y="128" font-size="12">press</text>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </section>
+                <pre class="code" data-a><span class="cc">src/mode.h · pure logic, no pins</span>
+<span class="ck">enum class</span> Mode  { Focus, Break, DND };
+<span class="ck">enum class</span> Press { Short, Long };
 
-        <section class="slide" data-title="From code to chip">
-          <p class="kicker">Stage 4 · Firmware</p>
-          <h2>From code to chip</h2>
-          <div class="body">
-            <div class="flow" data-a>
-              <div class="st"><span class="n">01</span><b>Write</b><span>code + config</span></div>
-              <div class="st"><span class="n">02</span><b>Build</b><span>compile for the chip</span></div>
-              <div class="st"><span class="n">03</span><b>Flash</b><span>upload over USB</span></div>
-              <div class="st"><span class="n">04</span><b>Monitor</b><span>read serial logs</span></div>
-              <div class="st"><span class="n">05</span><b>Iterate</b><span>change, repeat</span></div>
+Mode next(Mode m, Press p) {
+  <span class="ck">if</span> (p == Press::Long) <span class="ck">return</span> Mode::DND;
+  <span class="ck">return</span> m == Mode::Focus ? Mode::Break
+                          : Mode::Focus;
+}</pre>
+                <pre class="code" data-a><span class="cc">test/test_mode.cpp · pio test -e native</span>
+<span class="ck">void</span> test_long_press_is_dnd() {
+  TEST_ASSERT(next(Mode::Focus, Press::Long)
+              == Mode::DND);
+}
+<span class="ck">void</span> test_short_press_leaves_dnd() {
+  TEST_ASSERT(next(Mode::DND, Press::Short)
+              == Mode::Focus);
+}</pre>
+              </div>
+              <div class="stack">
+                <div class="card" data-a><span class="k">Split the decision from the pins</span><p>Pure logic compiles for your laptop (<code>platform = native</code>), so the agent runs the whole suite with no board attached.</p></div>
+                <div class="card" data-a><span class="k">Name the physical numbers</span><p>Debounce 30 ms · long-press 800 ms · LED brightness capped for USB power. Constants with names, not magic.</p></div>
+                <div class="card hl-c" data-a><span class="k">Then test on hardware</span><p>Flash, read the serial log, press the real button. Only that step needs the desk — and you.</p></div>
+                <p class="take" data-a>Prove the logic on the laptop; <em>the board only has to prove the wiring.</em></p>
+              </div>
             </div>
-            <span class="k" data-a>Ways in</span>
-            <div class="g g5" data-a>
-              <div class="card"><h3>Arduino IDE</h3><p>Friendliest first step</p></div>
-              <div class="card hl-c"><h3>PlatformIO</h3><p>Reproducible, CLI-first</p></div>
-              <div class="card"><h3>ESP-IDF</h3><p>Espressif's native framework</p></div>
-              <div class="card"><h3>ESPHome</h3><p>YAML config → firmware</p></div>
-              <div class="card"><h3>MicroPython</h3><p>Python on the chip, no compile step</p></div>
-            </div>
-            <p class="take" data-a>Start in the Arduino IDE. <em>Switch to PlatformIO when an agent joins.</em></p>
           </div>
         </section>
 
@@ -703,8 +524,6 @@ lib_deps      = <span class="cs">adafruit/Adafruit NeoPixel@^1.12</span></pre>
           </div>
         </section>
 
-        <!-- ---------------------------- Stage 5: design, in depth ---------------------------- -->
-
         <section class="slide" data-title="CAED: where form meets function">
           <p class="kicker">Stage 5 · CAED</p>
           <h2>CAED: where form meets function</h2>
@@ -716,43 +535,6 @@ lib_deps      = <span class="cs">adafruit/Adafruit NeoPixel@^1.12</span></pre>
             </div>
             <p class="take" data-a>One object. <em>Several kinds of design.</em></p>
             <p class="lede" data-a>The next six slides go deep on the part people skip: turning a sentence into decisions you can measure, a shape you can hold, and a file a printer can actually build.</p>
-          </div>
-        </section>
-
-        <section class="slide" data-title="From brief to design decisions">
-          <p class="kicker">Stage 5 · Design · decisions</p>
-          <h2>From brief to design decisions</h2>
-          <div class="body">
-            <p class="lede" data-a>Every requirement earns a design decision — and a test that can prove it wrong.</p>
-            <div class="tw" data-a>
-              <table class="t">
-                <thead><tr><th>Requirement</th><th>Design decision</th><th>How we'll know</th></tr></thead>
-                <tbody>
-                  <tr><td>Operable with one hand</td><td>72 mm hex footprint, 28 mm tall, 4 mm top fillet</td><td>Five people, one hand, no instructions</td></tr>
-                  <tr><td>Mode readable at a glance</td><td>Light ring under a diffuser; colour = mode</td><td>Read from 2 m in daylight</td></tr>
-                  <tr><td>Never slides on the desk</td><td>TPU feet, low centre of mass</td><td>Push test on wood and glass</td></tr>
-                  <tr><td>Feels deliberate to turn</td><td>Magnet detents at three positions</td><td>Eyes closed: count the clicks</td></tr>
-                  <tr><td>Easy to open and repair</td><td>M2 screws into heat-set inserts, no glue</td><td>Open and close it ten times</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <p class="note" data-a>Illustrative targets for the focus object — the prototype gets the final say.</p>
-          </div>
-        </section>
-
-        <section class="slide" data-tone="c" data-title="Design the feel, not just the look">
-          <p class="kicker">Stage 5 · Design · form language</p>
-          <h2>Design the feel, not just the look</h2>
-          <div class="body">
-            <div class="split r-wide">
-              <div class="obj float" data-a="pop"><svg viewBox="0 0 320 240" class="mat-dark" aria-hidden="true"><ellipse cx="160" cy="205" rx="130" ry="22" fill="url(#floorglow)" /><use href="#hexobj" /><g class="cycle"><g class="led" style="--c: #30d8ff"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g><g class="led" style="--c: #f3f1fa"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g><g class="led" style="--c: #f45ec1"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g></g></svg></div>
-              <div class="g g2">
-                <div class="card" data-a><span class="k">Shape</span><h3>Hexagon</h3><p>Stable, stackable, easy to grip — and it reads as an object, not a gadget.</p></div>
-                <div class="card" data-a><span class="k">Proportion</span><h3>Palm-sized</h3><p>Wide and low so it can't tip; the dial sits where a thumb lands.</p></div>
-                <div class="card hl-c" data-a><span class="k">Light</span><h3>Light is the interface</h3><p>Colour means mode. A diffuser hides the LED dots so it glows, never glares.</p></div>
-                <div class="card" data-a><span class="k">Touch</span><h3>Feedback you can feel</h3><p>Detents confirm a turn without looking. Soft feet stop the slide.</p></div>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -788,41 +570,6 @@ cq.exporters.export(shell, <span class="cs">"focus_shell.step"</span>)</pre>
           </div>
         </section>
 
-        <section class="slide" data-title="Designed from the inside out">
-          <p class="kicker">Stage 5 · Inside out</p>
-          <h2>Designed from the inside out</h2>
-          <div class="body">
-            <div class="split l-wide">
-              <div class="dia xp" data-a="pop">
-                <svg viewBox="0 0 620 450" role="img" aria-label="Exploded view: diffuser lid, light ring, circuit board, shell and feet">
-                  <line class="lead" x1="310" y1="20" x2="310" y2="430" />
-                  <polygon class="lay" points="420,70 365,117.6 255,117.6 200,70 255,22.4 365,22.4" fill="rgba(193,172,246,.18)" stroke="#c1acf6" stroke-width="1.5" />
-                  <g class="lay"><ellipse cx="310" cy="160" rx="64" ry="32" fill="none" stroke="#30d8ff" stroke-width="12" opacity=".8" filter="url(#ledglow)" /><ellipse cx="310" cy="160" rx="64" ry="32" fill="none" stroke="#30d8ff" stroke-width="5" /></g>
-                  <g class="lay"><polygon points="380,232 310,262 240,232 310,202" fill="#10261f" stroke="#5ef2b0" stroke-opacity=".6" /><polygon points="330,232 310,241 290,232 310,223" fill="#221c3c" stroke="#c1acf6" stroke-opacity=".6" /></g>
-                  <g class="lay"><polygon points="420,312 365,359.6 365,403.6 420,356" fill="#110e22" /><polygon points="365,359.6 255,359.6 255,403.6 365,403.6" fill="#17132d" /><polygon points="255,359.6 200,312 200,356 255,403.6" fill="#1f1a38" /><polygon points="420,312 365,359.6 255,359.6 200,312 255,264.4 365,264.4" fill="#0b0918" stroke="#9a8ae0" stroke-width="1.5" /></g>
-                  <g class="lay"><ellipse cx="240" cy="424" rx="14" ry="5" fill="#f45ec1" /><ellipse cx="380" cy="424" rx="14" ry="5" fill="#f45ec1" /><ellipse cx="310" cy="438" rx="14" ry="5" fill="#f45ec1" /></g>
-                  <line class="lead" x1="150" y1="70" x2="200" y2="70" /><text x="10" y="75">Hand feel</text>
-                  <line class="lead" x1="420" y1="70" x2="470" y2="70" /><text x="478" y="75">Diffuser</text>
-                  <line class="lead" x1="150" y1="232" x2="240" y2="232" /><text x="10" y="237">Button travel</text>
-                  <line class="lead" x1="380" y1="232" x2="470" y2="232" /><text x="478" y="230">Connector</text><text x="478" y="246">clearance</text>
-                  <line class="lead" x1="420" y1="340" x2="470" y2="340" /><text x="478" y="345">Fastening</text>
-                  <line class="lead" x1="150" y1="380" x2="200" y2="380" /><text x="10" y="385">Serviceability</text>
-                </svg>
-              </div>
-              <div class="stack">
-                <p class="quote small-q" data-a>Fit. Feel. <span class="grad-text">Assembly. Repair.</span></p>
-                <p class="take" data-a>The interior is part of the user experience.</p>
-                <ul class="ticks c" data-a>
-                  <li>Leave room for wires, connectors, screws and air gaps</li>
-                  <li>Design for real tolerances, not perfect ones</li>
-                  <li>Prefer screws to glue</li>
-                </ul>
-                <p class="note" data-a>Glue is a one-way door. Future you would like a screwdriver.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section class="slide" data-tone="c" data-title="Design for the printer">
           <p class="kicker">Stage 5 · Design for manufacture</p>
           <h2>Design for the printer, not just the screen</h2>
@@ -836,6 +583,104 @@ cq.exporters.export(shell, <span class="cs">"focus_shell.step"</span>)</pre>
               <div class="card" data-a><span class="k">Inserts</span><h3>Heat-set, not glued</h3><p>Size holes to the insert maker's spec and leave solid wall around each one.</p></div>
             </div>
             <p class="note" data-a>Rules of thumb for FDM with a 0.4 mm nozzle. Your printer and material get the final vote.</p>
+          </div>
+        </section>
+
+        <section class="slide" data-title="Worked example: a lid that actually fits">
+          <p class="kicker">Stage 5 · Fit math</p>
+          <h2>Worked example: a lid that actually fits</h2>
+          <div class="body">
+            <div class="split">
+              <div class="dia fit" data-a="pop">
+                <svg viewBox="0 0 520 380" role="img" aria-label="Cross-section of a lid lip sitting inside the shell walls with a clearance gap on each side">
+                  <rect class="wall" x="40" y="118" width="50" height="232" rx="3" />
+                  <rect class="wall" x="430" y="118" width="50" height="232" rx="3" />
+                  <rect class="lid" x="30" y="70" width="460" height="34" rx="4" />
+                  <polygon class="lid" points="100,104 420,104 420,192 412,200 108,200 100,192" />
+                  <rect class="gap" x="90" y="104" width="10" height="96" />
+                  <rect class="gap" x="420" y="104" width="10" height="96" />
+                  <text x="260" y="92" text-anchor="middle" class="lbl">lid</text>
+                  <text x="65" y="372" text-anchor="middle">shell wall</text>
+                  <line class="dim" x1="100" y1="252" x2="420" y2="252" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+                  <text x="260" y="244" text-anchor="middle">B · lip 59.25 → prints 59.35</text>
+                  <line class="dim" x1="90" y1="324" x2="430" y2="324" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+                  <text x="260" y="316" text-anchor="middle">A · opening 60.00 → prints 59.85</text>
+                  <text x="104" y="284" style="fill: #f45ec1">← 0.25 mm per side (drawn 40× wider)</text>
+                  <text x="112" y="218" font-size="12">↖ 0.4 mm chamfer</text>
+                </svg>
+              </div>
+              <div class="stack">
+                <div class="calc" data-a>
+                  <p><span>Shell opening, modelled</span><b>60.00 mm</b></p>
+                  <p class="sub"><span>insides print small · −0.15</span><b>59.85</b></p>
+                  <p><span>Lid lip, modelled naively</span><b>59.50</b></p>
+                  <p class="sub"><span>outsides print large · +0.10</span><b>59.60</b></p>
+                  <p class="bad"><span>Gap per side</span><b>0.125 ✗ binds</b></p>
+                  <p><span>Lid lip, compensated</span><b>59.25 → 59.35</b></p>
+                  <p class="good"><span>Gap per side</span><b>0.25 ✓ as specified</b></p>
+                </div>
+                <ul class="ticks c" data-a>
+                  <li>Measure your printer's offsets on a test coupon — don't copy them from the internet</li>
+                  <li>Chamfer the lip's bottom edge 0.4 mm: first layers flare ("elephant's foot")</li>
+                  <li>Keep the clearance in the PartSpec, so revision 5 doesn't lose it</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide lab" data-model="focus" data-title="Take it apart: the focus object in 3D">
+          <div class="lab-grid">
+            <header class="lab-head">
+              <div><p class="kicker">Stage 5 · Teardown · interactive</p><h2>Take it apart: the focus object</h2></div>
+              <span class="lab-tag">Live 3D · drag to orbit · scroll to zoom</span>
+            </header>
+            <aside class="lab-l">
+              <div class="pnl"><span class="pk">Parts</span><b class="big" data-hud="parts">14</b><span class="ps">printed, bought and fastened</span></div>
+              <div class="pnl"><span class="pk">Selected</span><b class="nm" data-hud="partName">Focus object · v4</b><p data-hud="partInfo">72 mm hex · 28 mm tall · PETG shell with 2.4 mm walls</p></div>
+              <div class="pnl"><span class="pk">PartSpec</span><dl class="spec"><dt>Footprint</dt><dd>72 mm hex</dd><dt>Height</dt><dd>28 mm</dd><dt>Wall</dt><dd>2.4 mm</dd><dt>Lid fit</dt><dd>0.25 mm/side</dd></dl></div>
+            </aside>
+            <div class="td-canvas" role="img" aria-label="Interactive 3D model of the focus object"></div>
+            <aside class="lab-r">
+              <div class="pnl"><span class="pk">Explode</span><b class="big" data-hud="explode">0%</b><span class="ps">camera <em data-hud="az">0°</em></span></div>
+              <div class="pnl"><span class="pk">Light ring</span><b class="nm"><i class="swatch-live"></i><span data-hud="mode">FOCUS</span></b><span class="ps mono" data-hud="modeHex">#30D8FF</span>
+                <div class="seg2"><button data-mode="focus">Focus</button><button data-mode="break">Break</button><button data-mode="dnd">DND</button></div></div>
+              <div class="pnl"><span class="pk">Stack, top to bottom</span><ol class="stackup"><li>Dial</li><li>Diffuser</li><li>LED ring</li><li>M2 screws</li><li>ESP32-C3 board</li><li>Heat-set inserts</li><li>Shell</li><li>TPU feet</li></ol></div>
+            </aside>
+            <nav class="lab-bar" aria-label="Teardown controls">
+              <button data-act="assemble">Assembled</button><button data-act="explode">Explode</button><span class="sep"></span>
+              <button data-focus="shell">Shell</button><button data-focus="electronics">Electronics</button><button data-focus="top">Top</button><span class="sep"></span>
+              <button data-act="xray">X-ray</button><button data-act="tour">Tour</button>
+              <span class="drag">The tour runs by itself · click anything to take over</span>
+            </nav>
+          </div>
+        </section>
+
+        <section class="slide" data-tone="p" data-title="3D printing: process and material">
+          <p class="kicker">Stages 6–7 · Additive manufacturing</p>
+          <h2>3D printing: process and material</h2>
+          <div class="body">
+            <div class="flow slim" data-a>
+              <div class="st"><b>Model</b></div><div class="st"><b>Slice</b></div><div class="st on"><b>Print</b></div><div class="st"><b>Post-process</b></div><div class="st"><b>Assemble</b></div>
+              <span class="loop-back">your first factory can be a local print service, a makerspace or a university lab</span>
+            </div>
+            <div class="tw" data-a>
+              <table class="t">
+                <thead><tr><th>Process</th><th>How it works</th><th>Best for</th><th>Watch out for</th></tr></thead>
+                <tbody>
+                  <tr><td>FDM / FFF</td><td>Melts filament, layer by layer</td><td>Fast form and fit, tough enclosures</td><td>Visible layers; weaker between layers</td></tr>
+                  <tr><td>Resin (SLA / MSLA)</td><td>Cures liquid resin with light</td><td>Fine detail, smooth surfaces</td><td>Post-curing, resin handling, brittleness</td></tr>
+                  <tr><td>SLS / MJF</td><td>Fuses nylon powder with heat</td><td>Durable, complex parts, no supports</td><td>Usually a service; grainy finish</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="g g4 mats" data-a>
+              <div class="card"><div class="swatch sw-pla"></div><h3>PLA</h3><p>Quick form studies</p></div>
+              <div class="card"><div class="swatch sw-petg"></div><h3>PETG</h3><p>Tougher, practical enclosures</p></div>
+              <div class="card"><div class="swatch sw-tpu"></div><h3>TPU</h3><p>Soft, flexible grip</p></div>
+              <div class="card hl-p"><div class="swatch sw-clear"></div><h3>Translucent</h3><p>Beautiful light diffusion</p></div>
+            </div>
+            <p class="take" data-a>Multi-material ≠ just multi-colour: <em>the right material in the right place.</em></p>
           </div>
         </section>
 
@@ -869,58 +714,6 @@ cq.exporters.export(shell, <span class="cs">"focus_shell.step"</span>)</pre>
           </div>
         </section>
 
-        <section class="slide" data-title="Additive manufacturing makes ideas tangible">
-          <p class="kicker">Stage 6 · Additive manufacturing</p>
-          <h2>Additive manufacturing makes ideas tangible</h2>
-          <div class="body">
-            <div class="flow" data-a>
-              <div class="st"><span class="n">01</span><b>Model</b><span>export the right file</span></div>
-              <div class="st"><span class="n">02</span><b>Slice</b><span>orientation, supports, tolerances</span></div>
-              <div class="st on"><span class="n">03</span><b>Print</b><span>layer by layer</span></div>
-              <div class="st"><span class="n">04</span><b>Post-process</b><span>remove supports, clean, finish</span></div>
-              <div class="st"><span class="n">05</span><b>Assemble</b><span>fit the real parts</span></div>
-            </div>
-            <div class="split">
-              <p class="take" data-a>Your first factory can be <em>a local print service.</em></p>
-              <p class="lede" data-a>Makerspaces, university labs and print bureaus all count. You don't need a printer to start — you need a file someone else can print.</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="slide light" data-title="Choosing a print process">
-          <p class="kicker">Stage 6 · Additive manufacturing</p>
-          <h2>Choosing a print process</h2>
-          <div class="body">
-            <div class="tw" data-a>
-              <table class="t">
-                <thead><tr><th>Process</th><th>How it works</th><th>Best for</th><th>Watch out for</th></tr></thead>
-                <tbody>
-                  <tr><td>FDM / FFF</td><td>Melts filament, layer by layer</td><td>Fast form and fit, tough enclosures</td><td>Visible layers; weaker between layers</td></tr>
-                  <tr><td>Resin (SLA / MSLA)</td><td>Cures liquid resin with light</td><td>Fine detail, smooth surfaces</td><td>Post-curing, resin handling, brittleness</td></tr>
-                  <tr><td>SLS / MJF</td><td>Fuses nylon powder with heat</td><td>Durable, complex parts, no supports</td><td>Usually a service; grainy finish</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <p class="take" data-a>A render is not proof of printability. A good print is not proof of a product.</p>
-          </div>
-        </section>
-
-        <section class="slide" data-tone="p" data-title="Material is an interaction decision">
-          <p class="kicker">Stage 7 · Materials</p>
-          <h2>Material is an interaction decision</h2>
-          <div class="body">
-            <div class="g g4">
-              <div class="card" data-a><div class="swatch sw-pla"></div><h3>PLA</h3><p>Quick form studies</p></div>
-              <div class="card" data-a><div class="swatch sw-petg"></div><h3>PETG</h3><p>Tougher, practical enclosures</p></div>
-              <div class="card" data-a><div class="swatch sw-tpu"></div><h3>TPU</h3><p>Soft, flexible grip</p></div>
-              <div class="card hl-p" data-a><div class="swatch sw-clear"></div><h3>Translucent</h3><p>Beautiful light diffusion</p></div>
-            </div>
-            <p class="take" data-a>Multi-material ≠ just multi-colour. <em>The right material in the right place.</em></p>
-          </div>
-        </section>
-
-        <!-- ============================== ACT III ============================== -->
-
         <section class="slide act grid-bg" data-title="Act III · An object is not yet a product">
           <div class="body">
             <div class="stack">
@@ -938,21 +731,24 @@ cq.exporters.export(shell, <span class="cs">"focus_shell.step"</span>)</pre>
           </div>
         </section>
 
-        <section class="slide" data-title="The print is the beginning of the truth">
-          <p class="kicker">Testing</p>
-          <h2>The print is the beginning of the truth</h2>
+        <section class="slide" data-title="A test plan, not a vibe check">
+          <p class="kicker">Testing · in depth</p>
+          <h2>A test plan, not a vibe check</h2>
           <div class="body">
-            <p class="lede" data-a>Does it fit? Does it work? Does it delight?</p>
-            <div class="g g4">
-              <div class="card" data-a><h3 class="big3 grad-text">Form</h3><p>Does it look and feel right?</p></div>
-              <div class="card" data-a><h3 class="big3 grad-text">Fit</h3><p>Do the real parts assemble?</p></div>
-              <div class="card" data-a><h3 class="big3 grad-text">Function</h3><p>Does it reliably do what it claims?</p></div>
-              <div class="card" data-a><h3 class="big3 grad-text">UX</h3><p>Do people get it without explanation?</p></div>
+            <div class="tw" data-a>
+              <table class="t">
+                <thead><tr><th>ID</th><th>Test</th><th>Method</th><th>Pass when</th><th>Catches</th></tr></thead>
+                <tbody>
+                  <tr><td>UX-01</td><td>Discoverability</td><td>5 people, one hand, no instructions</td><td>≥ 4 / 5 find all modes in &lt; 30 s</td><td>A hidden long-press</td></tr>
+                  <tr><td>VIS-02</td><td>Readability</td><td>Read the mode from 2 m, daylight and dark</td><td>5 / 5 correct</td><td>Weak diffusion, colour confusion</td></tr>
+                  <tr><td>FIT-03</td><td>Assembly</td><td>Assemble and open it 10×</td><td>Lid seats, no cracked bosses</td><td>Tight clearance, insert pull-out</td></tr>
+                  <tr><td>DUR-04</td><td>Button life</td><td>1,000 presses on a simple jig</td><td>No missed or double presses</td><td>Debounce bugs, a cracked actuator</td></tr>
+                  <tr><td>THR-05</td><td>Thermal</td><td>2 h at full brightness on USB</td><td>Warm, never hot · log °C at the hottest point</td><td>LED current, no venting</td></tr>
+                  <tr><td>DRP-06</td><td>Drop</td><td>1 m onto wood, every face</td><td>Still works, nothing rattles</td><td>Brittle layers, a loose board</td></tr>
+                </tbody>
+              </table>
             </div>
-            <div class="split">
-              <div class="flow slim" data-a><div class="st"><b>Prototype</b></div><div class="st"><b>Observe</b></div><div class="st on"><b>Revise</b></div><span class="loop-back">↺</span></div>
-              <p class="take" data-a>One honest prototype beats <em>a hundred perfect renders.</em></p>
-            </div>
+            <p class="take" data-a>Write the pass criteria before you print. <em class="p">Otherwise every result looks like success.</em></p>
           </div>
         </section>
 
@@ -971,39 +767,49 @@ cq.exporters.export(shell, <span class="cs">"focus_shell.step"</span>)</pre>
           </div>
         </section>
 
-        <section class="slide" data-title="From one prototype to many products">
-          <p class="kicker">Scaling</p>
-          <h2>From one prototype to many products</h2>
+        <section class="slide" data-tone="c" data-title="What changes at 1, 100 and 10,000 units">
+          <p class="kicker">Scaling · in depth</p>
+          <h2>What changes at 1, 100 and 10,000 units</h2>
           <div class="body">
-            <div class="g g4">
-              <div class="card" data-a><span class="k">01</span><h3>Prototype</h3><p>3D-printed, hand-assembled</p></div>
-              <div class="card" data-a><span class="k">02</span><h3>Pilot batch</h3><p>Validate demand, assembly time, failures</p></div>
-              <div class="card" data-a><span class="k">03</span><h3>Design for manufacture</h3><p>Draft angles, walls, custom PCB</p></div>
-              <div class="card" data-a><span class="k">04</span><h3>Production + quality</h3><p>Tooling, QA, packaging, support</p></div>
+            <div class="tw" data-a>
+              <table class="t">
+                <thead><tr><th></th><th>1 · prototype</th><th>100 · pilot</th><th>10,000 · production</th></tr></thead>
+                <tbody>
+                  <tr><td>Enclosure</td><td>FDM print, hours per part</td><td>Print farm, or SLS / MJF</td><td>Injection moulding: a steel tool, draft angles, even walls</td></tr>
+                  <tr><td>Electronics</td><td>Dev board + jumper wires</td><td>Custom PCB, small-batch assembly</td><td>PCBA line: pick-and-place, optical inspection, test fixture</td></tr>
+                  <tr><td>Radio</td><td>The dev board's module</td><td>A pre-certified module</td><td>Pre-certified module + product certification (FCC · CE · WPC)</td></tr>
+                  <tr><td>Testing</td><td>You, by hand</td><td>Sampling + a simple jig</td><td>End-of-line fixture and a QA plan</td></tr>
+                  <tr><td>Cost driver</td><td>Your time</td><td>Assembly time + failures</td><td>Tooling amortisation + yield</td></tr>
+                  <tr><td>The question</td><td class="pick">Does it work?</td><td class="pick">Can it be built twice?</td><td class="pick">Can it be built 10,000 times?</td></tr>
+                </tbody>
+              </table>
             </div>
-            <div data-a>
-              <span class="k">Real unit cost =</span>
-              <div class="chips"><span class="chip">parts</span><span class="chip">+ print or tooling</span><span class="chip">+ assembly</span><span class="chip">+ defects</span><span class="chip">+ testing</span><span class="chip">+ packaging</span><span class="chip">+ freight</span><span class="chip">+ support</span></div>
-            </div>
-            <p class="take" data-a>The manufacturing method <em>changes with the scale.</em></p>
+            <p class="take" data-a>Volume doesn't just make it cheaper — <em>it changes the design.</em></p>
           </div>
         </section>
 
-        <section class="slide" data-tone="c" data-title="From dev board to custom PCB">
-          <p class="kicker">Scaling · Electronics</p>
-          <h2>From dev board to custom PCB</h2>
+        <section class="slide" data-title="Mass manufacturing: design for the tool">
+          <p class="kicker">Mass manufacturing</p>
+          <h2>Mass manufacturing: design for the tool, not the printer</h2>
           <div class="body">
-            <div class="flow" data-a>
-              <div class="st"><span class="n">01</span><b>Breadboard</b><span>prove the circuit</span></div>
-              <div class="st"><span class="n">02</span><b>Dev board in a shell</b><span>prove the product</span></div>
-              <div class="st"><span class="n">03</span><b>Custom PCB</b><span>smaller, sturdier</span></div>
-              <div class="st"><span class="n">04</span><b>Assembled PCB</b><span>made by a PCBA service</span></div>
+            <div class="g g2">
+              <div class="card" data-a><span class="k">Injection moulding · the enclosure</span>
+                <ul class="ticks c rules">
+                  <li><span><b>Draft</b> on every vertical wall (≈ 1–2°) so the part releases from the steel</span></li>
+                  <li><span><b>Even walls</b>; ribs at about 50–60% of the wall instead of thick sections, so nothing sinks</span></li>
+                  <li><span><b>No undercuts</b> unless you pay for side actions; design snap-fits in from day one</span></li>
+                  <li><span><b>Freeze the design</b> before cutting the tool — every change after costs weeks</span></li>
+                </ul></div>
+              <div class="card" data-a><span class="k">PCBA · the electronics</span>
+                <ul class="ticks c rules">
+                  <li><span><b>Panelised boards</b> with fiducials for the pick-and-place machine</span></li>
+                  <li><span><b>Parts from the assembler's library</b>, with second sources written into the BOM</span></li>
+                  <li><span><b>Test points</b> for a fixture that flashes, tests and labels every unit</span></li>
+                  <li><span><b>Optical inspection + functional test</b> on every board; yield is a number you track</span></li>
+                </ul></div>
             </div>
-            <div class="split">
-              <div data-a><span class="k">Handoff files (KiCad exports these)</span><div class="chips"><span class="chip">Schematic</span><span class="chip">PCB layout</span><span class="chip">Gerbers</span><span class="chip">BOM</span><span class="chip">Pick-and-place (CPL)</span><span class="chip">Assembly drawing</span></div></div>
-              <div data-a><span class="k">When to make the move</span><ul class="ticks c"><li>Size or shape demands it</li><li>Unit cost matters at volume</li><li>Hand wiring keeps failing</li></ul></div>
-            </div>
-            <div class="callout" data-a><svg class="ic-svg"><use href="#i-radio" /></svg>Design around a pre-certified radio module, not a bare chip. <b>It simplifies certification; it doesn't remove it.</b></div>
+            <div class="chips" data-a><span class="chip">lead times in weeks</span><span class="chip">minimum order quantities</span><span class="chip">tooling amortised over the run</span><span class="chip">a QA plan, not a vibe</span></div>
+            <p class="take" data-a>The printer forgave everything. <em class="p">The tool forgives nothing.</em></p>
           </div>
         </section>
 
@@ -1023,21 +829,91 @@ cq.exporters.export(shell, <span class="cs">"focus_shell.step"</span>)</pre>
           </div>
         </section>
 
-        <section class="slide" data-tone="c" data-title="The creative stack is open to more people">
-          <p class="kicker">The bigger picture</p>
-          <h2>The creative stack is open to more people</h2>
+        <section class="slide act grid-bg" data-title="Case study · Sotreus Edge">
           <div class="body">
-            <div class="flow" data-a>
-              <div class="st"><b>An idea</b></div><div class="st"><b>An agent</b></div><div class="st"><b>A parts list</b></div><div class="st"><b>A model</b></div><div class="st on"><b>A local maker</b></div>
+            <div class="stack">
+              <p class="kicker" data-a>Case study · NetSepio</p>
+              <h2 class="act-h" data-a>Sotreus <span class="grad-text">Edge</span></h2>
+              <p class="lede" data-a>A real build, in progress: printed enclosure, IoT modules, firmware on the bench.</p>
             </div>
-            <div class="split">
-              <p class="quote" data-a>You don't need to own a factory <span class="grad-text">to begin.</span></p>
-              <div class="card" data-a><span class="k">Open hardware</span><p>Publish the editable files, the BOM, assembly notes and firmware so others can study, repair and adapt.</p><div class="chips mt"><span class="chip c">CAD</span><span class="chip c">BOM</span><span class="chip c">firmware</span></div></div>
+            <div class="act-hex" data-a="pop">
+              <svg viewBox="0 0 220 250" aria-hidden="true">
+                <g class="spin" style="transform-box: view-box; transform-origin: 110px 125px"><polygon points="110,6 214,66 214,184 110,244 6,184 6,66" fill="none" stroke="url(#gHex)" stroke-width="3" stroke-dasharray="40 14" /></g>
+                <polygon points="110,30 193,78 193,172 110,220 27,172 27,78" fill="rgba(163,44,196,.14)" stroke="rgba(193,172,246,.3)" />
+                <text x="110" y="158">04</text>
+              </svg>
             </div>
           </div>
         </section>
 
-        <!-- ============================== ACT IV: MyriadFlow ============================== -->
+        <section class="slide" data-tone="p" data-title="Sotreus Edge: the build so far">
+          <p class="kicker">Case study · NetSepio · Sotreus Edge</p>
+          <h2>Sotreus Edge: the build so far</h2>
+          <div class="body">
+            <div class="split l-wide">
+              <div class="photos" data-a>
+                <figure class="ph big"><img src="./img/sotreus-connecting.jpg" alt="Sotreus Edge on a desk, its OLED reading Connecting…" /><figcaption>Booting: "Connecting…"</figcaption></figure>
+                <figure class="ph"><img src="./img/sotreus-inside.jpg" alt="The open enclosure: Heltec board, SMA antenna and battery leads in the black back shell" /><figcaption>Inside: board, antenna, battery leads</figcaption></figure>
+                <figure class="ph"><img src="./img/sotreus-lora-error.jpg" alt="The OLED showing a Wi-Fi scan of 7 networks at -74 dBm, and LoRa Error" /><figcaption>The most honest screen in the room</figcaption></figure>
+              </div>
+              <div class="stack">
+                <ul class="status" data-a>
+                  <li>3D printing of the enclosure</li>
+                  <li>Getting the IoT modules</li>
+                  <li class="wip">Testing the firmware … (loading)</li>
+                </ul>
+                <div class="card" data-a><span class="k">Dual mode</span><h3>Local sensing + short-range P2P</h3><p>Sense on the device; talk directly to nearby peers over short-range radio.</p></div>
+                <div class="card" data-a><span class="k">Inside, from the photos</span><p>Heltec ESP32 + LoRa board with OLED · SMA antenna on an IPEX pigtail · LiPo leads on a JST · white front, black back · USB-C</p></div>
+                <p class="note" data-a>Photos: @NetSepio on X, 25 Oct 2026.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide lab" data-model="sotreus" data-title="Sotreus Edge, taken apart in 3D">
+          <div class="lab-grid">
+            <header class="lab-head">
+              <div><p class="kicker">Case study · Teardown · interactive</p><h2>Sotreus Edge, taken apart</h2></div>
+              <span class="lab-tag">Modelled from the build photos · drag to orbit</span>
+            </header>
+            <aside class="lab-l">
+              <div class="pnl"><span class="pk">Parts</span><b class="big" data-hud="parts">15</b><span class="ps">two printed shells, one board, one radio path</span></div>
+              <div class="pnl"><span class="pk">Selected</span><b class="nm" data-hud="partName">Sotreus Edge · in progress</b><p data-hud="partInfo">Two-part printed enclosure · ESP32 + LoRa board with OLED · external antenna · battery leads</p></div>
+              <div class="pnl"><span class="pk">Build status</span><ul class="checks"><li>Enclosure printed</li><li>IoT modules in</li><li class="wip">Firmware … loading</li></ul></div>
+            </aside>
+            <div class="td-canvas" role="img" aria-label="Interactive 3D model of the Sotreus Edge device"></div>
+            <aside class="lab-r">
+              <div class="pnl"><span class="pk">Wi-Fi scan</span><b class="big">7</b><span class="ps">networks · RSSI <em data-hud="rssi">-74</em> dBm</span>
+                <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none" data-spark="rssi" aria-hidden="true"><polyline points="" /></svg>
+                <span class="ps">replayed from the bench photo</span></div>
+              <div class="pnl"><span class="pk">Mode</span><div class="seg2"><button data-mode="sense">Sense</button><button data-mode="p2p">P2P</button></div><p data-hud="modeNote">Local sensing: Wi-Fi scan + on-device logic</p></div>
+              <div class="pnl"><span class="pk">Bring-up log</span><ol class="loglist" data-log></ol></div>
+            </aside>
+            <nav class="lab-bar" aria-label="Teardown controls">
+              <button data-act="assemble">Assembled</button><button data-act="explode">Explode</button><span class="sep"></span>
+              <button data-focus="shell">Shell</button><button data-focus="board">Board</button><button data-focus="radio">Radio</button><button data-focus="power">Power</button><button data-focus="ui">Front panel</button><span class="sep"></span>
+              <button data-act="xray">X-ray</button><button data-act="tour">Tour</button>
+              <span class="drag">Watch the OLED: switch to P2P</span>
+            </nav>
+          </div>
+        </section>
+
+        <section class="slide" data-title="Sotreus Edge, through the seven stages">
+          <p class="kicker">Case study · the same flow, a real device</p>
+          <h2>Sotreus Edge, through the seven stages</h2>
+          <div class="body">
+            <div class="st7" data-a>
+              <div class="r"><span class="n">01</span><b>Imagine</b><p>An edge device that senses locally and talks to nearby peers.</p><span class="chip c">done</span></div>
+              <div class="r"><span class="n">02</span><b>Specify</b><p>Dual mode: local sensing + short-range P2P. USB-C on the bench, battery-ready.</p><span class="chip c">done</span></div>
+              <div class="r"><span class="n">03</span><b>Source</b><p>Off-the-shelf Heltec ESP32 + LoRa board with OLED, SMA antenna, LiPo. Nothing invented that could be bought.</p><span class="chip c">done</span></div>
+              <div class="r"><span class="n">04</span><b>Design</b><p>Two-part enclosure: OLED window, two buttons, status LEDs, grille, a path for the antenna.</p><span class="chip c">done</span></div>
+              <div class="r"><span class="n">05</span><b>Make</b><p>Printed in white and black; board, antenna and battery leads fitted.</p><span class="chip c">done</span></div>
+              <div class="r"><span class="n">06</span><b>Test</b><p>Wi-Fi scan works (7 networks, -74 dBm). LoRa says "Error" — which is exactly what testing is for.</p><span class="chip p">in progress</span></div>
+              <div class="r"><span class="n">07</span><b>Scale</b><p>Next: field units, then a pilot batch on a pre-certified radio path.</p><span class="chip">next</span></div>
+            </div>
+            <p class="take" data-a>Off-the-shelf modules, a printed shell and honest logs: <em>the whole flow, on one desk.</em></p>
+          </div>
+        </section>
 
         <section class="slide act grid-bg" data-title="Act IV · Many ideas. One flow.">
           <div class="body">
@@ -1050,7 +926,7 @@ cq.exporters.export(shell, <span class="cs">"focus_shell.step"</span>)</pre>
               <svg viewBox="0 0 220 250" aria-hidden="true">
                 <g class="spin" style="transform-box: view-box; transform-origin: 110px 125px"><polygon points="110,6 214,66 214,184 110,244 6,184 6,66" fill="none" stroke="url(#gHex)" stroke-width="3" stroke-dasharray="40 14" /></g>
                 <polygon points="110,30 193,78 193,172 110,220 27,172 27,78" fill="rgba(163,44,196,.14)" stroke="rgba(193,172,246,.3)" />
-                <text x="110" y="158">04</text>
+                <text x="110" y="158">05</text>
               </svg>
             </div>
           </div>
@@ -1103,7 +979,489 @@ cq.exporters.export(shell, <span class="cs">"focus_shell.step"</span>)</pre>
           </div>
         </section>
 
-        <section class="slide" data-title="Build momentum around the proof">
+        <section class="slide" data-tone="c" data-title="Your first build, in four sessions">
+          <p class="kicker">Start here</p>
+          <h2>Your first build, in four sessions</h2>
+          <div class="body">
+            <div class="g g4">
+              <div class="card" data-a><h3 class="big3 grad-text">01</h3><span class="k">Brief &amp; BOM</span><p>Write the brief with an agent. Draft the BOM. Order parts.</p></div>
+              <div class="card" data-a><h3 class="big3 grad-text">02</h3><span class="k">Firmware</span><p>PlatformIO: blink, then button, then three modes.</p></div>
+              <div class="card" data-a><h3 class="big3 grad-text">03</h3><span class="k">Enclosure</span><p>A parametric shell. Print it at a makerspace.</p></div>
+              <div class="card" data-a><h3 class="big3 grad-text">04</h3><span class="k">Test</span><p>Assemble. Five people. Write down what broke.</p></div>
+            </div>
+            <div data-a><span class="k">Starter kit</span><div class="chips"><span class="chip">ESP32-C3 dev board</span><span class="chip">Push-button</span><span class="chip">Addressable LED ring</span><span class="chip">USB-C cable</span><span class="chip">Jumper wires</span></div></div>
+            <p class="take" data-a>Prove the passive version first, <em>if you can.</em></p>
+          </div>
+        </section>
+
+        <section class="slide grid-bg closing" data-title="What will you make?">
+          <div class="body center-all">
+            <img class="close-mark" src="/brand/mf-mark.png" alt="" width="120" height="135" data-a="pop" />
+            <h2 class="mega close-word" data-a>MYRIADFLOW</h2>
+            <p class="take" data-a>Many ideas. One flow.</p>
+            <p class="lede" data-a>From imagination to prototypes to products.</p>
+            <p class="prompt big-prompt" data-a><span class="pm">›</span><span><span data-type="ideas">a palm-sized desk object that shows my focus mode</span><i class="caret"></i></span></p>
+            <h3 class="ask grad-text" data-a>What will you make?</h3>
+            <div class="chips center-chips" data-a>
+              <a class="chip solid" href="https://discord.gg/38jktRtuY7" target="_blank" rel="noopener">Join the private beta on Discord</a>
+              <a class="chip c" href="https://myriadflow.com">myriadflow.com</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================== APPENDIX ============================== -->
+
+        <section class="slide act grid-bg" data-appendix data-title="Appendix · deep dives and reference">
+          <div class="body">
+            <div class="stack">
+              <p class="kicker" data-a>Appendix</p>
+              <h2 class="act-h" data-a>Deep dives <span class="grad-text">&amp; reference</span></h2>
+              <p class="lede" data-a>The deeper cuts: prompting, BOMs, sourcing, choosing a brain, firmware tooling, design detail, testing, scaling, PCBs and the launchpad.</p>
+            </div>
+            <div class="act-hex" data-a="pop">
+              <svg viewBox="0 0 220 250" aria-hidden="true">
+                <g class="spin" style="transform-box: view-box; transform-origin: 110px 125px"><polygon points="110,6 214,66 214,184 110,244 6,184 6,66" fill="none" stroke="url(#gHex)" stroke-width="3" stroke-dasharray="40 14" /></g>
+                <polygon points="110,30 193,78 193,172 110,220 27,172 27,78" fill="rgba(163,44,196,.14)" stroke="rgba(193,172,246,.3)" />
+                <text x="110" y="158">A</text>
+              </svg>
+            </div>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-title="Prompt for a process, not an object">
+          <p class="kicker">Stage 1 · ADLC</p>
+          <h2>Prompt for a process, not an object</h2>
+          <div class="body">
+            <div class="split">
+              <div class="code prompt-card" data-a><div class="win-bar"><i></i><i></i><i></i></div><span class="cp">prompt</span>
+<span class="cn">›</span> Act as a product-design collaborator. Turn this
+  idea into a minimal product requirements document,
+  list unknowns, propose three physical
+  implementation paths, and define measurable
+  prototype tests. Prioritize a non-connected version
+  first. Do not invent part specifications; flag
+  every assumption.</div>
+              <div class="stack">
+                <div class="card" data-a><span class="k">Requirement</span><h3>Comfortably operable with one hand.</h3></div>
+                <div class="card hl-c" data-a><span class="k">Acceptance test</span><h3>Five people find all three modes without instructions.</h3></div>
+                <div data-a>
+                  <span class="k">Artifacts that survive a new chat</span>
+                  <div class="chips"><span class="chip">Brief</span><span class="chip">Acceptance criteria</span><span class="chip">Versioned CAD + code</span><span class="chip">Test log</span><span class="chip">Decision record</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-title="Three paths, one design language">
+          <p class="kicker">Stage 1 · Choosing a path</p>
+          <h2>Three paths, one design language</h2>
+          <div class="body">
+            <div class="g g3">
+              <div class="card" data-a><span class="k">01</span><h3>Mechanical</h3><ul class="ticks plus"><li>Printed shell</li><li>Rotating dial</li><li>Magnet detents</li><li>Grip feet</li></ul></div>
+              <div class="card hl-c" data-a><span class="k">02</span><h3>Electronic</h3><ul class="ticks plus"><li>Shell &amp; dial</li><li>Push-button</li><li>LED ring</li><li>Controller board</li><li>USB-C power</li></ul></div>
+              <div class="card" data-a><span class="k">03</span><h3>Connected</h3><ul class="ticks plus"><li>Everything in 02</li><li>Wi-Fi / Bluetooth</li><li>Pairing &amp; updates</li><li>Security &amp; privacy</li></ul></div>
+            </div>
+            <p class="take" data-a>Choose the simplest version that <em>proves the design insight.</em></p>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-title="Your idea becomes a BOM">
+          <p class="kicker">Stage 2 · BOM — Bill of Materials</p>
+          <h2>Your idea becomes a BOM</h2>
+          <div class="body">
+            <p class="lede" data-a>Every part, in a format someone else can actually buy and assemble.</p>
+            <div class="tw" data-a>
+              <table class="t">
+                <thead><tr><th>What?</th><th>How many?</th><th>Which exact part?</th><th>From where?</th><th>At what cost?</th></tr></thead>
+                <tbody>
+                  <tr><td>LED ring</td><td>1</td><td>Manufacturer part no.</td><td>Distributor + datasheet</td><td>Price, checked today</td></tr>
+                  <tr><td>Printed shell</td><td>1</td><td>Print file v3 · STEP</td><td>Local print service</td><td>Quote, checked today</td></tr>
+                  <tr><td>M2 screws</td><td>4</td><td>Size, length, head</td><td>Hardware supplier</td><td>Unit cost + spares</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note" data-a>Mechanical parts count too: shell, dial, diffuser, feet, screws, packaging.</p>
+            <div class="callout" data-a><svg class="ic-svg"><use href="#i-shield" /></svg>An agent can draft the BOM. <b>A human verifies every critical part.</b></div>
+          </div>
+        </section>
+
+        <section data-appendix class="slide light" data-title="An illustrative BOM slice">
+          <p class="kicker">Stage 2 · BOM</p>
+          <h2>An illustrative BOM slice</h2>
+          <div class="body">
+            <div class="tw" data-a>
+              <table class="t">
+                <thead><tr><th>Component</th><th>Passive</th><th>Electronic</th><th>What to verify</th></tr></thead>
+                <tbody>
+                  <tr><td>Printed shell and rotary dial</td><td>Yes</td><td>Adapted</td><td>Dimensions, tolerances, finish</td></tr>
+                  <tr><td>Colour / icon insert</td><td>Yes</td><td>Optional</td><td>Legibility, adhesion, alignment</td></tr>
+                  <tr><td>Non-slip feet / flexible grip</td><td>Yes</td><td>Yes</td><td>Material, fit, wear</td></tr>
+                  <tr><td>Microcontroller dev board</td><td>No</td><td>Yes</td><td>Exact board size, voltage, pins, USB</td></tr>
+                  <tr><td>LED module or ring</td><td>No</td><td>Yes</td><td>Supply, current draw, signal level, size</td></tr>
+                  <tr><td>Button, wiring, fasteners</td><td>Optional</td><td>Yes</td><td>Physical fit, connector type, assembly</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note" data-a>Illustrative design targets, not a shopping list. Verify every line before you buy.</p>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-tone="p" data-title="Intermission: it's just a tiny desk object">
+          <p class="kicker">Intermission · scope creep, a love story</p>
+          <h2>"It's just a tiny desk object"</h2>
+          <div class="body">
+            <div class="meme two">
+              <div class="panel" data-a>
+                <span class="who">Me, on Monday</span>
+                <p class="cap big-cap">It's just a tiny desk object.</p>
+                <div class="obj small-obj"><svg viewBox="0 0 320 240" class="mat-dark" aria-hidden="true"><use href="#hexobj" /><g class="cycle"><g class="led" style="--c: #30d8ff"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g><g class="led" style="--c: #f3f1fa"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g><g class="led" style="--c: #f45ec1"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g></g></svg></div>
+              </div>
+              <div class="panel" data-a>
+                <span class="who">The BOM, on Friday</span>
+                <div class="bom-scroll">
+                  <ol>
+                    <li><b>Printed shell</b><span>×1</span></li>
+                    <li><b>Rotary dial</b><span>×1</span></li>
+                    <li><b>Diffuser</b><span>×1</span></li>
+                    <li><b>Colour inserts</b><span>×3</span></li>
+                    <li><b>Magnets for detents</b><span>×3</span></li>
+                    <li><b>Non-slip feet</b><span>×4</span></li>
+                    <li><b>ESP32-C3 dev board</b><span>×1</span></li>
+                    <li><b>Addressable LED ring</b><span>×1</span></li>
+                    <li><b>Push-button</b><span>×1</span></li>
+                    <li><b>Jumper wires</b><span>×8</span></li>
+                    <li><b>USB-C cable</b><span>×1</span></li>
+                    <li><b>Heat-set inserts</b><span>×4</span></li>
+                    <li><b>M2 screws</b><span>×4 (+20 — the floor eats them)</span></li>
+                    <li><b>Spare dev board</b><span>×1 (you will need it)</span></li>
+                    <li><b>Packaging</b><span>×1</span></li>
+                    <li><b>Instructions card</b><span>×1</span></li>
+                    <li><b>Patience</b><span>×∞</span></li>
+                  </ol>
+                </div>
+                <span class="stamp">Scope: crept</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-tone="c" data-title="Don't invent what you can source">
+          <p class="kicker">Stage 3 · Sourcing</p>
+          <h2>Don't invent what you can source</h2>
+          <div class="body">
+            <p class="lede" data-a>COTS = Commercial Off-The-Shelf. Build around what exists.</p>
+            <div class="flow" data-a>
+              <div class="st"><span class="n">01</span><b>Search</b><span>datasheets, not marketing pages</span></div>
+              <div class="st"><span class="n">02</span><b>Compare</b><span>size, power, pins, libraries</span></div>
+              <div class="st"><span class="n">03</span><b>Verify</b><span>stock and price, today</span></div>
+              <div class="st"><span class="n">04</span><b>Substitute</b><span>list approved alternates</span></div>
+              <div class="st"><span class="n">05</span><b>Order</b><span>plus a few spares</span></div>
+            </div>
+            <div class="split">
+              <div data-a>
+                <span class="k">Where to look</span>
+                <div class="chips"><span class="chip">DigiKey</span><span class="chip">Mouser</span><span class="chip">LCSC</span><span class="chip">Octopart</span><span class="chip">Your fab's parts library</span></div>
+                <p class="note" style="margin-top: 0.8em">"Ultra-low power*" &nbsp;<span class="hl p">*while switched off.</span> Read the datasheet.</p>
+              </div>
+              <div class="card hl-c" data-a><h3>The first real-world surprise usually comes from sourcing, not coding.</h3></div>
+            </div>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-title="Microcontroller or single-board computer?">
+          <p class="kicker">Choosing the brain</p>
+          <h2>Microcontroller or single-board computer?</h2>
+          <div class="body">
+            <div class="g g2">
+              <div class="card" data-a>
+                <span class="k">Microcontroller · MCU</span>
+                <h3>Runs one program, forever.</h3>
+                <ul class="ticks c"><li>Starts in milliseconds</li><li>Sips power — battery-friendly</li><li>Precise, real-time input and output</li><li>No operating system to update</li></ul>
+                <div class="chips mt"><span class="chip">Arduino</span><span class="chip">ESP32</span><span class="chip">Raspberry Pi Pico</span></div>
+              </div>
+              <div class="card" data-a>
+                <span class="k">Single-board computer · SBC</span>
+                <h3>Runs an operating system.</h3>
+                <ul class="ticks p"><li>Linux, Python, cameras, screens</li><li>Room for local AI models</li><li>Boots in seconds; needs a clean shutdown</li><li>More power, more heat</li></ul>
+                <div class="chips mt"><span class="chip">Raspberry Pi 5</span><span class="chip">Raspberry Pi Zero 2 W</span></div>
+              </div>
+            </div>
+            <p class="take" data-a>A microcontroller is a light switch with a brain. <em class="p">A single-board computer is a tiny laptop without a screen.</em></p>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-tone="c" data-title="Meet the brains">
+          <p class="kicker">Choosing the brain · the usual suspects</p>
+          <h2>Meet the brains</h2>
+          <div class="body">
+            <div class="g g3">
+              <div class="card" data-a>
+                <span class="k">Arduino · where most makers start</span>
+                <h3>A board, an IDE and a framework</h3>
+                <p>The framework is the quiet superpower: the same sketch style runs on ESP32 and Pico too.</p>
+                <div class="g g2 mt stats">
+                  <div class="stat"><b>2 KB</b><span>RAM · Uno R3, 16 MHz</span></div>
+                  <div class="stat"><b>32 KB</b><span>RAM · Uno R4, 48 MHz</span></div>
+                </div>
+                <p class="mt">Watch out: classic boards use 5 V logic; no wireless on basic boards.</p>
+              </div>
+              <div class="card hl-c" data-a>
+                <span class="k">ESP32 · Wi-Fi + Bluetooth on a chip</span>
+                <h3>Pick the radio, then the chip</h3>
+                <ul class="fam">
+                  <li><b>C3</b><span>RISC-V 160 MHz · Wi-Fi 4 + BLE 5 · low cost</span><em>our pick</em></li>
+                  <li><b>S3</b><span>2×240 MHz · native USB · on-device AI</span></li>
+                  <li><b>C6</b><span>Wi-Fi 6 + Thread / Zigbee / Matter</span></li>
+                  <li><b>H2</b><span>BLE + 802.15.4 · no Wi-Fi</span></li>
+                </ul>
+              </div>
+              <div class="card" data-a>
+                <span class="k">Raspberry Pi · one name, two species</span>
+                <h3>Pi 5 / Zero 2 W</h3>
+                <p>A Linux computer: cameras, displays, local AI, home hubs. Needs a solid 5 V supply.</p>
+                <h3 class="mt">Pico / Pico 2</h3>
+                <p>A microcontroller: RP2040 / RP2350, no OS. Pico W adds Wi-Fi.</p>
+                <p class="mt hl p">The Pico is not a Pi. Check which one a tutorial means.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section data-appendix class="slide light" data-title="Four brains, side by side">
+          <p class="kicker">Choosing the brain</p>
+          <h2>Four brains, side by side</h2>
+          <div class="body">
+            <div class="tw" data-a>
+              <table class="t">
+                <thead><tr><th></th><th>Arduino Uno R4</th><th>ESP32-C3</th><th>Pi Pico 2 W</th><th>Raspberry Pi 5</th></tr></thead>
+                <tbody>
+                  <tr><td>Kind</td><td>Microcontroller</td><td>Microcontroller</td><td>Microcontroller</td><td>Linux computer</td></tr>
+                  <tr><td>Wireless</td><td>None (WiFi model: yes)</td><td>Wi-Fi + BLE</td><td>Wi-Fi + Bluetooth</td><td>Wi-Fi + Bluetooth</td></tr>
+                  <tr><td>Starts up</td><td>Instantly</td><td>Instantly</td><td>Instantly</td><td>In seconds</td></tr>
+                  <tr><td>Power</td><td>Low</td><td>Low · deep sleep</td><td>Low</td><td>Watts, needs cooling</td></tr>
+                  <tr><td>Program in</td><td>Arduino C++</td><td>Arduino · IDF · ESPHome</td><td>C SDK · MicroPython</td><td>Python · Node · Linux</td></tr>
+                  <tr><td>Best for</td><td>Learning, simple I/O</td><td class="pick">Connected objects</td><td>Cheap, precise I/O</td><td>Vision, UI, local AI</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note" data-a>Specs vary by board variant. Check the exact board you buy.</p>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-title="Which brain? Start from the behavior">
+          <p class="kicker">Choosing the brain</p>
+          <h2>Which brain? Start from the behavior</h2>
+          <div class="body">
+            <div class="tree" data-a>
+              <div class="row"><p class="q">Does it need any behavior at all?</p><span class="yn">NO →</span><p class="a">Stay passive: shell, dial, magnets</p></div>
+              <p class="down">↓ yes</p>
+              <div class="row"><p class="q">Does it need an OS, a camera or a rich screen?</p><span class="yn">YES →</span><p class="a">Raspberry Pi 5 / Zero 2 W</p></div>
+              <p class="down">↓ no</p>
+              <div class="row"><p class="q">Does it need wireless or long battery life?</p><span class="yn">YES →</span><p class="a">ESP32 (C3, S3, C6) or Pico 2 W</p></div>
+              <p class="down">↓ no</p>
+              <div class="row"><p class="q">Otherwise</p><span class="yn">→</span><p class="a">Arduino or Raspberry Pi Pico</p></div>
+            </div>
+            <p class="take" data-a><span class="chip solid">Focus object</span>&nbsp; ESP32-C3: <em>offline today, wireless-ready tomorrow.</em></p>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-title="Firmware, when the object needs behavior">
+          <p class="kicker">Stage 4 · Firmware</p>
+          <h2>Firmware, when the object needs behavior</h2>
+          <div class="body">
+            <div class="split">
+              <div class="stack">
+                <div class="io" data-a><span class="k">Input</span><p>Press button</p></div>
+                <div class="io" data-a><span class="k">Decision</span><p>Change mode</p></div>
+                <div class="io" data-a><span class="k">Output</span><p>Update light</p></div>
+                <p class="take" data-a><em>Keep it local first.</em></p>
+                <p class="mono-line" data-a>button → state machine → LED</p>
+              </div>
+              <div class="dia" data-a="pop">
+                <svg viewBox="0 0 420 330" role="img" aria-label="State machine: Focus to Break on press, Break to Do not disturb on long press, back to Focus on press">
+                  <g class="sm-node"><polygon points="210,26 248,48 248,92 210,114 172,92 172,48" /><polygon class="glow" points="210,26 248,48 248,92 210,114 172,92 172,48" fill="#30d8ff" /></g>
+                  <g class="sm-node"><polygon points="345,206 383,228 383,272 345,294 307,272 307,228" /><polygon class="glow" points="345,206 383,228 383,272 345,294 307,272 307,228" fill="#f3f1fa" /></g>
+                  <g class="sm-node"><polygon points="75,206 113,228 113,272 75,294 37,272 37,228" /><polygon class="glow" points="75,206 113,228 113,272 75,294 37,272 37,228" fill="#f45ec1" /></g>
+                  <path class="sm-arrow" d="M254 78 Q 330 118 342 196" marker-end="url(#arrow)" />
+                  <path class="sm-arrow" d="M300 284 Q 210 318 122 284" marker-end="url(#arrow)" />
+                  <path class="sm-arrow" d="M76 196 Q 88 118 166 78" marker-end="url(#arrow)" />
+                  <text x="210" y="138" text-anchor="middle" class="lbl" font-size="16">Focus</text>
+                  <text x="345" y="320" text-anchor="middle" class="lbl" font-size="16">Break</text>
+                  <text x="75" y="320" text-anchor="middle" class="lbl" font-size="16">Do not disturb</text>
+                  <text x="318" y="128" font-size="12">press</text>
+                  <text x="210" y="292" text-anchor="middle" font-size="12">long-press</text>
+                  <text x="66" y="128" font-size="12">press</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-title="From code to chip">
+          <p class="kicker">Stage 4 · Firmware</p>
+          <h2>From code to chip</h2>
+          <div class="body">
+            <div class="flow" data-a>
+              <div class="st"><span class="n">01</span><b>Write</b><span>code + config</span></div>
+              <div class="st"><span class="n">02</span><b>Build</b><span>compile for the chip</span></div>
+              <div class="st"><span class="n">03</span><b>Flash</b><span>upload over USB</span></div>
+              <div class="st"><span class="n">04</span><b>Monitor</b><span>read serial logs</span></div>
+              <div class="st"><span class="n">05</span><b>Iterate</b><span>change, repeat</span></div>
+            </div>
+            <span class="k" data-a>Ways in</span>
+            <div class="g g5" data-a>
+              <div class="card"><h3>Arduino IDE</h3><p>Friendliest first step</p></div>
+              <div class="card hl-c"><h3>PlatformIO</h3><p>Reproducible, CLI-first</p></div>
+              <div class="card"><h3>ESP-IDF</h3><p>Espressif's native framework</p></div>
+              <div class="card"><h3>ESPHome</h3><p>YAML config → firmware</p></div>
+              <div class="card"><h3>MicroPython</h3><p>Python on the chip, no compile step</p></div>
+            </div>
+            <p class="take" data-a>Start in the Arduino IDE. <em>Switch to PlatformIO when an agent joins.</em></p>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-title="From brief to design decisions">
+          <p class="kicker">Stage 5 · Design · decisions</p>
+          <h2>From brief to design decisions</h2>
+          <div class="body">
+            <p class="lede" data-a>Every requirement earns a design decision — and a test that can prove it wrong.</p>
+            <div class="tw" data-a>
+              <table class="t">
+                <thead><tr><th>Requirement</th><th>Design decision</th><th>How we'll know</th></tr></thead>
+                <tbody>
+                  <tr><td>Operable with one hand</td><td>72 mm hex footprint, 28 mm tall, 4 mm top fillet</td><td>Five people, one hand, no instructions</td></tr>
+                  <tr><td>Mode readable at a glance</td><td>Light ring under a diffuser; colour = mode</td><td>Read from 2 m in daylight</td></tr>
+                  <tr><td>Never slides on the desk</td><td>TPU feet, low centre of mass</td><td>Push test on wood and glass</td></tr>
+                  <tr><td>Feels deliberate to turn</td><td>Magnet detents at three positions</td><td>Eyes closed: count the clicks</td></tr>
+                  <tr><td>Easy to open and repair</td><td>M2 screws into heat-set inserts, no glue</td><td>Open and close it ten times</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note" data-a>Illustrative targets for the focus object — the prototype gets the final say.</p>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-tone="c" data-title="Design the feel, not just the look">
+          <p class="kicker">Stage 5 · Design · form language</p>
+          <h2>Design the feel, not just the look</h2>
+          <div class="body">
+            <div class="split r-wide">
+              <div class="obj float" data-a="pop"><svg viewBox="0 0 320 240" class="mat-dark" aria-hidden="true"><ellipse cx="160" cy="205" rx="130" ry="22" fill="url(#floorglow)" /><use href="#hexobj" /><g class="cycle"><g class="led" style="--c: #30d8ff"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g><g class="led" style="--c: #f3f1fa"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g><g class="led" style="--c: #f45ec1"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g></g></svg></div>
+              <div class="g g2">
+                <div class="card" data-a><span class="k">Shape</span><h3>Hexagon</h3><p>Stable, stackable, easy to grip — and it reads as an object, not a gadget.</p></div>
+                <div class="card" data-a><span class="k">Proportion</span><h3>Palm-sized</h3><p>Wide and low so it can't tip; the dial sits where a thumb lands.</p></div>
+                <div class="card hl-c" data-a><span class="k">Light</span><h3>Light is the interface</h3><p>Colour means mode. A diffuser hides the LED dots so it glows, never glares.</p></div>
+                <div class="card" data-a><span class="k">Touch</span><h3>Feedback you can feel</h3><p>Detents confirm a turn without looking. Soft feet stop the slide.</p></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-title="Designed from the inside out">
+          <p class="kicker">Stage 5 · Inside out</p>
+          <h2>Designed from the inside out</h2>
+          <div class="body">
+            <div class="split l-wide">
+              <div class="dia xp" data-a="pop">
+                <svg viewBox="0 0 620 450" role="img" aria-label="Exploded view: diffuser lid, light ring, circuit board, shell and feet">
+                  <line class="lead" x1="310" y1="20" x2="310" y2="430" />
+                  <polygon class="lay" points="420,70 365,117.6 255,117.6 200,70 255,22.4 365,22.4" fill="rgba(193,172,246,.18)" stroke="#c1acf6" stroke-width="1.5" />
+                  <g class="lay"><ellipse cx="310" cy="160" rx="64" ry="32" fill="none" stroke="#30d8ff" stroke-width="12" opacity=".8" filter="url(#ledglow)" /><ellipse cx="310" cy="160" rx="64" ry="32" fill="none" stroke="#30d8ff" stroke-width="5" /></g>
+                  <g class="lay"><polygon points="380,232 310,262 240,232 310,202" fill="#10261f" stroke="#5ef2b0" stroke-opacity=".6" /><polygon points="330,232 310,241 290,232 310,223" fill="#221c3c" stroke="#c1acf6" stroke-opacity=".6" /></g>
+                  <g class="lay"><polygon points="420,312 365,359.6 365,403.6 420,356" fill="#110e22" /><polygon points="365,359.6 255,359.6 255,403.6 365,403.6" fill="#17132d" /><polygon points="255,359.6 200,312 200,356 255,403.6" fill="#1f1a38" /><polygon points="420,312 365,359.6 255,359.6 200,312 255,264.4 365,264.4" fill="#0b0918" stroke="#9a8ae0" stroke-width="1.5" /></g>
+                  <g class="lay"><ellipse cx="240" cy="424" rx="14" ry="5" fill="#f45ec1" /><ellipse cx="380" cy="424" rx="14" ry="5" fill="#f45ec1" /><ellipse cx="310" cy="438" rx="14" ry="5" fill="#f45ec1" /></g>
+                  <line class="lead" x1="150" y1="70" x2="200" y2="70" /><text x="10" y="75">Hand feel</text>
+                  <line class="lead" x1="420" y1="70" x2="470" y2="70" /><text x="478" y="75">Diffuser</text>
+                  <line class="lead" x1="150" y1="232" x2="240" y2="232" /><text x="10" y="237">Button travel</text>
+                  <line class="lead" x1="380" y1="232" x2="470" y2="232" /><text x="478" y="230">Connector</text><text x="478" y="246">clearance</text>
+                  <line class="lead" x1="420" y1="340" x2="470" y2="340" /><text x="478" y="345">Fastening</text>
+                  <line class="lead" x1="150" y1="380" x2="200" y2="380" /><text x="10" y="385">Serviceability</text>
+                </svg>
+              </div>
+              <div class="stack">
+                <p class="quote small-q" data-a>Fit. Feel. <span class="grad-text">Assembly. Repair.</span></p>
+                <p class="take" data-a>The interior is part of the user experience.</p>
+                <ul class="ticks c" data-a>
+                  <li>Leave room for wires, connectors, screws and air gaps</li>
+                  <li>Design for real tolerances, not perfect ones</li>
+                  <li>Prefer screws to glue</li>
+                </ul>
+                <p class="note" data-a>Glue is a one-way door. Future you would like a screwdriver.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-title="The print is the beginning of the truth">
+          <p class="kicker">Testing</p>
+          <h2>The print is the beginning of the truth</h2>
+          <div class="body">
+            <p class="lede" data-a>Does it fit? Does it work? Does it delight?</p>
+            <div class="g g4">
+              <div class="card" data-a><h3 class="big3 grad-text">Form</h3><p>Does it look and feel right?</p></div>
+              <div class="card" data-a><h3 class="big3 grad-text">Fit</h3><p>Do the real parts assemble?</p></div>
+              <div class="card" data-a><h3 class="big3 grad-text">Function</h3><p>Does it reliably do what it claims?</p></div>
+              <div class="card" data-a><h3 class="big3 grad-text">UX</h3><p>Do people get it without explanation?</p></div>
+            </div>
+            <div class="split">
+              <div class="flow slim" data-a><div class="st"><b>Prototype</b></div><div class="st"><b>Observe</b></div><div class="st on"><b>Revise</b></div><span class="loop-back">↺</span></div>
+              <p class="take" data-a>One honest prototype beats <em>a hundred perfect renders.</em></p>
+            </div>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-title="From one prototype to many products">
+          <p class="kicker">Scaling</p>
+          <h2>From one prototype to many products</h2>
+          <div class="body">
+            <div class="g g4">
+              <div class="card" data-a><span class="k">01</span><h3>Prototype</h3><p>3D-printed, hand-assembled</p></div>
+              <div class="card" data-a><span class="k">02</span><h3>Pilot batch</h3><p>Validate demand, assembly time, failures</p></div>
+              <div class="card" data-a><span class="k">03</span><h3>Design for manufacture</h3><p>Draft angles, walls, custom PCB</p></div>
+              <div class="card" data-a><span class="k">04</span><h3>Production + quality</h3><p>Tooling, QA, packaging, support</p></div>
+            </div>
+            <div data-a>
+              <span class="k">Real unit cost =</span>
+              <div class="chips"><span class="chip">parts</span><span class="chip">+ print or tooling</span><span class="chip">+ assembly</span><span class="chip">+ defects</span><span class="chip">+ testing</span><span class="chip">+ packaging</span><span class="chip">+ freight</span><span class="chip">+ support</span></div>
+            </div>
+            <p class="take" data-a>The manufacturing method <em>changes with the scale.</em></p>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-tone="c" data-title="From dev board to custom PCB">
+          <p class="kicker">Scaling · Electronics</p>
+          <h2>From dev board to custom PCB</h2>
+          <div class="body">
+            <div class="flow" data-a>
+              <div class="st"><span class="n">01</span><b>Breadboard</b><span>prove the circuit</span></div>
+              <div class="st"><span class="n">02</span><b>Dev board in a shell</b><span>prove the product</span></div>
+              <div class="st"><span class="n">03</span><b>Custom PCB</b><span>smaller, sturdier</span></div>
+              <div class="st"><span class="n">04</span><b>Assembled PCB</b><span>made by a PCBA service</span></div>
+            </div>
+            <div class="split">
+              <div data-a><span class="k">Handoff files (KiCad exports these)</span><div class="chips"><span class="chip">Schematic</span><span class="chip">PCB layout</span><span class="chip">Gerbers</span><span class="chip">BOM</span><span class="chip">Pick-and-place (CPL)</span><span class="chip">Assembly drawing</span></div></div>
+              <div data-a><span class="k">When to make the move</span><ul class="ticks c"><li>Size or shape demands it</li><li>Unit cost matters at volume</li><li>Hand wiring keeps failing</li></ul></div>
+            </div>
+            <div class="callout" data-a><svg class="ic-svg"><use href="#i-radio" /></svg>Design around a pre-certified radio module, not a bare chip. <b>It simplifies certification; it doesn't remove it.</b></div>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-tone="c" data-title="The creative stack is open to more people">
+          <p class="kicker">The bigger picture</p>
+          <h2>The creative stack is open to more people</h2>
+          <div class="body">
+            <div class="flow" data-a>
+              <div class="st"><b>An idea</b></div><div class="st"><b>An agent</b></div><div class="st"><b>A parts list</b></div><div class="st"><b>A model</b></div><div class="st on"><b>A local maker</b></div>
+            </div>
+            <div class="split">
+              <p class="quote" data-a>You don't need to own a factory <span class="grad-text">to begin.</span></p>
+              <div class="card" data-a><span class="k">Open hardware</span><p>Publish the editable files, the BOM, assembly notes and firmware so others can study, repair and adapt.</p><div class="chips mt"><span class="chip c">CAD</span><span class="chip c">BOM</span><span class="chip c">firmware</span></div></div>
+            </div>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-title="Build momentum around the proof">
           <p class="kicker">The launchpad</p>
           <h2>Build momentum around the proof</h2>
           <div class="body">
@@ -1123,22 +1481,7 @@ cq.exporters.export(shell, <span class="cs">"focus_shell.step"</span>)</pre>
           </div>
         </section>
 
-        <section class="slide" data-tone="c" data-title="Your first build, in four sessions">
-          <p class="kicker">Start here</p>
-          <h2>Your first build, in four sessions</h2>
-          <div class="body">
-            <div class="g g4">
-              <div class="card" data-a><h3 class="big3 grad-text">01</h3><span class="k">Brief &amp; BOM</span><p>Write the brief with an agent. Draft the BOM. Order parts.</p></div>
-              <div class="card" data-a><h3 class="big3 grad-text">02</h3><span class="k">Firmware</span><p>PlatformIO: blink, then button, then three modes.</p></div>
-              <div class="card" data-a><h3 class="big3 grad-text">03</h3><span class="k">Enclosure</span><p>A parametric shell. Print it at a makerspace.</p></div>
-              <div class="card" data-a><h3 class="big3 grad-text">04</h3><span class="k">Test</span><p>Assemble. Five people. Write down what broke.</p></div>
-            </div>
-            <div data-a><span class="k">Starter kit</span><div class="chips"><span class="chip">ESP32-C3 dev board</span><span class="chip">Push-button</span><span class="chip">Addressable LED ring</span><span class="chip">USB-C cable</span><span class="chip">Jumper wires</span></div></div>
-            <p class="take" data-a>Prove the passive version first, <em>if you can.</em></p>
-          </div>
-        </section>
-
-        <section class="slide" data-tone="p" data-title="How it started vs how it's going">
+        <section data-appendix class="slide" data-tone="p" data-title="How it started vs how it's going">
           <p class="kicker">Intermission · one last one</p>
           <h2>How it started vs how it's going</h2>
           <div class="body">
@@ -1153,21 +1496,6 @@ cq.exporters.export(shell, <span class="cs">"focus_shell.step"</span>)</pre>
                 <div class="obj small-obj"><svg viewBox="0 0 320 240" class="mat-dark" aria-hidden="true"><ellipse cx="160" cy="205" rx="130" ry="22" fill="url(#floorglow)" /><use href="#hexobj" /><g class="cycle"><g class="led" style="--c: #30d8ff"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g><g class="led" style="--c: #f3f1fa"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g><g class="led" style="--c: #f45ec1"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g></g></svg></div>
                 <div class="chips"><span class="chip c">PrintReport #12 ✓</span><span class="chip">v4 lid</span><span class="chip">pilot run, coming up</span></div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="slide grid-bg closing" data-title="What will you make?">
-          <div class="body center-all">
-            <img class="close-mark" src="/brand/mf-mark.png" alt="" width="120" height="135" data-a="pop" />
-            <h2 class="mega close-word" data-a>MYRIADFLOW</h2>
-            <p class="take" data-a>Many ideas. One flow.</p>
-            <p class="lede" data-a>From imagination to prototypes to products.</p>
-            <p class="prompt big-prompt" data-a><span class="pm">›</span><span><span data-type="ideas">a palm-sized desk object that shows my focus mode</span><i class="caret"></i></span></p>
-            <h3 class="ask grad-text" data-a>What will you make?</h3>
-            <div class="chips center-chips" data-a>
-              <a class="chip solid" href="https://discord.gg/38jktRtuY7" target="_blank" rel="noopener">Join the private beta on Discord</a>
-              <a class="chip c" href="https://myriadflow.com">myriadflow.com</a>
             </div>
           </div>
         </section>
@@ -1190,5 +1518,6 @@ cq.exporters.export(shell, <span class="cs">"focus_shell.step"</span>)</pre>
     </div>
 
     <script type="module" src="./deck.js"></script>
+    <script type="module" src="./teardown.js"></script>
   </body>
 </html>
