@@ -2867,3 +2867,11 @@ code {
 .rules li b {
   color: var(--text);
 }
+
+.rules6 .card {
+  padding: 0.8em 1em;
+}
+
+.rules6 h3 {
+  font-size: 0.95em;
+}

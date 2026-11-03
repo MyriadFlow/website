@@ -290,81 +290,6 @@
           </div>
         </section>
 
-        <section class="slide" data-tone="c" data-title="What the agent actually hands you">
-          <p class="kicker">Stage 1 · ADLC in practice</p>
-          <h2>What the agent actually hands you</h2>
-          <div class="body">
-            <div class="chain">
-              <div class="art" data-a><span class="fn">brief.md</span><pre class="code"><span class="cp"># Focus object · brief v2</span>
-<span class="cp">user:</span>  desk worker, one hand free
-<span class="cp">job:</span>   show focus / break / DND
-       to the room
-<span class="cp">must:</span>  readable at 2 m · no app
-       USB-C power
-<span class="cp">won't:</span> batteries, cloud, screen
-<span class="cp">open:</span>  dial or button?</pre><span class="why">Who, what, must, won't — and the open questions</span></div>
-              <div class="art" data-a><span class="fn">acceptance.yaml</span><pre class="code">- <span class="cp">id:</span> <span class="cs">UX-01</span>
-  <span class="cp">test:</span> 5 people, no instructions
-  <span class="cp">pass:</span> ≥ 4 find all 3 modes
-        in &lt; 30 s
-- <span class="cp">id:</span> <span class="cs">VIS-02</span>
-  <span class="cp">test:</span> read mode at 2 m, daylight
-  <span class="cp">pass:</span> 5 / 5 correct</pre><span class="why">Pass/fail, written before the first print</span></div>
-              <div class="art" data-a><span class="fn">decisions/ADR-004.md</span><pre class="code"><span class="cp">ADR-004 · Button over dial (v1)</span>
-<span class="cp">status:</span>  accepted
-<span class="cp">why:</span>     one moving part,
-         cheaper than detents
-<span class="cp">trade:</span>   less tactile "feel"
-<span class="cp">revisit:</span> after UX-01 results</pre><span class="why">Why we chose — and what we traded away</span></div>
-              <div class="art" data-a><span class="fn">test-log.md</span><pre class="code"><span class="cp">2026-10-12 · v0.3 · print #4</span>
-UX-01   3/5   <span class="ck">✗</span>
-  2 people never found
-  long-press for DND
-<span class="cn">fix →</span> pulse the ring once
-      on first boot (v0.4)</pre><span class="why">Evidence the next loop can use</span></div>
-            </div>
-            <p class="take" data-a>Chats forget. Files don't. <em>Every loop must leave something you can diff.</em></p>
-          </div>
-        </section>
-
-        <section class="slide" data-title="PartSpec: the contract between intent and geometry">
-          <p class="kicker">TVASTR · PartSpec</p>
-          <h2>PartSpec: the contract between intent and geometry</h2>
-          <div class="body">
-            <div class="split">
-              <pre class="code" data-a><span class="cc">focus_shell.partspec.yaml</span>
-<span class="cp">part:</span> <span class="cs">focus_shell</span>          <span class="cp">version:</span> <span class="cn">4</span>
-<span class="cp">envelope:</span>
-  <span class="cp">footprint:</span> <span class="cs">hex</span>
-  <span class="cp">across_corners:</span> <span class="cn">72 mm</span>
-  <span class="cp">height:</span> <span class="cn">28 mm</span>
-<span class="cp">wall:</span> <span class="cn">2.4 mm</span>               <span class="cc"># 6 × 0.4 mm lines</span>
-<span class="cp">fillet:</span> { <span class="cp">top_edges:</span> <span class="cn">4 mm</span> }
-<span class="cp">material:</span> <span class="cs">PETG</span>
-<span class="cp">fit:</span>
-  <span class="cp">lid:</span> { <span class="cp">type:</span> <span class="cs">slip</span>, <span class="cp">clearance:</span> <span class="cn">0.25 mm/side</span> }
-<span class="cp">features:</span>
-  - <span class="cp">heat_set_insert:</span> { <span class="cp">size:</span> <span class="cs">M2</span>, <span class="cp">count:</span> <span class="cn">3</span> }
-  - <span class="cp">usb_c_exit:</span> { <span class="cp">keepout:</span> <span class="cn">9 × 4 mm</span> }
-<span class="cp">intent:</span>
-  - <span class="cs">one-hand operation</span>
-  - <span class="cs">no visible LED hotspots</span>
-<span class="cp">acceptance:</span> [<span class="cs">UX-01</span>, <span class="cs">VIS-02</span>, <span class="cs">FIT-03</span>]</pre>
-              <div class="stack">
-                <span class="k" data-a>Checked before anything prints</span>
-                <ul class="gates" data-a>
-                  <li><b>Wall ≥ 3 × line width</b><span>2.4 mm ≥ 1.2 mm</span></li>
-                  <li><b>Overhangs ≤ 45° or chamfered</b><span>fillets face up · underside chamfered</span></li>
-                  <li><b>Fits the reference printer</b><span>72 × 72 × 28 mm inside the build volume</span></li>
-                  <li><b>Clearance &gt; measured printer error</b><span>0.25 mm/side vs ±0.10 mm</span></li>
-                  <li class="warn"><b>Insert holes match the supplier</b><span>no part number yet → ask the human</span></li>
-                </ul>
-                <p class="take" data-a>Geometry, fit, material and intent — <em>one versioned file the next revision can trust.</em></p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section class="slide" data-tone="c" data-title="Electronics: the anatomy of a smart object">
           <p class="kicker">Stage 3 · Electronics</p>
           <h2>Electronics: the anatomy of a smart object</h2>
@@ -428,41 +353,6 @@ UX-01   3/5   <span class="ck">✗</span>
               </div>
             </div>
             <p class="take" data-a>Equivalent means it does the same job. <em class="p">Drop-in means it fits the same hole.</em></p>
-          </div>
-        </section>
-
-        <section class="slide" data-tone="c" data-title="Firmware an agent can actually test">
-          <p class="kicker">Stage 4 · Firmware, in depth</p>
-          <h2>Firmware an agent can actually test</h2>
-          <div class="body">
-            <div class="split">
-              <div class="stack">
-                <pre class="code" data-a><span class="cc">src/mode.h · pure logic, no pins</span>
-<span class="ck">enum class</span> Mode  { Focus, Break, DND };
-<span class="ck">enum class</span> Press { Short, Long };
-
-Mode next(Mode m, Press p) {
-  <span class="ck">if</span> (p == Press::Long) <span class="ck">return</span> Mode::DND;
-  <span class="ck">return</span> m == Mode::Focus ? Mode::Break
-                          : Mode::Focus;
-}</pre>
-                <pre class="code" data-a><span class="cc">test/test_mode.cpp · pio test -e native</span>
-<span class="ck">void</span> test_long_press_is_dnd() {
-  TEST_ASSERT(next(Mode::Focus, Press::Long)
-              == Mode::DND);
-}
-<span class="ck">void</span> test_short_press_leaves_dnd() {
-  TEST_ASSERT(next(Mode::DND, Press::Short)
-              == Mode::Focus);
-}</pre>
-              </div>
-              <div class="stack">
-                <div class="card" data-a><span class="k">Split the decision from the pins</span><p>Pure logic compiles for your laptop (<code>platform = native</code>), so the agent runs the whole suite with no board attached.</p></div>
-                <div class="card" data-a><span class="k">Name the physical numbers</span><p>Debounce 30 ms · long-press 800 ms · LED brightness capped for USB power. Constants with names, not magic.</p></div>
-                <div class="card hl-c" data-a><span class="k">Then test on hardware</span><p>Flash, read the serial log, press the real button. Only that step needs the desk — and you.</p></div>
-                <p class="take" data-a>Prove the logic on the laptop; <em>the board only has to prove the wiring.</em></p>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -538,49 +428,29 @@ lib_deps      = <span class="cs">adafruit/Adafruit NeoPixel@^1.12</span></pre>
           </div>
         </section>
 
-        <section class="slide" data-title="CAD as code: geometry an agent can edit">
-          <p class="kicker">Stage 5 · CAED</p>
-          <h2>CAD as code: geometry an agent can edit</h2>
+        <section class="slide" data-tone="c" data-title="Design for the printer: parametric, not pixels">
+          <p class="kicker">Stage 5 · Design for manufacture</p>
+          <h2>Design for the printer, not just the screen</h2>
           <div class="body">
-            <div class="split">
-              <pre class="code" data-a><span class="cc">focus_shell.py · CadQuery</span>
-<span class="ck">import</span> cadquery <span class="ck">as</span> cq
-
-D, H, WALL = <span class="cn">72</span>, <span class="cn">28</span>, <span class="cn wall-val"><span class="a">2.4</span><span class="b">2.0</span></span>  <span class="cc"># mm</span>
-
-shell = (
-  cq.Workplane(<span class="cs">"XY"</span>)
-  .polygon(<span class="cn">6</span>, D)        <span class="cc"># hex footprint</span>
-  .extrude(H)
-  .edges(<span class="cs">"&gt;Z"</span>).fillet(<span class="cn">4</span>)
-  .faces(<span class="cs">"&gt;Z"</span>).shell(-WALL)
-)
-cq.exporters.export(shell, <span class="cs">"focus_shell.step"</span>)</pre>
+            <div class="split r-wide">
               <div class="stack">
                 <div class="g g2">
                   <div class="card" data-a><span class="k">A render</span><p>Pixels. No dimensions. Can't be measured, edited or printed reliably.</p></div>
-                  <div class="card hl-c" data-a><span class="k">A parametric model</span><p>Dimensions, constraints, editable history. Exports STEP, STL, 3MF.</p></div>
+                  <div class="card hl-c" data-a><span class="k">A parametric model</span><p>Dimensions, constraints and history. Exports STEP, STL, 3MF.</p></div>
                 </div>
                 <div class="sect" data-a>
                   <svg viewBox="0 0 220 180" aria-hidden="true"><polygon class="outer" points="200,90 155,12 65,12 20,90 65,168 155,168" /><polygon class="inner" points="200,90 155,12 65,12 20,90 65,168 155,168" /></svg>
                 </div>
-                <p class="mono-line" data-a>Change one number: <span class="hl">WALL = 2.4 → 2.0</span> · regenerate</p>
+                <p class="mono-line" data-a>Change one number: <span class="hl">wall 2.4 → 2.0 mm</span> · regenerate · re-check</p>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="slide" data-tone="c" data-title="Design for the printer">
-          <p class="kicker">Stage 5 · Design for manufacture</p>
-          <h2>Design for the printer, not just the screen</h2>
-          <div class="body">
-            <div class="g g6">
-              <div class="card" data-a><span class="k">Walls</span><h3>Multiples of the nozzle</h3><p>With a 0.4 mm nozzle, 1.2, 1.6 or 2.0 mm walls print as clean, solid perimeters.</p></div>
-              <div class="card" data-a><span class="k">Overhangs</span><h3>Respect 45°</h3><p>Up to about 45° prints without support. Chamfer downward edges instead of filleting them.</p></div>
-              <div class="card" data-a><span class="k">Clearances</span><h3>Gaps are a feature</h3><p>Sliding fits need roughly 0.2–0.3 mm per side. Print a test coupon before you trust a number.</p></div>
-              <div class="card" data-a><span class="k">Holes</span><h3>They print small</h3><p>Add about 0.1–0.2 mm to small holes, or drill to size afterwards.</p></div>
-              <div class="card hl-c" data-a><span class="k">Strength</span><h3>Mind the layers</h3><p>Parts are weakest between layers. Orient so loads run along them, not across.</p></div>
-              <div class="card" data-a><span class="k">Inserts</span><h3>Heat-set, not glued</h3><p>Size holes to the insert maker's spec and leave solid wall around each one.</p></div>
+              <div class="g g2 rules6">
+                <div class="card" data-a><span class="k">Walls</span><h3>Multiples of the nozzle</h3><p>0.4 mm nozzle → 1.2, 1.6 or 2.0 mm walls.</p></div>
+                <div class="card" data-a><span class="k">Overhangs</span><h3>Respect 45°</h3><p>Steeper needs support. Chamfer downward edges.</p></div>
+                <div class="card" data-a><span class="k">Clearances</span><h3>Gaps are a feature</h3><p>Sliding fits ≈ 0.2–0.3 mm per side. Print a coupon first.</p></div>
+                <div class="card" data-a><span class="k">Holes</span><h3>They print small</h3><p>Add 0.1–0.2 mm, or drill to size afterwards.</p></div>
+                <div class="card hl-c" data-a><span class="k">Strength</span><h3>Mind the layers</h3><p>Weakest between layers: load along them, not across.</p></div>
+                <div class="card" data-a><span class="k">Inserts</span><h3>Heat-set, not glued</h3><p>Holes to the insert spec, solid wall around each.</p></div>
+              </div>
             </div>
             <p class="note" data-a>Rules of thumb for FDM with a 0.4 mm nozzle. Your printer and material get the final vote.</p>
           </div>
@@ -1016,7 +886,7 @@ cq.exporters.export(shell, <span class="cs">"focus_shell.step"</span>)</pre>
             <div class="stack">
               <p class="kicker" data-a>Appendix</p>
               <h2 class="act-h" data-a>Deep dives <span class="grad-text">&amp; reference</span></h2>
-              <p class="lede" data-a>The deeper cuts: prompting, BOMs, sourcing, choosing a brain, firmware tooling, design detail, testing, scaling, PCBs and the launchpad.</p>
+              <p class="lede" data-a>The deeper cuts: agent artifacts, PartSpec, testable firmware, CAD as code, prompting, BOMs, sourcing, choosing a brain, design detail, testing, scaling, PCBs and the launchpad.</p>
             </div>
             <div class="act-hex" data-a="pop">
               <svg viewBox="0 0 220 250" aria-hidden="true">
@@ -1024,6 +894,148 @@ cq.exporters.export(shell, <span class="cs">"focus_shell.step"</span>)</pre>
                 <polygon points="110,30 193,78 193,172 110,220 27,172 27,78" fill="rgba(163,44,196,.14)" stroke="rgba(193,172,246,.3)" />
                 <text x="110" y="158">A</text>
               </svg>
+            </div>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-tone="c" data-title="What the agent actually hands you">
+          <p class="kicker">Stage 1 · ADLC in practice</p>
+          <h2>What the agent actually hands you</h2>
+          <div class="body">
+            <div class="chain">
+              <div class="art" data-a><span class="fn">brief.md</span><pre class="code"><span class="cp"># Focus object · brief v2</span>
+<span class="cp">user:</span>  desk worker, one hand free
+<span class="cp">job:</span>   show focus / break / DND
+       to the room
+<span class="cp">must:</span>  readable at 2 m · no app
+       USB-C power
+<span class="cp">won't:</span> batteries, cloud, screen
+<span class="cp">open:</span>  dial or button?</pre><span class="why">Who, what, must, won't — and the open questions</span></div>
+              <div class="art" data-a><span class="fn">acceptance.yaml</span><pre class="code">- <span class="cp">id:</span> <span class="cs">UX-01</span>
+  <span class="cp">test:</span> 5 people, no instructions
+  <span class="cp">pass:</span> ≥ 4 find all 3 modes
+        in &lt; 30 s
+- <span class="cp">id:</span> <span class="cs">VIS-02</span>
+  <span class="cp">test:</span> read mode at 2 m, daylight
+  <span class="cp">pass:</span> 5 / 5 correct</pre><span class="why">Pass/fail, written before the first print</span></div>
+              <div class="art" data-a><span class="fn">decisions/ADR-004.md</span><pre class="code"><span class="cp">ADR-004 · Button over dial (v1)</span>
+<span class="cp">status:</span>  accepted
+<span class="cp">why:</span>     one moving part,
+         cheaper than detents
+<span class="cp">trade:</span>   less tactile "feel"
+<span class="cp">revisit:</span> after UX-01 results</pre><span class="why">Why we chose — and what we traded away</span></div>
+              <div class="art" data-a><span class="fn">test-log.md</span><pre class="code"><span class="cp">2026-10-12 · v0.3 · print #4</span>
+UX-01   3/5   <span class="ck">✗</span>
+  2 people never found
+  long-press for DND
+<span class="cn">fix →</span> pulse the ring once
+      on first boot (v0.4)</pre><span class="why">Evidence the next loop can use</span></div>
+            </div>
+            <p class="take" data-a>Chats forget. Files don't. <em>Every loop must leave something you can diff.</em></p>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-title="PartSpec: the contract between intent and geometry">
+          <p class="kicker">TVASTR · PartSpec</p>
+          <h2>PartSpec: the contract between intent and geometry</h2>
+          <div class="body">
+            <div class="split">
+              <pre class="code" data-a><span class="cc">focus_shell.partspec.yaml</span>
+<span class="cp">part:</span> <span class="cs">focus_shell</span>          <span class="cp">version:</span> <span class="cn">4</span>
+<span class="cp">envelope:</span>
+  <span class="cp">footprint:</span> <span class="cs">hex</span>
+  <span class="cp">across_corners:</span> <span class="cn">72 mm</span>
+  <span class="cp">height:</span> <span class="cn">28 mm</span>
+<span class="cp">wall:</span> <span class="cn">2.4 mm</span>               <span class="cc"># 6 × 0.4 mm lines</span>
+<span class="cp">fillet:</span> { <span class="cp">top_edges:</span> <span class="cn">4 mm</span> }
+<span class="cp">material:</span> <span class="cs">PETG</span>
+<span class="cp">fit:</span>
+  <span class="cp">lid:</span> { <span class="cp">type:</span> <span class="cs">slip</span>, <span class="cp">clearance:</span> <span class="cn">0.25 mm/side</span> }
+<span class="cp">features:</span>
+  - <span class="cp">heat_set_insert:</span> { <span class="cp">size:</span> <span class="cs">M2</span>, <span class="cp">count:</span> <span class="cn">3</span> }
+  - <span class="cp">usb_c_exit:</span> { <span class="cp">keepout:</span> <span class="cn">9 × 4 mm</span> }
+<span class="cp">intent:</span>
+  - <span class="cs">one-hand operation</span>
+  - <span class="cs">no visible LED hotspots</span>
+<span class="cp">acceptance:</span> [<span class="cs">UX-01</span>, <span class="cs">VIS-02</span>, <span class="cs">FIT-03</span>]</pre>
+              <div class="stack">
+                <span class="k" data-a>Checked before anything prints</span>
+                <ul class="gates" data-a>
+                  <li><b>Wall ≥ 3 × line width</b><span>2.4 mm ≥ 1.2 mm</span></li>
+                  <li><b>Overhangs ≤ 45° or chamfered</b><span>fillets face up · underside chamfered</span></li>
+                  <li><b>Fits the reference printer</b><span>72 × 72 × 28 mm inside the build volume</span></li>
+                  <li><b>Clearance &gt; measured printer error</b><span>0.25 mm/side vs ±0.10 mm</span></li>
+                  <li class="warn"><b>Insert holes match the supplier</b><span>no part number yet → ask the human</span></li>
+                </ul>
+                <p class="take" data-a>Geometry, fit, material and intent — <em>one versioned file the next revision can trust.</em></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-tone="c" data-title="Firmware an agent can actually test">
+          <p class="kicker">Stage 4 · Firmware, in depth</p>
+          <h2>Firmware an agent can actually test</h2>
+          <div class="body">
+            <div class="split">
+              <div class="stack">
+                <pre class="code" data-a><span class="cc">src/mode.h · pure logic, no pins</span>
+<span class="ck">enum class</span> Mode  { Focus, Break, DND };
+<span class="ck">enum class</span> Press { Short, Long };
+
+Mode next(Mode m, Press p) {
+  <span class="ck">if</span> (p == Press::Long) <span class="ck">return</span> Mode::DND;
+  <span class="ck">return</span> m == Mode::Focus ? Mode::Break
+                          : Mode::Focus;
+}</pre>
+                <pre class="code" data-a><span class="cc">test/test_mode.cpp · pio test -e native</span>
+<span class="ck">void</span> test_long_press_is_dnd() {
+  TEST_ASSERT(next(Mode::Focus, Press::Long)
+              == Mode::DND);
+}
+<span class="ck">void</span> test_short_press_leaves_dnd() {
+  TEST_ASSERT(next(Mode::DND, Press::Short)
+              == Mode::Focus);
+}</pre>
+              </div>
+              <div class="stack">
+                <div class="card" data-a><span class="k">Split the decision from the pins</span><p>Pure logic compiles for your laptop (<code>platform = native</code>), so the agent runs the whole suite with no board attached.</p></div>
+                <div class="card" data-a><span class="k">Name the physical numbers</span><p>Debounce 30 ms · long-press 800 ms · LED brightness capped for USB power. Constants with names, not magic.</p></div>
+                <div class="card hl-c" data-a><span class="k">Then test on hardware</span><p>Flash, read the serial log, press the real button. Only that step needs the desk — and you.</p></div>
+                <p class="take" data-a>Prove the logic on the laptop; <em>the board only has to prove the wiring.</em></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section data-appendix class="slide" data-title="CAD as code: geometry an agent can edit">
+          <p class="kicker">Stage 5 · CAED</p>
+          <h2>CAD as code: geometry an agent can edit</h2>
+          <div class="body">
+            <div class="split">
+              <pre class="code" data-a><span class="cc">focus_shell.py · CadQuery</span>
+<span class="ck">import</span> cadquery <span class="ck">as</span> cq
+
+D, H, WALL = <span class="cn">72</span>, <span class="cn">28</span>, <span class="cn wall-val"><span class="a">2.4</span><span class="b">2.0</span></span>  <span class="cc"># mm</span>
+
+shell = (
+  cq.Workplane(<span class="cs">"XY"</span>)
+  .polygon(<span class="cn">6</span>, D)        <span class="cc"># hex footprint</span>
+  .extrude(H)
+  .edges(<span class="cs">"&gt;Z"</span>).fillet(<span class="cn">4</span>)
+  .faces(<span class="cs">"&gt;Z"</span>).shell(-WALL)
+)
+cq.exporters.export(shell, <span class="cs">"focus_shell.step"</span>)</pre>
+              <div class="stack">
+                <div class="g g2">
+                  <div class="card" data-a><span class="k">A render</span><p>Pixels. No dimensions. Can't be measured, edited or printed reliably.</p></div>
+                  <div class="card hl-c" data-a><span class="k">A parametric model</span><p>Dimensions, constraints, editable history. Exports STEP, STL, 3MF.</p></div>
+                </div>
+                <div class="sect" data-a>
+                  <svg viewBox="0 0 220 180" aria-hidden="true"><polygon class="outer" points="200,90 155,12 65,12 20,90 65,168 155,168" /><polygon class="inner" points="200,90 155,12 65,12 20,90 65,168 155,168" /></svg>
+                </div>
+                <p class="mono-line" data-a>Change one number: <span class="hl">WALL = 2.4 → 2.0</span> · regenerate</p>
+              </div>
             </div>
           </div>
         </section>
