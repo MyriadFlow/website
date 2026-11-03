@@ -13,6 +13,7 @@ export default defineConfig({
         privacy: page("./legal/privacy.html"),
         "creator-terms": page("./legal/creator-terms.html"),
         "community-guidelines": page("./legal/community-guidelines.html"),
+        pitch: page("./resources/pitch/index.html"),
       },
     },
   },
