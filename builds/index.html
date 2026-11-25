@@ -61,9 +61,8 @@
             <p class="eyebrow" data-a="up"><i class="pip"></i>Manufacturing</p>
             <h1 class="display" data-a="up">From a sentence<br /><span class="accent">to a shipped product.</span></h1>
             <p class="lede" data-a="up">
-              Vibe manufacturing is intent-led, agent-assisted creation of physical products. You
-              describe what you want; agents draft the spec, the model and the test plan; the real
-              world checks the result — and every check is written down.
+              How vibe manufacturing works on MyriadFlow: the flow, the engine behind it, a real
+              build taken apart, and the path from prototype to production.
             </p>
             <div class="cta-row" data-a="up">
               <a class="btn btn-primary" href="https://discord.gg/38jktRtuY7" target="_blank" rel="noopener">Start a project</a>
@@ -81,7 +80,8 @@
                 <div class="bc-art">
                   <!-- the same model as the teardown, drawn as turquoise edges -->
                   <div class="obj-3d" data-model3d="wire" data-spin="1.4"></div>
-                  <span class="bc-cap">CAD wireframe · v0.3</span>
+                  <img class="obj-still" src="/img/sotreus-wire.png" width="900" height="733" alt="" />
+                  <span class="bc-cap">CAD · v0.3</span>
                 </div>
                 <span class="bc-chip"><b>✓</b> DFM</span>
               </figure>
@@ -90,10 +90,8 @@
               </svg>
               <figure class="bc-step bc-print">
                 <div class="bc-art">
-                  <figure class="shot" style="--ar: 4 / 3" data-asset="b3450eff">
-                    <span class="shot-tag">export b3450eff</span>
-                    <figcaption>The printed Sotreus Edge prototype on the bench.</figcaption>
-                  </figure>
+<img class="shot" style="--ar: 4 / 3" src="/img/sotreus-printed.jpg" width="1000" height="1100" loading="lazy"
+                    alt="The printed Sotreus Edge prototype on the bench." />
                   <span class="bc-cap">Printed · PLA</span>
                 </div>
                 <span class="bc-chip"><b>✓</b> Built</span>
@@ -165,10 +163,8 @@
 
       <!-- BENCH BAND ------------------------------------------------------- -->
       <section class="sec band band-slim">
-        <figure class="shot band-shot" style="--ar: 21 / 9" data-asset="d6f916c5">
-          <span class="shot-tag">export d6f916c5 · AI image, to be replaced</span>
-          <figcaption>A maker's desk at night: board, printed shell, tools and a lit screen.</figcaption>
-        </figure>
+<img class="shot band-shot" src="/img/bench.jpg" width="1376" height="768" loading="lazy"
+          alt="A maker's desk at night: a printer mid-job, printed parts, calipers and a board going into a shell." />
         <div class="wrap band-in">
           <p class="band-cap" data-a="up"><i class="dot" aria-hidden="true"></i>On the bench</p>
         </div>
@@ -178,7 +174,7 @@
       <section class="sec block" id="journey">
         <div class="wrap">
           <header class="sec-head">
-            <p class="eyebrow" data-a="up"><i class="pip"></i>02 / Creator journey</p>
+            <p class="eyebrow" data-a="up"><i class="pip"></i>02 / The creator journey</p>
             <h2 class="h2" data-a="up">From spark <span class="accent-grey">to proof.</span></h2>
             <p class="sec-lede" data-a="up">
               It begins with an idea, not an empty engineering canvas. MyriadFlow asks only the
@@ -242,7 +238,7 @@
       <section class="sec block" id="tvastr">
         <div class="wrap">
           <header class="sec-head">
-            <p class="eyebrow" data-a="up"><i class="pip"></i>03 / TVASTR</p>
+            <p class="eyebrow" data-a="up"><i class="pip"></i>03 / TVASTR · Manufacturing intelligence</p>
             <h2 class="h2" data-a="up">The engine that turns <span class="accent-grey">a brief into a build.</span></h2>
             <p class="sec-lede" data-a="up">
               Named for the Vedic maker and fashioner of forms, TVASTR turns a brief into structured
@@ -341,10 +337,8 @@ shell = (
             </aside>
 
             <div class="td-canvas" role="img" aria-label="Interactive 3D model of the Sotreus Edge: a two-part printed enclosure holding an ESP32 and LoRa board with an OLED, an external antenna and a battery">
-              <figure class="shot td-still" style="--ar: 4 / 3" data-asset="644dd312">
-                <span class="shot-tag">export 644dd312</span>
-                <figcaption>The Sotreus Edge, rendered whole and uncropped.</figcaption>
-              </figure>
+<img class="shot td-still" src="/img/sotreus-full.png" width="903" height="797" loading="lazy"
+                alt="The Sotreus Edge: a two-part printed enclosure with an OLED window, buttons and an antenna." />
             </div>
 
             <aside class="td-r" aria-label="Teardown: live readouts">
@@ -364,7 +358,7 @@ shell = (
             <nav class="td-bar" aria-label="Teardown controls">
               <button type="button" data-act="assemble" aria-pressed="true">Assembled</button><button type="button" data-act="explode" aria-pressed="false">Explode</button><span class="sep"></span>
               <button type="button" data-focus="shell" aria-pressed="false">Shell</button><button type="button" data-focus="board" aria-pressed="false">Board</button><button type="button" data-focus="radio" aria-pressed="false">Radio</button><button type="button" data-focus="power" aria-pressed="false">Power</button><button type="button" data-focus="ui" aria-pressed="false">Front panel</button><span class="sep"></span>
-              <button type="button" data-act="xray" aria-pressed="false">X-ray</button><button type="button" data-act="tour" aria-pressed="false">Tour</button>
+              <button type="button" data-act="xray" aria-pressed="false">X-ray</button><button type="button" data-act="tour" aria-pressed="false">▶ Tour</button>
               <span class="td-hint">Drag to orbit · ⌘/ctrl + scroll to zoom</span>
             </nav>
           </div>

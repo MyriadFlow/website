@@ -75,6 +75,7 @@ export default defineConfig({
         "community-guidelines": page("./legal/community-guidelines/index.html"),
         "archive-creator-terms": page("./legal/archive/creator-terms/index.html"),
         "archive-community-guidelines": page("./legal/archive/community-guidelines/index.html"),
+        resources: page("./resources/index.html"),
         pitch: page("./resources/pitch/index.html"),
       },
     },

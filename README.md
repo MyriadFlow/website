@@ -158,7 +158,8 @@ Builds teardown and the pitch deck.
 | `/phygitals` | `phygitals/index.html` | Pink `#F25BC4` |
 | `/contact` | `contact/index.html` | Gradient (hero only) |
 | `/legal/terms`, `/legal/privacy` | `legal/*/index.html` | Neutral |
-| `/resources/pitch/` | `resources/pitch/index.html` | The pitch deck |
+| `/resources/` | `resources/index.html` | The Hub: everything published, the deck included |
+| `/resources/pitch/` | `resources/pitch/index.html` | The pitch deck (opens in its own tab) |
 
 `/legal/creator-terms` and `/legal/community-guidelines` redirect to `/legal/terms`; the 2024
 documents stay readable under `/legal/archive/`.
@@ -182,9 +183,11 @@ pull request (`.github/workflows/checks.yml`): `html-validate` over the built pa
 `linkinator` over every link in `dist`. Social and Discord links are skipped by default
 because they rate-limit bots; CI checks them separately and only warns.
 
+Images come from the design canvas and live in `public/img/`; the per-page logo marks are
+`public/brand/mark-{gradient,violet,pink}.png`, swapped by `body[data-page]`.
+
 ### Open items
 
-- Export the canvas images (every `data-asset` placeholder on the pages names its ID).
 - Point the contact form at a real endpoint (`data-endpoint` on `#briefForm`); until then it
   falls back to a pre-filled email.
 - Per-page OG images at `/og/`, self-hosted fonts, and the violet and pink logo marks.
@@ -196,12 +199,6 @@ because they rate-limit bots; CI checks them separately and only warns.
 - **Run printers, a makerspace or a factory?** Become a manufacturing partner.
 - **Follow along:** [Discord](https://discord.gg/38jktRtuY7) · [Telegram](https://t.me/MyriadFlow) · [X](https://x.com/0xMyriadFlow) · [Instagram](https://www.instagram.com/0xmyriadflow)
 
-## Company
-
-**MyriadFlow LLC** · Identification number 405818227<br />
-Bakhtrioni Street N22, Apartment N75, Saburtalo District, Tbilisi, Georgia<br />
-[contact@myriadflow.com](mailto:contact@myriadflow.com)
-
 ---
 
-<sub>This repository holds the myriadflow.com website. It deploys to GitHub Pages on every push to `main`. MIT licensed.</sub>
+<sub>MIT licensed. Company details: <a href="COMPANY.md">COMPANY.md</a>.</sub>

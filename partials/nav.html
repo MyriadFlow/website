@@ -1,19 +1,20 @@
-<!-- Floating pill nav. The hero runs underneath it; it turns to glass once the page
+<!-- The brand sits outside the pill; the links are the pill, each page marked by a dot in
+     its own colour. The hero runs underneath, and the bar turns to glass once the page
      scrolls past 24px. main.js marks the current page with aria-current. -->
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <div class="nav-pill">
-      <a class="brand" href="/" aria-label="MyriadFlow home">
-        <img src="/brand/mf-mark.png" width="30" height="34" alt="" />
-        <img class="brand-word" src="/brand/wordmark.png" width="132" height="13" alt="MyriadFlow" />
-      </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="/builds">Builds</a>
-        <a href="/phygitals">Phygitals</a>
-        <a href="/resources/pitch/">Hub</a>
-        <a href="/contact">Contact</a>
-      </nav>
-      <span class="nav-beta">Private beta</span>
+    <a class="brand" href="/" aria-label="MyriadFlow home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <img class="brand-word" src="/brand/logo.png" width="128" height="24" alt="MyriadFlow" />
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/builds"><i class="nav-dot dot-builds" aria-hidden="true"></i>Builds</a>
+      <a href="/phygitals"><i class="nav-dot dot-phygitals" aria-hidden="true"></i>Phygitals</a>
+      <a href="/resources/">Hub</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="nav-end">
+      <span class="nav-beta"><i aria-hidden="true"></i>Private beta</span>
       <a class="btn btn-sm btn-primary nav-cta" href="https://discord.gg/38jktRtuY7" target="_blank" rel="noopener">Start a project</a>
       <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navPanel" aria-label="Open menu">
         <span></span><span></span>
@@ -23,9 +24,9 @@
   <div class="nav-panel" id="navPanel" hidden>
     <a href="/builds">Builds</a>
     <a href="/phygitals">Phygitals</a>
-    <a href="/resources/pitch/">Hub</a>
+    <a href="/resources/">Hub</a>
     <a href="/contact">Contact</a>
-    <span class="nav-beta">Private beta</span>
+    <span class="nav-beta"><i aria-hidden="true"></i>Private beta</span>
     <a class="btn btn-primary" href="https://discord.gg/38jktRtuY7" target="_blank" rel="noopener">Start a project</a>
   </div>
 </header>

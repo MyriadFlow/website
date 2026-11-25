@@ -941,7 +941,7 @@ if (model3d.length) {
       return;
     }
     el.classList.add("is-live");
-    el.closest(".obj-stage")?.classList.add("has-3d");
+    el.closest(".obj-stage, .bc-art")?.classList.add("has-3d");
     el.closest(".pp-twin")?.classList.add("is-live");
     if (reduce) return app.still();
     const io = new IntersectionObserver((entries) => {
