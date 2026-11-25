@@ -1,0 +1,60 @@
+name: Checks
+
+# Runs on every push and pull request, so build breaks, invalid markup, dead links and
+# dangling #anchors show up before anything is merged into main and deployed.
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      - name: Validate HTML
+        if: '!cancelled()'
+        run: pnpm check:html
+
+      - name: Check in-page anchors and include markers
+        if: '!cancelled()'
+        run: pnpm check:anchors
+
+      - name: Check links
+        if: '!cancelled()'
+        run: pnpm check:links
+
+      # Social and Discord links are skipped above (they rate-limit bots); check them
+      # weekly and on demand instead, and only warn.
+      - name: Check outbound links
+        if: '!cancelled()'
+        continue-on-error: true
+        run: pnpm exec linkinator dist --recurse --verbosity error --retry --timeout 20000
+
+      - name: Upload the built site
+        if: '!cancelled()'
+        uses: actions/upload-artifact@v5
+        with:
+          name: dist
+          path: dist
+          retention-days: 7

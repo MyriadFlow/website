@@ -1,0 +1,14 @@
+{
+  "recurse": true,
+  "concurrency": 20,
+  "timeout": 15000,
+  "retry": true,
+  "skip": [
+    "^https://discord\\.gg",
+    "^https://t\\.me",
+    "^https://x\\.com",
+    "^https://www\\.instagram\\.com",
+    "^https://myriadflow\\.com"
+  ],
+  "verbosity": "error"
+}

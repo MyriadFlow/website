@@ -86,26 +86,104 @@ navPanel?.addEventListener("click", (e) => {
   if (e.target.closest("a")) setNav(false);
 });
 
-/* ---------- legal pages: highlight the section being read ---------- */
+const route = (path) => path.replace(/\/index\.html$/, "").replace(/\/$/, "") || "/";
+const here = route(location.pathname);
 
-const toc = document.querySelector(".legal-toc");
-if (toc) {
-  const links = new Map([...toc.querySelectorAll("a")].map((a) => [a.hash.slice(1), a]));
+for (const a of document.querySelectorAll(".nav-links a, .nav-panel a:not(.btn)")) {
+  if (route(a.pathname) === here) a.setAttribute("aria-current", "page");
+}
+
+/* Sections that used to live on the homepage now have their own page. */
+const MOVED = new Set(["flow", "journey", "tvastr", "launchpad", "record", "execution", "teardown"]);
+if (here === "/" && MOVED.has(location.hash.slice(1))) location.replace(`/builds${location.hash}`);
+
+/* The nav floats over the hero and turns to glass once the page starts scrolling. */
+const nav = document.getElementById("nav");
+if (nav) {
+  const glass = () => nav.classList.toggle("is-stuck", window.scrollY > 24);
+  glass();
+  window.addEventListener("scroll", glass, { passive: true });
+}
+
+/* Marks the link whose section is being read. Used by the legal TOC and the Builds sub-nav. */
+function scrollSpy(links, rootMargin) {
+  const map = new Map([...links].map((a) => [a.hash.slice(1), a]));
   const spy = new IntersectionObserver(
     (entries) => {
       for (const e of entries) {
         if (!e.isIntersecting) continue;
-        links.forEach((a) => a.removeAttribute("aria-current"));
-        links.get(e.target.id)?.setAttribute("aria-current", "true");
+        map.forEach((a) => a.removeAttribute("aria-current"));
+        map.get(e.target.id)?.setAttribute("aria-current", "true");
       }
     },
-    { rootMargin: "-30% 0px -60% 0px" },
+    { rootMargin },
   );
-  links.forEach((_, id) => {
+  map.forEach((_, id) => {
     const section = document.getElementById(id);
     if (section) spy.observe(section);
   });
 }
+
+const subnav = document.getElementById("subnav");
+if (subnav) scrollSpy(subnav.querySelectorAll("a"), "-35% 0px -60% 0px");
+
+/* The action pill waits until the hero has left, and steps aside for the closing CTA —
+   both of those carry the same two buttons. */
+const fab = document.querySelector("[data-fab]");
+if (fab) {
+  const covered = new Set();
+  const zones = document.querySelectorAll(".hero, .page-hero, .legal-hero, .cta");
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) e.isIntersecting ? covered.add(e.target) : covered.delete(e.target);
+      fab.hidden = false;
+      fab.classList.toggle("is-on", covered.size === 0);
+    },
+    { threshold: 0 },
+  );
+  zones.forEach((z) => io.observe(z));
+}
+
+/* Send a brief. With no endpoint configured yet, fall back to a pre-filled email. */
+const brief = document.getElementById("briefForm");
+if (brief) {
+  const msg = document.getElementById("briefMsg");
+  brief.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    msg.classList.remove("is-err");
+    if (!brief.reportValidity()) return;
+    const data = new FormData(brief);
+    const endpoint = brief.dataset.endpoint;
+    if (!endpoint) {
+      const body = [
+        data.get("prompt"),
+        "",
+        `What I have: ${data.get("have")}`,
+        `Interested in: ${data.get("want")}`,
+        `Name: ${data.get("name") || "—"}`,
+      ].join("\n");
+      const file = data.get("file");
+      location.href = `mailto:contact@myriadflow.com?subject=${encodeURIComponent("Brief from the site")}&body=${encodeURIComponent(body)}`;
+      msg.textContent = file?.name
+        ? `Your email client is opening — please attach ${file.name} before sending.`
+        : "Your email client is opening with the brief filled in.";
+      return;
+    }
+    try {
+      const res = await fetch(endpoint, { method: "POST", body: data });
+      if (!res.ok) throw new Error(res.status);
+      brief.innerHTML = '<p class="brief-msg">Thanks — we\'ll reply by email.</p>';
+    } catch {
+      msg.classList.add("is-err");
+      msg.innerHTML = 'That didn\'t send. Please email <a href="mailto:contact@myriadflow.com">contact@myriadflow.com</a>.';
+    }
+  });
+}
+
+/* ---------- legal pages: highlight the section being read ---------- */
+
+const toc = document.querySelector(".legal-toc");
+if (toc) scrollSpy(toc.querySelectorAll("a"), "-30% 0px -60% 0px");
 
 /* ---------- sections: intro choreography ---------- */
 
@@ -264,8 +342,8 @@ story("hero", (el) => {
 
       modes.forEach((keys, i) => {
         const w = track(keys, t, E2);
-        leds[i].style.opacity = w;
-        modeDots[i].style.opacity = 0.35 + 0.65 * w;
+        if (leds[i]) leds[i].style.opacity = w;
+        if (modeDots[i]) modeDots[i].style.opacity = 0.35 + 0.65 * w;
       });
     },
   };
@@ -635,47 +713,8 @@ story("layers", (el) => {
   };
 });
 
-/* Made to your taste: the same object cycles through materials; a click picks one. */
-story("config", (el) => {
-  const mats = [...el.querySelectorAll(".mat")];
-  const buttons = [...el.querySelectorAll(".seg button")];
-  const thumb = el.querySelector(".seg-thumb");
-  const notes = [...el.querySelectorAll(".cfg-note")];
-  const SLOT = 2.6, N = mats.length, P = SLOT * N;
-  let shift = 0, last = 0;
-
-  function paint(from, k) {
-    const to = (from + 1) % N;
-    const x = to === 0 ? from * (1 - k) : from + k;
-    thumb.style.transform = `translateX(${(x * 100).toFixed(2)}%)`;
-    mats.forEach((m, i) => (m.style.opacity = i === from ? 1 - k : i === to ? k : 0));
-    notes.forEach((nt, i) => (nt.style.opacity = i === from ? 1 - k : i === to ? k : 0));
-    const on = k > 0.5 ? to : from;
-    buttons.forEach((b, i) => b.setAttribute("aria-checked", String(i === on)));
-  }
-
-  buttons.forEach((b, i) =>
-    b.addEventListener("click", () => {
-      shift = (((i * SLOT - last) % P) + P) % P;
-      paint(i, 0);
-    }),
-  );
-
-  return {
-    draw(t, x) {
-      last = x;
-      const u = (x + shift) % P;
-      const i = Math.floor(u / SLOT);
-      paint(i, IO(seg(u - i * SLOT, SLOT - 0.55, SLOT)));
-    },
-  };
-});
-
-/* Music: playback advances while the equalizer breathes, then scrubs back. */
+/* Music: the record spins in CSS; playback runs the progress bar and eases back. */
 story("player", (el) => {
-  const bars = [...el.querySelectorAll(".eq i")];
-  const base = [0.42, 0.7, 0.55, 0.88, 0.62, 0.95, 0.74, 0.5, 0.82, 0.6, 0.9, 0.48, 0.66, 0.38];
-  bars.forEach((b, i) => (b.style.transform = `scaleY(${base[i % base.length]})`));
   const bar = el.querySelector(".p-bar");
   const fill = el.querySelector(".p-fill");
   const handle = el.querySelector(".p-handle");
@@ -692,11 +731,6 @@ story("player", (el) => {
       fill.style.clipPath = `inset(0 ${((1 - p) * 100).toFixed(2)}% 0 0)`;
       handle.style.transform = `translateX(${(p * w).toFixed(1)}px)`;
       setText(cur, fmtTime(p * LEN));
-      const env = track([[0, 0], [0.6, 1], [6.6, 1], [7.3, 0]], t, E2);
-      bars.forEach((b, i) => {
-        const h = base[i % base.length] + env * 0.34 * Math.sin(t * (5 + (i % 4) * 1.3) + i * 1.9);
-        b.style.transform = `scaleY(${clamp(h, 0.12, 1).toFixed(3)})`;
-      });
     },
   };
 });
@@ -757,6 +791,182 @@ story("ideas", (el) => {
     },
   };
 });
+
+/* Phygitals: one tap, end to end. The phone reads the tag, the tag signs that single tap,
+   and the passport checks the signature, the owner and the record. */
+story("tap", (el) => {
+  const stages = [...el.querySelectorAll(".tap-stage")];
+  const ripples = [...el.querySelectorAll(".ripple")];
+  const fills = [...el.querySelectorAll(".tap-fill")];
+  const num = el.querySelector(".tap-n");
+  const sig = el.querySelector(".tap-sig");
+  const ticks = [...el.querySelectorAll(".tap-rows .tick")];
+  const pill = el.querySelector(".pill-ok");
+  const SIG = "8F3A…C71E";
+  const HEX = "0123456789ABCDEF";
+  const T1 = 0.2, T2 = 1.3, T3 = 2.7, TP = 3.9, OUT = 6.2, P = 7.4;
+  const scramble = () => `${Array.from({ length: 4 }, () => HEX[(Math.random() * 16) | 0]).join("")}…${Array.from({ length: 4 }, () => HEX[(Math.random() * 16) | 0]).join("")}`;
+  stages.forEach((st) => st.classList.remove("is-dim"));
+
+  return {
+    period: P,
+    offset: 0.4,
+    draw(t, x) {
+      const out = 1 - E2(seg(t, OUT, OUT + 0.5));
+      const on = [1, E2(seg(t, T2, T2 + 0.3)) * out, E2(seg(t, T3, T3 + 0.3)) * out];
+      stages.forEach((st, i) => (st.style.opacity = (0.35 + 0.65 * on[i]).toFixed(3)));
+
+      ripples.forEach((r, i) => {
+        const k = seg(t, T1 + i * 0.12, T1 + i * 0.12 + 0.6);
+        r.style.opacity = (1 - k) * (k > 0 ? 0.8 : 0);
+        r.style.transform = `scale(${(0.7 + k * 1.5).toFixed(3)})`;
+      });
+
+      fills[0].style.height = `${(IO(seg(t, T2, T2 + 0.5)) * 100 * out).toFixed(1)}%`;
+      fills[1].style.height = `${(IO(seg(t, T3, T3 + 0.5)) * 100 * out).toFixed(1)}%`;
+
+      const lap = Math.floor(x / P);
+      setText(num, `#${String(67 + lap).padStart(4, "0")}`);
+      setText(sig, t > T2 && t < T2 + 0.4 ? scramble() : SIG);
+
+      ticks.forEach((tk, i) => {
+        const k = E2(seg(t, T3 + 0.3 + i * 0.25, T3 + 0.55 + i * 0.25)) * out;
+        tk.style.opacity = k;
+        const row = tk.closest("li");
+        row.querySelector("em").style.color = k > 0.5 ? "var(--status)" : "var(--text)";
+      });
+
+      const pop = E2(seg(t, TP, TP + 0.2)) * out;
+      pill.style.opacity = pop;
+      pill.style.transform = `scale(${(0.9 + 0.1 * pop).toFixed(3)})`;
+    },
+  };
+});
+
+/* Builds hero: a sentence becomes a checked model and then a printed part. Runs once. */
+story("build", (el) => {
+  const typed = el.querySelector(".typed");
+  const caret = el.querySelector(".caret");
+  const steps = [...el.querySelectorAll(".bc-step")];
+  const chips = [...el.querySelectorAll(".bc-chip")];
+  const arrow = el.querySelector(".bc-arrow path");
+  const full = typed.dataset.full;
+  const TYP = 0.028;
+  const tEnd = 0.4 + full.length * TYP;
+  const tCad = tEnd + 0.3, tArrow = tCad + 0.6, tPrint = tArrow + 0.5;
+
+  return {
+    draw(t) {
+      const n = Math.floor(clamp((t - 0.4) / TYP, 0, full.length));
+      setText(typed, full.slice(0, n));
+      caret.style.opacity = t < tEnd ? 1 : blink(t);
+
+      const k1 = E2(seg(t, tCad, tCad + 0.4));
+      const k2 = E2(seg(t, tPrint, tPrint + 0.4));
+      steps[0].style.opacity = 0.4 + 0.6 * k1;
+      steps[1].style.opacity = 0.4 + 0.6 * k2;
+      chips[0].style.opacity = E2(seg(t, tCad + 0.25, tCad + 0.5));
+      chips[1].style.opacity = E2(seg(t, tPrint + 0.25, tPrint + 0.5));
+      arrow.style.strokeDashoffset = 1 - IO(seg(t, tArrow, tArrow + 0.4));
+    },
+  };
+});
+
+/* Contact: the brief field suggests ideas until it is focused. */
+story("ideas-ph", (el) => {
+  const ideas = [
+    "a palm-sized desk object that shows my focus mode",
+    "a cane grip shaped to my grandmother's hand",
+    "a planter that clips onto my balcony rail",
+    "a pedal enclosure for my synth, in translucent PETG",
+    "a lamp that dims when my calendar says rest",
+  ];
+  el.placeholder = el.dataset.placeholder || ideas[0];
+  let live = true;
+  el.addEventListener("focus", () => {
+    live = false;
+    el.placeholder = "";
+  }, { once: true });
+
+  const HOLD = 2.2, DEL = 0.024, GAP = 0.35, TYP = 0.055;
+  let at = 0;
+  const parts = ideas.map((idea, i) => {
+    const next = ideas[(i + 1) % ideas.length];
+    const q = { at, idea, next, del: at + HOLD, gap: at + HOLD + idea.length * DEL };
+    q.type = q.gap + GAP;
+    q.end = q.type + next.length * TYP;
+    at = q.end;
+    return q;
+  });
+
+  return {
+    period: at,
+    draw(t) {
+      if (!live) return;
+      const q = parts.find((r) => t < r.end) || parts[parts.length - 1];
+      let text = q.idea;
+      if (t >= q.type) text = q.next.slice(0, Math.floor((t - q.type) / TYP) + 1);
+      else if (t >= q.gap) text = "";
+      else if (t >= q.del) text = q.idea.slice(0, q.idea.length - Math.floor((t - q.del) / DEL));
+      if (el.placeholder !== text) el.placeholder = text;
+    },
+  };
+});
+
+/* ---------- the 3D models ---------- */
+
+/* One module (src/sotreus.js, shared with the pitch deck) covers all three uses: the hero
+   model, the passport twin and the Builds teardown. Loaded a viewport ahead of the
+   section, and paused whenever it is off screen. Stills show until the first frame. */
+const model3d = document.querySelectorAll("[data-model3d]");
+if (model3d.length) {
+  const mount = async (el) => {
+    const kind = el.dataset.model3d;
+    const teardown = kind === "teardown";
+    const host = teardown ? el.querySelector(".td-canvas") : el;
+    const spin = Number(el.dataset.spin ?? 0);
+    let app;
+    try {
+      const { MODELS, create } = await import("./sotreus.js");
+      app = create(el, host, MODELS.sotreus, {
+        tour: teardown,
+        autoRotate: teardown ? 0.9 : spin,
+        zoom: teardown ? "modifier" : false,
+        edges: kind === "wire" || kind === "twin",
+        ground: teardown,
+        maxPixelRatio: teardown ? 2.5 : 1.5,
+      });
+    } catch (err) {
+      console.warn("3D model unavailable", err);
+      return;
+    }
+    el.classList.add("is-live");
+    el.closest(".obj-stage")?.classList.add("has-3d");
+    el.closest(".pp-twin")?.classList.add("is-live");
+    if (reduce) return app.still();
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) (e.isIntersecting ? app.start : app.stop)();
+    });
+    io.observe(host);
+  };
+
+  // low-memory or data-saving devices keep the stills
+  const nav2 = navigator.connection || {};
+  const lean = nav2.saveData || (navigator.deviceMemory ?? 8) < 2;
+  if (!lean) {
+    const io = new IntersectionObserver(
+      (entries, obs) => {
+        for (const e of entries) {
+          if (!e.isIntersecting) continue;
+          obs.unobserve(e.target);
+          mount(e.target);
+        }
+      },
+      { rootMargin: "100% 0px" },
+    );
+    model3d.forEach((el) => io.observe(el));
+  }
+}
 
 /* ---------- the clock ---------- */
 

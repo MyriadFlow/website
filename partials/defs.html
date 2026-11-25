@@ -1,0 +1,24 @@
+<!-- Shared product drawing: the hex focus object from the Vibe Manufacturing walkthrough -->
+<svg width="0" height="0" class="sr-only" aria-hidden="true">
+  <defs>
+    <symbol id="hexobj" viewBox="0 0 320 240">
+      <polygon points="270,100 215,147.6 215,191.6 270,144" fill="var(--o-s1)" />
+      <polygon points="215,147.6 105,147.6 105,191.6 215,191.6" fill="var(--o-s2)" />
+      <polygon points="105,147.6 50,100 50,144 105,191.6" fill="var(--o-s3)" />
+      <polygon points="270,100 215,147.6 105,147.6 50,100 105,52.4 215,52.4" fill="var(--o-top)" />
+      <polyline points="50,100 105,52.4 215,52.4 270,100" fill="none" stroke="var(--o-edge)" stroke-width="1.5" stroke-linejoin="round" />
+      <polyline points="50,100 105,147.6 215,147.6 270,100" fill="none" stroke="var(--o-edge)" stroke-opacity=".45" stroke-width="1" stroke-linejoin="round" />
+      <ellipse cx="160" cy="100" rx="64" ry="32" fill="none" stroke="var(--o-groove)" stroke-width="10" />
+      <ellipse cx="160" cy="104" rx="36" ry="18" fill="var(--o-dial-side)" />
+      <ellipse cx="160" cy="98" rx="36" ry="18" fill="var(--o-dial)" />
+      <line x1="160" y1="98" x2="160" y2="84" stroke="var(--o-notch)" stroke-width="3" stroke-linecap="round" />
+    </symbol>
+    <filter id="ledglow" x="-30%" y="-60%" width="160%" height="220%">
+      <feGaussianBlur stdDeviation="6" />
+    </filter>
+    <radialGradient id="floorglow">
+      <stop offset="0" stop-color="#30d8ff" stop-opacity=".35" />
+      <stop offset="1" stop-color="#30d8ff" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+</svg>
