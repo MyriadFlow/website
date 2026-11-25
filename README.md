@@ -161,8 +161,7 @@ Builds teardown and the pitch deck.
 | `/resources/` | `resources/index.html` | The Hub: everything published, the deck included |
 | `/resources/pitch/` | `resources/pitch/index.html` | The pitch deck (opens in its own tab) |
 
-`/legal/creator-terms` and `/legal/community-guidelines` redirect to `/legal/terms`; the 2024
-documents stay readable under `/legal/archive/`.
+`/legal/creator-terms` and `/legal/community-guidelines` redirect to `/legal/terms`.
 
 Shared chrome (head, nav, closing CTA, footer, action pill) lives once in `partials/` and is
 pulled in at build time by `<!--@include name-->`, resolved by a small plugin in
