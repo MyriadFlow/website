@@ -505,22 +505,22 @@ lib_deps      = <span class="cs">adafruit/Adafruit NeoPixel@^1.12</span></pre>
               <div><p class="kicker">Stage 5 · Teardown · interactive</p><h2>Take it apart: the focus object</h2></div>
               <span class="lab-tag">Live 3D · drag to orbit · scroll to zoom</span>
             </header>
-            <aside class="lab-l">
+            <aside class="lab-l" aria-label="Focus object: parts and selection">
               <div class="pnl"><span class="pk">Parts</span><b class="big" data-hud="parts">14</b><span class="ps">printed, bought and fastened</span></div>
               <div class="pnl"><span class="pk">Selected</span><b class="nm" data-hud="partName">Focus object · v4</b><p data-hud="partInfo">72 mm hex · 28 mm tall · PETG shell with 2.4 mm walls</p></div>
               <div class="pnl"><span class="pk">PartSpec</span><dl class="spec"><dt>Footprint</dt><dd>72 mm hex</dd><dt>Height</dt><dd>28 mm</dd><dt>Wall</dt><dd>2.4 mm</dd><dt>Lid fit</dt><dd>0.25 mm/side</dd></dl></div>
             </aside>
             <div class="td-canvas" role="img" aria-label="Interactive 3D model of the focus object"></div>
-            <aside class="lab-r">
+            <aside class="lab-r" aria-label="Focus object: live readouts">
               <div class="pnl"><span class="pk">Explode</span><b class="big" data-hud="explode">0%</b><span class="ps">camera <em data-hud="az">0°</em></span></div>
               <div class="pnl"><span class="pk">Light ring</span><b class="nm"><i class="swatch-live"></i><span data-hud="mode">FOCUS</span></b><span class="ps mono" data-hud="modeHex">#30D8FF</span>
-                <div class="seg2"><button data-mode="focus">Focus</button><button data-mode="break">Break</button><button data-mode="dnd">DND</button></div></div>
+                <div class="seg2"><button type="button" data-mode="focus">Focus</button><button type="button" data-mode="break">Break</button><button type="button" data-mode="dnd">DND</button></div></div>
               <div class="pnl"><span class="pk">Stack, top to bottom</span><ol class="stackup"><li>Dial</li><li>Diffuser</li><li>LED ring</li><li>M2 screws</li><li>ESP32-C3 board</li><li>Heat-set inserts</li><li>Shell</li><li>TPU feet</li></ol></div>
             </aside>
-            <nav class="lab-bar" aria-label="Teardown controls">
-              <button data-act="assemble">Assembled</button><button data-act="explode">Explode</button><span class="sep"></span>
-              <button data-focus="shell">Shell</button><button data-focus="electronics">Electronics</button><button data-focus="top">Top</button><span class="sep"></span>
-              <button data-act="xray">X-ray</button><button data-act="tour">Tour</button>
+            <nav class="lab-bar" aria-label="Focus object teardown controls">
+              <button type="button" data-act="assemble">Assembled</button><button type="button" data-act="explode">Explode</button><span class="sep"></span>
+              <button type="button" data-focus="shell">Shell</button><button type="button" data-focus="electronics">Electronics</button><button type="button" data-focus="top">Top</button><span class="sep"></span>
+              <button type="button" data-act="xray">X-ray</button><button type="button" data-act="tour">Tour</button>
               <span class="drag">The tour runs by itself · click anything to take over</span>
             </nav>
           </div>
@@ -746,23 +746,23 @@ lib_deps      = <span class="cs">adafruit/Adafruit NeoPixel@^1.12</span></pre>
               <div><p class="kicker">Case study · Teardown · interactive</p><h2>Sotreus Edge, taken apart</h2></div>
               <span class="lab-tag">Modelled from the build photos · drag to orbit</span>
             </header>
-            <aside class="lab-l">
+            <aside class="lab-l" aria-label="Sotreus Edge: parts and selection">
               <div class="pnl"><span class="pk">Parts</span><b class="big" data-hud="parts">15</b><span class="ps">two printed shells, one board, one radio path</span></div>
               <div class="pnl"><span class="pk">Selected</span><b class="nm" data-hud="partName">Sotreus Edge · in progress</b><p data-hud="partInfo">Two-part printed enclosure · ESP32 + LoRa board with OLED · external antenna · battery leads</p></div>
               <div class="pnl"><span class="pk">Build status</span><ul class="checks"><li>Enclosure printed</li><li>IoT modules in</li><li class="wip">Firmware … loading</li></ul></div>
             </aside>
             <div class="td-canvas" role="img" aria-label="Interactive 3D model of the Sotreus Edge device"></div>
-            <aside class="lab-r">
+            <aside class="lab-r" aria-label="Sotreus Edge: live readouts">
               <div class="pnl"><span class="pk">Wi-Fi scan</span><b class="big">7</b><span class="ps">networks · RSSI <em data-hud="rssi">-74</em> dBm</span>
                 <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none" data-spark="rssi" aria-hidden="true"><polyline points="" /></svg>
                 <span class="ps">replayed from the bench photo</span></div>
-              <div class="pnl"><span class="pk">Mode</span><div class="seg2"><button data-mode="sense">Sense</button><button data-mode="p2p">P2P</button></div><p data-hud="modeNote">Local sensing: Wi-Fi scan + on-device logic</p></div>
+              <div class="pnl"><span class="pk">Mode</span><div class="seg2"><button type="button" data-mode="sense">Sense</button><button type="button" data-mode="p2p">P2P</button></div><p data-hud="modeNote">Local sensing: Wi-Fi scan + on-device logic</p></div>
               <div class="pnl"><span class="pk">Bring-up log</span><ol class="loglist" data-log></ol></div>
             </aside>
-            <nav class="lab-bar" aria-label="Teardown controls">
-              <button data-act="assemble">Assembled</button><button data-act="explode">Explode</button><span class="sep"></span>
-              <button data-focus="shell">Shell</button><button data-focus="board">Board</button><button data-focus="radio">Radio</button><button data-focus="power">Power</button><button data-focus="ui">Front panel</button><span class="sep"></span>
-              <button data-act="xray">X-ray</button><button data-act="tour">Tour</button>
+            <nav class="lab-bar" aria-label="Sotreus Edge teardown controls">
+              <button type="button" data-act="assemble">Assembled</button><button type="button" data-act="explode">Explode</button><span class="sep"></span>
+              <button type="button" data-focus="shell">Shell</button><button type="button" data-focus="board">Board</button><button type="button" data-focus="radio">Radio</button><button type="button" data-focus="power">Power</button><button type="button" data-focus="ui">Front panel</button><span class="sep"></span>
+              <button type="button" data-act="xray">X-ray</button><button type="button" data-act="tour">Tour</button>
               <span class="drag">Watch the OLED: switch to P2P</span>
             </nav>
           </div>
@@ -1517,14 +1517,14 @@ cq.exporters.export(shell, <span class="cs">"focus_shell.step"</span>)</pre>
     <div class="progress" aria-hidden="true"><i id="bar"></i></div>
     <p class="hint" id="hint">← → to move · M for slides · F for fullscreen</p>
     <nav class="hud" id="hud" aria-label="Deck controls">
-      <button class="pres-only" id="prev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" /></svg></button>
+      <button type="button" class="pres-only" id="prev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" /></svg></button>
       <span class="count pres-only" id="count" aria-live="polite">1 / 1</span>
-      <button class="pres-only" id="next" aria-label="Next slide"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" /></svg></button>
-      <button id="menu" aria-label="All slides"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" /></svg></button>
-      <button class="pres-only" id="fs" aria-label="Fullscreen"><svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3" /></svg></button>
+      <button type="button" class="pres-only" id="next" aria-label="Next slide"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" /></svg></button>
+      <button type="button" id="menu" aria-label="All slides"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+      <button type="button" class="pres-only" id="fs" aria-label="Fullscreen"><svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3" /></svg></button>
     </nav>
     <div class="toc" id="toc" hidden>
-      <button class="close" id="tocClose">Close · Esc</button>
+      <button type="button" class="close" id="tocClose">Close · Esc</button>
       <h2>All slides</h2>
       <ol id="tocList"></ol>
     </div>

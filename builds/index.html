@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Builds — From a sentence to a shipped product | MyriadFlow</title>
+    <meta
+      name="description"
+      content="How vibe manufacturing works on MyriadFlow: the flow, the engine behind it, a real build taken apart in 3D, and the path from prototype to production."
+    />
+    <link rel="canonical" href="https://myriadflow.com/builds" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MyriadFlow" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://myriadflow.com/builds" />
+    <meta property="og:title" content="Builds — From a sentence to a shipped product" />
+    <meta property="og:description" content="How vibe manufacturing works on MyriadFlow: the flow, the engine behind it, a real build taken apart in 3D, and the path from prototype to production." />
+    <meta property="og:image" content="https://myriadflow.com/og/og-builds.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="MyriadFlow Builds — from a sentence to a shipped product." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@0xMyriadFlow" />
+    <meta name="twitter:title" content="Builds — From a sentence to a shipped product" />
+    <meta name="twitter:description" content="How vibe manufacturing works on MyriadFlow: the flow, the engine behind it, a real build taken apart in 3D, and the path from prototype to production." />
+    <meta name="twitter:image" content="https://myriadflow.com/og/og-builds.png" />
+    <meta name="twitter:image:alt" content="MyriadFlow Builds — from a sentence to a shipped product." />
+
+    <!--@include head-->
+  </head>
+
+  <body data-page="builds">
+    <a class="skip" href="#main">Skip to content</a>
+
+    <!--@include defs-->
+    <!--@include nav-->
+
+    <nav class="subnav" id="subnav" aria-label="On this page">
+      <div class="wrap subnav-in">
+        <a href="#flow">The flow</a>
+        <a href="#journey">Creator journey</a>
+        <a href="#tvastr">TVASTR</a>
+        <a href="#teardown">Teardown</a>
+        <a href="#launchpad">Launchpad</a>
+        <a href="#record">One record</a>
+        <a href="#execution">Execution</a>
+      </div>
+    </nav>
+
+    <main id="main">
+      <!-- HERO (stacked) --------------------------------------------------- -->
+      <section class="hero hero-stack sec" id="top">
+        <div class="hero-bg" aria-hidden="true">
+          <i class="glow g1"></i><i class="glow g2"></i>
+          <i class="grid"></i>
+        </div>
+        <div class="wrap">
+          <div class="hero-copy">
+            <p class="eyebrow" data-a="up"><i class="pip"></i>Manufacturing</p>
+            <h1 class="display" data-a="up">From a sentence<br /><span class="accent">to a shipped product.</span></h1>
+            <p class="lede" data-a="up">
+              How vibe manufacturing works on MyriadFlow: the flow, the engine behind it, a real
+              build taken apart, and the path from prototype to production.
+            </p>
+            <div class="cta-row" data-a="up">
+              <a class="btn btn-primary" href="https://discord.gg/38jktRtuY7" target="_blank" rel="noopener">Start a project</a>
+              <a class="btn btn-ghost" href="#teardown">See a real build <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+
+          <div class="buildcard card" data-a="card" data-story="build" role="img" aria-label="One sentence becoming a part: the prompt, a CAD wireframe passing its DFM check, and the printed prototype">
+            <div class="bc-prompt" aria-hidden="true">
+              <span class="prompt-mark">›</span>
+              <p class="prompt-text"><span class="typed" data-full="make a pocket device that shows the signals around me"></span><i class="caret"></i></p>
+            </div>
+            <div class="bc-row" aria-hidden="true">
+              <figure class="bc-step bc-cad">
+                <div class="bc-art">
+                  <!-- the same model as the teardown, drawn as turquoise edges -->
+                  <div class="obj-3d" data-model3d="wire" data-spin="1.4"></div>
+                  <img class="obj-still" src="/img/sotreus-wire.png" width="900" height="733" alt="" />
+                  <span class="bc-cap">CAD · v0.3</span>
+                </div>
+                <span class="bc-chip"><b>✓</b> DFM</span>
+              </figure>
+              <svg class="bc-arrow" viewBox="0 0 80 24" aria-hidden="true">
+                <path pathLength="1" d="M2 12 H66 M58 5 L66 12 L58 19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <figure class="bc-step bc-print">
+                <div class="bc-art">
+<img class="shot" style="--ar: 4 / 3" src="/img/sotreus-printed.jpg" width="1000" height="1100" loading="lazy"
+                    alt="The printed Sotreus Edge prototype on the bench." />
+                  <span class="bc-cap">Printed · PLA</span>
+                </div>
+                <span class="bc-chip"><b>✓</b> Built</span>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 01 · THE FLOW ---------------------------------------------------- -->
+      <section class="sec block" id="flow">
+        <div class="wrap">
+          <header class="sec-head center">
+            <p class="eyebrow" data-a="up"><i class="pip"></i>01 / The flow</p>
+            <h2 class="h2 quote" data-a="up">
+              Intent-led, agent-assisted creation of <span class="accent-grey">physical products.</span>
+            </h2>
+            <p class="sec-lede" data-a="up">A definition worth keeping — and a flow you can actually walk.</p>
+          </header>
+
+          <div class="stages" data-story="stages">
+            <div class="stages-rail" aria-hidden="true"><i class="stages-line" data-a="line"></i><i class="stages-pulse"></i></div>
+            <ol>
+              <li class="stage" data-a="up"><span class="stage-dot"><i></i>01</span><b>Imagine</b><span>A sentence, a sketch, a photo or a STEP file.</span></li>
+              <li class="stage" data-a="up"><span class="stage-dot"><i></i>02</span><b>Specify</b><span>Intent becomes requirements and acceptance tests.</span></li>
+              <li class="stage" data-a="up"><span class="stage-dot"><i></i>03</span><b>Source</b><span>Build around parts that exist, in stock, today.</span></li>
+              <li class="stage" data-a="up"><span class="stage-dot"><i></i>04</span><b>Design</b><span>Parametric CAD and firmware an agent can edit.</span></li>
+              <li class="stage" data-a="up"><span class="stage-dot"><i></i>05</span><b>Make</b><span>Slice, print, assemble. Your first factory can be local.</span></li>
+              <li class="stage" data-a="up"><span class="stage-dot"><i></i>06</span><b>Test</b><span>Form, fit, function — and five honest people.</span></li>
+              <li class="stage" data-a="up"><span class="stage-dot"><i></i>07</span><b>Scale</b><span>Pilot batch, design for manufacture, production.</span></li>
+            </ol>
+          </div>
+
+          <div class="honest">
+            <div class="honest-col" data-a="card">
+              <p class="honest-k">Agents are great at</p>
+              <ul class="ticks">
+                <li>Turning intent into requirements</li>
+                <li>Comparing datasheets and options</li>
+                <li>Drafting firmware and CAD code</li>
+                <li>Writing test plans and checklists</li>
+                <li>Keeping decisions documented</li>
+              </ul>
+            </div>
+            <div class="honest-col real" data-a="card">
+              <p class="honest-k">Only the real world can</p>
+              <ul class="ticks">
+                <li>Enforce physics and tolerances</li>
+                <li>Confirm real stock and price</li>
+                <li>Tell you how a click feels</li>
+                <li>Show how it holds up in daily use</li>
+                <li>Prove that it's safe</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="vote" data-a="up">
+            The real world still gets the final vote — so every project on MyriadFlow says plainly
+            what it knows.
+          </p>
+
+          <ul class="evidence" data-a="up">
+            <li class="ev-ok"><b>✓ Verified</b><span>Tested on a real part, with the report attached.</span></li>
+            <li class="ev-est"><b>≈ Estimated</b><span>Quotes, costs and timings that may still move.</span></li>
+            <li class="ev-open"><b>○ Needs testing</b><span>Open questions, named before anyone commits.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- BENCH BAND ------------------------------------------------------- -->
+      <section class="sec band band-slim">
+<img class="shot band-shot" src="/img/bench.jpg" width="1376" height="768" loading="lazy"
+          alt="A maker's desk at night: a printer mid-job, printed parts, calipers and a board going into a shell." />
+        <div class="wrap band-in">
+          <p class="band-cap" data-a="up"><i class="dot" aria-hidden="true"></i>On the bench</p>
+        </div>
+      </section>
+
+      <!-- 02 · CREATOR JOURNEY --------------------------------------------- -->
+      <section class="sec block" id="journey">
+        <div class="wrap">
+          <header class="sec-head">
+            <p class="eyebrow" data-a="up"><i class="pip"></i>02 / The creator journey</p>
+            <h2 class="h2" data-a="up">From spark <span class="accent-grey">to proof.</span></h2>
+            <p class="sec-lede" data-a="up">
+              It begins with an idea, not an empty engineering canvas. MyriadFlow asks only the
+              questions that change the outcome — who uses it, what it must do, where it lives, what
+              it should cost, and how many might one day be made.
+            </p>
+          </header>
+
+          <div class="journey card" data-a="card" data-story="journey">
+            <div class="j-tabs" role="tablist" aria-label="Creator journey">
+              <button type="button" class="j-tab" role="tab" aria-selected="true" aria-controls="jp0" id="jt0"><span class="j-n">01</span>Start<i class="j-prog"></i></button>
+              <button type="button" class="j-tab" role="tab" aria-selected="false" aria-controls="jp1" id="jt1" tabindex="-1"><span class="j-n">02</span>Shape<i class="j-prog"></i></button>
+              <button type="button" class="j-tab" role="tab" aria-selected="false" aria-controls="jp2" id="jt2" tabindex="-1"><span class="j-n">03</span>Build<i class="j-prog"></i></button>
+              <button type="button" class="j-tab" role="tab" aria-selected="false" aria-controls="jp3" id="jt3" tabindex="-1"><span class="j-n">04</span>Learn<i class="j-prog"></i></button>
+              <button type="button" class="j-tab" role="tab" aria-selected="false" aria-controls="jp4" id="jt4" tabindex="-1"><span class="j-n">05</span>Launch<i class="j-prog"></i></button>
+              <button type="button" class="j-tab" role="tab" aria-selected="false" aria-controls="jp5" id="jt5" tabindex="-1"><span class="j-n">06</span>Fulfill<i class="j-prog"></i></button>
+            </div>
+            <div class="j-panels">
+              <div class="j-panel is-on" role="tabpanel" id="jp0" aria-labelledby="jt0">
+                <p class="j-k">What you see</p>
+                <p class="j-v">Describe an idea. Attach a sketch, a photo, or an existing STEP file.</p>
+                <p class="j-k">What it leaves behind</p>
+                <ul class="j-files"><li>brief.md</li><li>open-questions</li><li>intended-user</li></ul>
+              </div>
+              <div class="j-panel" role="tabpanel" id="jp1" aria-labelledby="jt1" hidden>
+                <p class="j-k">What you see</p>
+                <p class="j-v">Compare possible product approaches and choose a first testable form.</p>
+                <p class="j-k">What it leaves behind</p>
+                <ul class="j-files"><li>requirements · v2</li><li>prototype-plan</li></ul>
+              </div>
+              <div class="j-panel" role="tabpanel" id="jp2" aria-labelledby="jt2" hidden>
+                <p class="j-k">What you see</p>
+                <p class="j-v">Review a model, materials, feasibility checks, costs and a prototype job.</p>
+                <p class="j-k">What it leaves behind</p>
+                <ul class="j-files"><li>focus_shell.step</li><li>BOM</li><li>estimate</li><li>build-record</li></ul>
+              </div>
+              <div class="j-panel" role="tabpanel" id="jp3" aria-labelledby="jt3" hidden>
+                <p class="j-k">What you see</p>
+                <p class="j-v">Handle the prototype, record what worked, invite feedback, revise.</p>
+                <p class="j-k">What it leaves behind</p>
+                <ul class="j-files"><li>PrintReport #12</li><li>test-evidence</li><li>risk-list</li></ul>
+              </div>
+              <div class="j-panel" role="tabpanel" id="jp4" aria-labelledby="jt4" hidden>
+                <p class="j-k">What you see</p>
+                <p class="j-v">Publish the story, the funding goal, milestones and the offer to supporters.</p>
+                <p class="j-k">What it leaves behind</p>
+                <ul class="j-files"><li>project-page</li><li>campaign-plan</li></ul>
+              </div>
+              <div class="j-panel" role="tabpanel" id="jp5" aria-labelledby="jt5" hidden>
+                <p class="j-k">What you see</p>
+                <p class="j-v">Confirm demand, then coordinate suppliers, a pilot run, production and shipping.</p>
+                <p class="j-k">What it leaves behind</p>
+                <ul class="j-files"><li>production-status</li><li>orders</li><li>creator-updates</li></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 · TVASTR ------------------------------------------------------ -->
+      <section class="sec block" id="tvastr">
+        <div class="wrap">
+          <header class="sec-head">
+            <p class="eyebrow" data-a="up"><i class="pip"></i>03 / TVASTR · Manufacturing intelligence</p>
+            <h2 class="h2" data-a="up">The engine that turns <span class="accent-grey">a brief into a build.</span></h2>
+            <p class="sec-lede" data-a="up">
+              Named for the Vedic maker and fashioner of forms, TVASTR turns a brief into structured
+              specifications, parametric design, feasibility checks, prototype jobs, test reports and
+              a production handoff. Every physical test leaves a report the next revision can use.
+            </p>
+          </header>
+
+          <div class="bento bento-2">
+            <article class="card" data-a="card">
+              <div class="viz viz-tall" data-story="loop">
+                <svg class="loop" viewBox="0 0 520 400" role="img" aria-label="The TVASTR prototype loop: brief, PartSpec, parametric CAD, DFM checks, manufacturing plan, slice, print, PrintReport, revision">
+                  <circle cx="260" cy="200" r="128" class="loop-ring" />
+                  <circle cx="260" cy="200" r="128" class="loop-tail" pathLength="1" transform="rotate(-90 260 200)" />
+                  <g class="loop-nodes"></g>
+                  <g class="loop-pulse"><circle r="12" class="halo" /><circle r="5" /></g>
+                  <text x="260" y="198" class="loop-title">TVASTR</text>
+                  <text x="260" y="224" class="loop-sub">the prototype loop</text>
+                </svg>
+              </div>
+              <div class="card-body">
+                <h3 class="h3" data-a="up">One narrow loop, run honestly</h3>
+                <p data-a="up">brief → PartSpec → parametric CAD → DFM checks → manufacturing plan → slice → print → PrintReport → revision.</p>
+              </div>
+            </article>
+
+            <article class="card" data-a="card">
+              <div class="viz viz-tall" data-story="cad" role="img" aria-label="Parametric CAD code next to a section view: one wall thickness changes and the DFM check confirms the minimum wall">
+                <div class="cad" aria-hidden="true">
+                  <pre class="code"><span class="c-k">import</span> cadquery <span class="c-k">as</span> cq
+D, H, WALL = <span class="c-n">72</span>, <span class="c-n">28</span>, <span class="c-n c-wall"><i class="c-sel"></i><span class="c-val">2.4</span><i class="caret"></i></span>  <span class="c-c"># mm</span>
+shell = (
+  cq.Workplane(<span class="c-s">"XY"</span>)
+  .polygon(<span class="c-n">6</span>, D)   <span class="c-c"># hex footprint</span>
+  .extrude(H)
+  .edges(<span class="c-s">"&gt;Z"</span>).fillet(<span class="c-n">4</span>)
+  .faces(<span class="c-s">"&gt;Z"</span>).shell(-WALL)
+)</pre>
+                  <div class="section-view">
+                    <svg viewBox="0 0 220 180">
+                      <polygon class="sv-outer" points="200,90 155,12 65,12 20,90 65,168 155,168" />
+                      <g class="sv-inner-g"><polygon class="sv-inner" points="200,90 155,12 65,12 20,90 65,168 155,168" /></g>
+                      <path class="sv-dim" d="M20 90 H44" />
+                    </svg>
+                    <i class="sv-sweep"></i>
+                    <span class="sv-label"><span class="sv-a">wall 2.4 mm</span><span class="sv-b">wall 2.0 mm</span></span>
+                    <span class="sv-badge"><b>✓</b> DFM · min wall 1.2 mm</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3 class="h3" data-a="up">CAD as code</h3>
+                <p data-a="up">Not a render — a parametric model with dimensions, constraints and history. Change one number, regenerate, re-check, export STEP, STL or 3MF.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="bounds">
+            <div class="bounds-col" data-a="card">
+              <p class="bounds-k"><i class="pip"></i>TVASTR can</p>
+              <ul>
+                <li>Ask clarifying questions</li><li>Draft a spec</li><li>Generate parametric parts</li>
+                <li>Check geometry and materials</li><li>Prepare a print job</li><li>Observe results and propose revisions</li>
+              </ul>
+            </div>
+            <div class="bounds-col you" data-a="card">
+              <p class="bounds-k"><i class="pip"></i>You approve</p>
+              <ul>
+                <li>Designs</li><li>Spending</li><li>Machine starts</li><li>Production commitments</li><li>Campaign terms</li><li>Major changes</li>
+              </ul>
+            </div>
+            <p class="bounds-foot" data-a="up">
+              <b>Beyond a print.</b> As projects mature, the right path may be CNC, sheet metal,
+              electronics assembly, injection moulding, textiles or a manufacturing partner. Printers and
+              suppliers plug in as structured capabilities; price, quality and schedule come from real
+              quotes and tests.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 · CASE STUDY: TEARDOWN (white) -------------------------------- -->
+      <section class="sec block white" id="teardown">
+        <div class="wrap">
+          <header class="sec-head">
+            <p class="eyebrow" data-a="up"><i class="pip"></i>04 / Case study · Teardown</p>
+            <h2 class="h2" data-a="up">Sotreus Edge, <span class="accent">taken apart.</span></h2>
+            <p class="sec-lede" data-a="up">Modelled from the build photos · drag to orbit</p>
+          </header>
+
+          <div class="td" data-a="card" data-model3d="teardown">
+            <aside class="td-l" aria-label="Teardown: parts and selection">
+              <div class="pnl"><span class="pk">Parts</span><b class="pnl-big" data-hud="parts">15</b><span class="ps">two printed shells, one board, one radio path</span></div>
+              <div class="pnl"><span class="pk">Selected</span><b class="pnl-nm" data-hud="partName">Sotreus Edge · in progress</b><p data-hud="partInfo">Two-part printed enclosure · ESP32 + LoRa board with OLED · external antenna · battery leads</p></div>
+              <div class="pnl"><span class="pk">Build status</span><ul class="td-checks"><li>Enclosure printed</li><li>IoT modules in</li><li class="wip">Firmware … loading</li></ul></div>
+            </aside>
+
+            <div class="td-canvas" role="img" aria-label="Interactive 3D model of the Sotreus Edge: a two-part printed enclosure holding an ESP32 and LoRa board with an OLED, an external antenna and a battery">
+<img class="shot td-still" src="/img/sotreus-full.png" width="903" height="797" loading="lazy"
+                alt="The Sotreus Edge: a two-part printed enclosure with an OLED window, buttons and an antenna." />
+            </div>
+
+            <aside class="td-r" aria-label="Teardown: live readouts">
+              <div class="pnl"><span class="pk">Wi-Fi scan</span><b class="pnl-big">7</b><span class="ps">networks · RSSI <em data-hud="rssi">-74</em> dBm</span>
+                <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none" data-spark="rssi" aria-hidden="true"><polyline points="" /></svg>
+                <span class="ps">replayed from the bench photo</span>
+              </div>
+              <div class="pnl"><span class="pk">Mode</span>
+                <div class="seg2" role="radiogroup" aria-label="Device mode">
+                  <button type="button" role="radio" aria-checked="true" data-mode="sense">Sense</button><button type="button" role="radio" aria-checked="false" data-mode="p2p">P2P</button>
+                </div>
+                <p data-hud="modeNote">Local sensing: Wi-Fi scan + on-device logic</p>
+              </div>
+              <div class="pnl"><span class="pk">Bring-up log</span><ol class="td-log" data-log></ol></div>
+            </aside>
+
+            <nav class="td-bar" aria-label="Teardown controls">
+              <button type="button" data-act="assemble" aria-pressed="true">Assembled</button><button type="button" data-act="explode" aria-pressed="false">Explode</button><span class="sep"></span>
+              <button type="button" data-focus="shell" aria-pressed="false">Shell</button><button type="button" data-focus="board" aria-pressed="false">Board</button><button type="button" data-focus="radio" aria-pressed="false">Radio</button><button type="button" data-focus="power" aria-pressed="false">Power</button><button type="button" data-focus="ui" aria-pressed="false">Front panel</button><span class="sep"></span>
+              <button type="button" data-act="xray" aria-pressed="false">X-ray</button><button type="button" data-act="tour" aria-pressed="false">▶ Tour</button>
+              <span class="td-hint">Drag to orbit · ⌘/ctrl + scroll to zoom</span>
+            </nav>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 · THE LAUNCHPAD ----------------------------------------------- -->
+      <section class="sec block" id="launchpad">
+        <div class="wrap launch-grid">
+          <div class="launch-copy">
+            <p class="eyebrow" data-a="up"><i class="pip"></i>05 / The launchpad</p>
+            <h2 class="h2" data-a="up">Build momentum around <span class="accent-grey">the proof.</span></h2>
+            <p class="sec-lede" data-a="up">
+              A good project page shows more than a polished render. It makes the promise, the
+              prototype, the remaining risks and the path to delivery legible — so supporters back
+              evidence, not hype.
+            </p>
+            <ol class="states">
+              <li data-a="left"><b>Idea</b><span>Problem, intended user, concept.</span><em>Follow · join the waitlist</em></li>
+              <li data-a="left"><b>Prototype</b><span>Working demo, photos, test notes, revisions.</span><em>Give feedback · request a pilot unit</em></li>
+              <li data-a="left"><b>Campaign</b><span>Funding goal, unit economics, timeline, risks.</span><em>Back the project</em></li>
+              <li data-a="left"><b>Pilot run</b><span>Supplier quotes, design freeze, sample checks.</span><em>Track milestones</em></li>
+              <li data-a="left"><b>Product</b><span>Availability, delivery and support.</span><em>Order · review · recommend</em></li>
+            </ol>
+          </div>
+
+          <div class="launch-visual">
+            <article class="proj card" data-a="card" data-story="proj" role="img" aria-label="A sample project page for a fictional studio: a tested prototype, 72 percent of its pilot run backed by 318 people, with design freeze and supplier quotes done and sample checks still open">
+              <div class="proj-cover" aria-hidden="true">
+                <svg viewBox="0 0 320 240" class="mat-petg">
+                  <ellipse cx="160" cy="200" rx="130" ry="22" fill="url(#floorglow)" />
+                  <use href="#hexobj" />
+                  <g class="led" style="--c: #30d8ff; opacity: 1"><ellipse cx="160" cy="100" rx="64" ry="32" filter="url(#ledglow)" /><ellipse cx="160" cy="100" rx="64" ry="32" /></g>
+                </svg>
+                <span class="proj-tag">Prototype v3 · tested</span>
+                <span class="proj-sample">Sample</span>
+              </div>
+              <div class="proj-body" aria-hidden="true">
+                <p class="proj-kicker">Home &amp; desk · by Studio Kiln</p>
+                <h3 class="proj-title">Focus Object</h3>
+                <p class="proj-desc">A palm-sized dial that tells the room when you're in deep work.</p>
+                <div class="rail">
+                  <i class="rail-line"></i><i class="rail-fill"></i>
+                  <span class="rail-dot"><i></i></span><span class="rail-dot"><i></i></span><span class="rail-dot"><i></i></span><span class="rail-dot is-now"><i></i><em class="ring"></em></span><span class="rail-dot"><i></i></span>
+                </div>
+                <div class="rail-labels"><span>Idea</span><span>Proto</span><span>Campaign</span><span>Pilot</span><span>Product</span></div>
+                <div class="fund">
+                  <p class="fund-row"><b class="fund-pct">72%</b> of the pilot run backed</p>
+                  <span class="bar bar-lg"><i class="bar-fill"></i></span>
+                  <p class="fund-meta"><span><b class="backers">318</b> backers</span><span>120-unit batch</span><span>Preorder</span></p>
+                </div>
+                <ul class="miles">
+                  <li><b class="m-tick">✓</b>Design freeze</li>
+                  <li><b class="m-tick">✓</b>Supplier quotes</li>
+                  <li class="todo"><b class="m-tick">○</b>Sample checks</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <div class="launch-notes">
+            <div class="note" data-a="card">
+              <h3 class="h3">Funding is a launch tool, not a default.</h3>
+              <p>
+                Preorders, reservations, rewards or community backing — chosen per project. Before a
+                campaign opens, the creator states the minimum viable batch, per-unit cost, tooling and
+                test needs, contingency and timing. If a goal is missed or a prototype fails, the page
+                says what happens next.
+              </p>
+            </div>
+            <div class="note" data-a="card">
+              <h3 class="h3">The flywheel.</h3>
+              <p>
+                More ideas bring more builders. Visible prototypes bring better feedback. Better
+                evidence helps supporters judge a launch. Finished products build trust — and reusable
+                manufacturing knowledge for the next wave of creators.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 · ONE RECORD -------------------------------------------------- -->
+      <section class="sec block" id="record">
+        <div class="wrap record-grid">
+          <div class="record-copy">
+            <p class="eyebrow" data-a="up"><i class="pip"></i>06 / One record</p>
+            <h2 class="h2" data-a="up">One record across <span class="accent-grey">the whole lifecycle.</span></h2>
+            <p class="sec-lede" data-a="up">
+              Not a chat here, a CAD folder there, a campaign page and a supplier spreadsheet
+              somewhere else. Every project keeps a versioned record that ties intent to decisions
+              and deliverables — so a change in size, material, price or process traces forward on
+              its own.
+            </p>
+          </div>
+          <div class="layers card" data-a="card" data-story="layers">
+            <i class="layers-rail" aria-hidden="true"></i>
+            <i class="layers-pulse" aria-hidden="true"></i>
+            <div class="layer"><i class="layer-on"></i><span class="layer-n">Project</span><span class="layer-o">Brief · users · constraints · milestones · updates</span><span class="layer-note"></span></div>
+            <div class="layer"><i class="layer-on"></i><span class="layer-n">Design</span><span class="layer-o">PartSpec · CAD · assemblies · revision history</span><span class="layer-note change">material · PLA → PETG</span></div>
+            <div class="layer"><i class="layer-on"></i><span class="layer-n">Prototype</span><span class="layer-o">Manufacturing plan · machine profile · PrintReport</span><span class="layer-note">reprint queued</span></div>
+            <div class="layer"><i class="layer-on"></i><span class="layer-n">Launch</span><span class="layer-o">Story · evidence · campaign · disclosures</span><span class="layer-note">unit cost updated</span></div>
+            <div class="layer"><i class="layer-on"></i><span class="layer-n">Production</span><span class="layer-o">BOM · supplier quotes · QA · fulfilment</span><span class="layer-note">BOM rev C</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 07 · EXECUTION --------------------------------------------------- -->
+      <section class="sec block" id="execution">
+        <div class="wrap">
+          <header class="sec-head">
+            <p class="eyebrow" data-a="up"><i class="pip"></i>07 / Execution</p>
+            <h2 class="h2" data-a="up">Start with <span class="accent-grey">one reliable flow.</span></h2>
+            <p class="sec-lede" data-a="up">
+              The destination is a launchpad for hardware ideas of every kind. The first build proves
+              one complete path through the hard middle: turning an ambiguous request into a physical
+              test and an honest public project.
+            </p>
+          </header>
+          <ol class="phases">
+            <li data-a="card"><span class="ph-l">A</span><b>Compile</b><p>PartSpec → valid parametric enclosure → STEP/STL preview.</p><em>Dimensions and features survive revisions.</em></li>
+            <li data-a="card"><span class="ph-l">B</span><b>Make</b><p>Manufacturing plan, DFM, slicing, a reference printer connection.</p><em>A real enclosure prints with the right material and profile.</em></li>
+            <li data-a="card"><span class="ph-l">C</span><b>Learn</b><p>Job status, PrintReport, test notes, guided redesign.</p><em>Failure or feedback leads to a traceable, improved part.</em></li>
+            <li data-a="card"><span class="ph-l">D</span><b>Share</b><p>Creator workspace, project page, waitlist, updates and feedback.</p><em>A visitor understands the proof and what remains.</em></li>
+            <li data-a="card"><span class="ph-l">E</span><b>Launch</b><p>Campaign configuration, milestones, supporter tracking.</p><em>A vetted pilot run with explicit terms and progress.</em></li>
+            <li data-a="card"><span class="ph-l">F</span><b>Scale</b><p>Supplier handoff, production QA, orders and fulfilment.</p><em>A completed batch reaches buyers with visible status.</em></li>
+          </ol>
+          <p class="boundary" data-a="up">
+            <b>Early boundaries.</b> Prove an enclosure before arbitrary assemblies. Production
+            electronics, certification, tooling and high-volume manufacturing go through specialist
+            review and partner processes. A first print is never presented as proof that a device is
+            safe, certified or production-ready.
+          </p>
+        </div>
+      </section>
+
+      <!--@include cta-->
+    </main>
+
+    <!--@include footer-->
+    <!--@include fab-->
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

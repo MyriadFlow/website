@@ -135,18 +135,69 @@ certification, tooling and high-volume manufacturing go through specialist revie
 processes. A first print is never presented as proof that a device is safe, certified or
 production-ready.
 
+## Phygitals
+
+A phygital is a physical object with a verifiable digital life. A **FlowTag** — an NFC chip
+with its own key — goes into the product; a **Product Passport** sits behind it. One tap
+shows who made it, what it's made of, which edition it is and who owns it. A QR code opens a
+link anyone can copy; a FlowTag signs each tap, so the object itself proves it is the real
+one. Products made through the flow fill their passport as they are built; products that
+already exist can be tagged and set up by our team.
+
+## This site
+
+Static HTML built with Vite and deployed to GitHub Pages. No framework — one small scene
+engine (`src/main.js`) drives every diagram on one `requestAnimationFrame` clock, and
+`src/sotreus.js` builds the Sotreus Edge in three.js for the hero, the passport twin, the
+Builds teardown and the pitch deck.
+
+| Route | Source | Page colour |
+|---|---|---|
+| `/` | `index.html` | Brand gradient |
+| `/builds` | `builds/index.html` | Violet `#9060FC` |
+| `/phygitals` | `phygitals/index.html` | Pink `#F25BC4` |
+| `/contact` | `contact/index.html` | Gradient (hero only) |
+| `/legal/terms`, `/legal/privacy` | `legal/*/index.html` | Neutral |
+| `/resources/` | `resources/index.html` | The Hub: everything published, the deck included |
+| `/resources/pitch/` | `resources/pitch/index.html` | The pitch deck (opens in its own tab) |
+
+`/legal/creator-terms` and `/legal/community-guidelines` redirect to `/legal/terms`.
+
+Shared chrome (head, nav, closing CTA, footer, action pill) lives once in `partials/` and is
+pulled in at build time by `<!--@include name-->`, resolved by a small plugin in
+`vite.config.js`.
+
+```bash
+pnpm install
+pnpm dev
+```
+
+```bash
+pnpm check
+```
+
+`pnpm check` builds the site and then runs the same three checks CI runs on every push and
+pull request (`.github/workflows/checks.yml`): `html-validate` over the built pages,
+`scripts/check-anchors.mjs` for in-page `#anchors` and unresolved include markers, and
+`linkinator` over every link in `dist`. Social and Discord links are skipped by default
+because they rate-limit bots; CI checks them separately and only warns.
+
+Images come from the design canvas and live in `public/img/`; the per-page logo marks are
+`public/brand/mark-{gradient,violet,pink}.png`, swapped by `body[data-page]`.
+
+### Open items
+
+- Point the contact form at a real endpoint (`data-endpoint` on `#briefForm`); until then it
+  falls back to a pre-filled email.
+- Per-page OG images at `/og/`, self-hosted fonts, and the violet and pink logo marks.
+- Have a lawyer review the Terms and the Privacy Policy.
+
 ## Get involved
 
 - **Have an idea?** MyriadFlow is in private beta — [join the Discord](https://discord.gg/38jktRtuY7) to start a project. A sentence is enough.
 - **Run printers, a makerspace or a factory?** Become a manufacturing partner.
 - **Follow along:** [Discord](https://discord.gg/38jktRtuY7) · [Telegram](https://t.me/MyriadFlow) · [X](https://x.com/0xMyriadFlow) · [Instagram](https://www.instagram.com/0xmyriadflow)
 
-## Company
-
-**MyriadFlow LLC** · Identification number 405818227<br />
-Bakhtrioni Street N22, Apartment N75, Saburtalo District, Tbilisi, Georgia<br />
-[contact@myriadflow.com](mailto:contact@myriadflow.com)
-
 ---
 
-<sub>This repository holds the myriadflow.com website. It deploys to GitHub Pages on every push to `main`. MIT licensed.</sub>
+<sub>MIT licensed. Company details: <a href="COMPANY.md">COMPANY.md</a>.</sub>
