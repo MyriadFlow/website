@@ -1,9 +1,10 @@
-<!-- S3: only the menu pill floats. The brand and the right-hand group sit at the top of the
-     page and scroll away with it; the pill stays put, with nothing full width behind it.
-     On narrow screens the pill is replaced by a floating menu button. main.js marks the
-     current page with aria-current. -->
+<!-- H2-2: the full bar is back at the top of every page. Once the hero has scrolled away the
+     bar fades out and only the menu pill stays, now led by the MF icon. On Builds the page's
+     section links join that same pill after a divider. On narrow screens the pill is replaced
+     by a floating menu button. main.js marks the current page and flips body.scrolled. -->
 <div class="nav-float">
-  <nav class="nav-links" aria-label="Primary">
+  <nav class="nav-links" id="navLinks" aria-label="Primary">
+    <a class="nav-home" href="/" aria-label="MyriadFlow home"><span class="brand-mark" aria-hidden="true"></span></a>
     <a href="/builds"><i class="nav-dot dot-builds" aria-hidden="true"></i>Builds</a>
     <a href="/phygitals"><i class="nav-dot dot-phygitals" aria-hidden="true"></i>Phygitals</a>
     <a href="/contact">Contact</a>

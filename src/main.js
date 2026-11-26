@@ -98,14 +98,16 @@ const MOVED = new Set(["flow", "journey", "tvastr", "launchpad", "record", "exec
 if (here === "/" && MOVED.has(location.hash.slice(1))) location.replace(`/builds${location.hash}`);
 
 /* Marks the link whose section is being read. Used by the legal TOC and the Builds sub-nav. */
-function scrollSpy(links, rootMargin) {
+function scrollSpy(links, rootMargin, onChange) {
   const map = new Map([...links].map((a) => [a.hash.slice(1), a]));
   const spy = new IntersectionObserver(
     (entries) => {
       for (const e of entries) {
         if (!e.isIntersecting) continue;
         map.forEach((a) => a.removeAttribute("aria-current"));
-        map.get(e.target.id)?.setAttribute("aria-current", "true");
+        const here = map.get(e.target.id);
+        here?.setAttribute("aria-current", "true");
+        if (here) onChange?.(here);
       }
     },
     { rootMargin },
@@ -116,11 +118,70 @@ function scrollSpy(links, rootMargin) {
   });
 }
 
-const subnav = document.getElementById("subnav");
-if (subnav) scrollSpy(subnav.querySelectorAll("a"), "-35% 0px -60% 0px");
+/* H2-2: on Builds the section links share the menu pill. They are authored in the page and
+   moved here, so the shared nav partial stays identical on every page. Under about 1100px the
+   long pill would not fit, so they fold behind one button naming the section in view. */
+const pagenav = document.getElementById("pageNav");
+const pill = document.getElementById("navLinks");
+if (pagenav && pill) {
+  const links = [...pagenav.querySelectorAll("a")];
+
+  const divider = document.createElement("span");
+  divider.className = "pill-div";
+  divider.setAttribute("aria-hidden", "true");
+
+  const secs = document.createElement("div");
+  secs.className = "pill-secs";
+  secs.id = "pillSecs";
+  secs.append(...links);
+
+  const fold = document.createElement("button");
+  fold.type = "button";
+  fold.className = "pill-fold";
+  fold.setAttribute("aria-expanded", "false");
+  fold.setAttribute("aria-controls", "pillSecs");
+  fold.append(
+    Object.assign(document.createElement("span"), { textContent: "On this page" }),
+    Object.assign(document.createElement("b"), { textContent: links[0].textContent }),
+    Object.assign(document.createElement("i"), { textContent: "▾", ariaHidden: "true" }),
+  );
+  const foldName = fold.querySelector("b");
+
+  pill.append(divider, secs, fold);
+  pagenav.remove();
+
+  const closeFold = () => {
+    secs.classList.remove("open");
+    fold.setAttribute("aria-expanded", "false");
+  };
+
+  fold.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const open = secs.classList.toggle("open");
+    fold.setAttribute("aria-expanded", String(open));
+  });
+  secs.addEventListener("click", closeFold);
+  document.addEventListener("click", (e) => {
+    if (!pill.contains(e.target)) closeFold();
+  });
+  document.addEventListener("keydown", (e) => e.key === "Escape" && closeFold());
+
+  scrollSpy(links, "-35% 0px -60% 0px", (a) => setText(foldName, a.textContent));
+}
 
 /* S4: the action pill waits until the hero has left, and steps aside only once the closing
    section's own buttons are on screen — not when the section merely touches the bottom edge. */
+/* H2-2: the header bar fades out once the hero has scrolled away and the pill takes over. */
+const inHero = new Set();
+const heroIO = new IntersectionObserver(
+  (entries) => {
+    for (const e of entries) e.isIntersecting ? inHero.add(e.target) : inHero.delete(e.target);
+    document.body.classList.toggle("scrolled", inHero.size === 0);
+  },
+  { threshold: 0 },
+);
+document.querySelectorAll(".hero, .page-hero, .legal-hero").forEach((h) => heroIO.observe(h));
+
 const fab = document.querySelector("[data-fab]");
 if (fab) {
   const covered = new Set();

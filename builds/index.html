@@ -37,17 +37,16 @@
     <!--@include defs-->
     <!--@include nav-->
 
-    <nav class="subnav" id="subnav" aria-label="On this page">
-      <div class="subnav-in">
-        <span class="subnav-k" aria-hidden="true">On this page</span>
-        <a href="#flow">The flow</a>
-        <a href="#journey">Creator journey</a>
-        <a href="#tvastr">TVASTR</a>
-        <a href="#teardown">Teardown</a>
-        <a href="#launchpad">Launchpad</a>
-        <a href="#record">One record</a>
-        <a href="#execution">Execution</a>
-      </div>
+    <!-- H2-2: these move into the menu pill once the hero has gone; main.js does the moving,
+         which is why they sit here hidden rather than in the shared nav partial. -->
+    <nav class="pagenav" id="pageNav" aria-label="On this page" hidden>
+      <a href="#flow">The flow</a>
+      <a href="#journey">Journey</a>
+      <a href="#tvastr">TVASTR</a>
+      <a href="#teardown">Teardown</a>
+      <a href="#launchpad">Launchpad</a>
+      <a href="#record">Record</a>
+      <a href="#execution">Execution</a>
     </nav>
 
     <main id="main">
