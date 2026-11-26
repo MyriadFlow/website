@@ -16,7 +16,7 @@
   );
   --diagram-line: rgba(255, 255, 255, 0.06);
   --diagram-row: rgba(255, 255, 255, 0.03);
-  --line: rgba(255, 255, 255, 0.09);
+  --line: rgba(255, 255, 255, 0.05);
   --line-2: rgba(255, 255, 255, 0.18);
   --text: #e9e6f3;
   --muted: #9a96ab;
@@ -370,7 +370,7 @@ body[data-page="phygitals"] .nav-panel .btn-primary {
   gap: 6px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(15, 13, 23, 0.86);
+  background: rgba(15, 13, 23, 0.92);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
@@ -457,8 +457,13 @@ body[data-page="phygitals"] .nav-panel .btn-primary {
   transition: border-color 0.4s var(--e2);
 }
 
-.card:hover {
-  border-color: var(--line-2);
+/* H3-3: only a box that takes you somewhere reacts to the pointer, and only a little */
+a.card {
+  transition: border-color 0.15s ease;
+}
+
+a.card:hover {
+  border-color: rgba(255, 255, 255, 0.09);
 }
 
 .viz {
@@ -545,7 +550,7 @@ body[data-page="phygitals"] .nav-panel .btn-primary {
   height: 520px;
   left: -160px;
   top: -120px;
-  background: rgba(48, 216, 255, 0.14);
+  background: rgba(48, 216, 255, 0.06);
 }
 
 .hero-bg .g2 {
@@ -553,7 +558,7 @@ body[data-page="phygitals"] .nav-panel .btn-primary {
   height: 640px;
   right: -200px;
   top: 80px;
-  background: rgba(163, 44, 196, 0.14);
+  background: rgba(163, 44, 196, 0.09);
 }
 
 .hero-bg .g3 {
@@ -561,7 +566,7 @@ body[data-page="phygitals"] .nav-panel .btn-primary {
   height: 420px;
   right: 20%;
   bottom: -220px;
-  background: rgba(244, 94, 193, 0.12);
+  background: rgba(244, 94, 193, 0.06);
 }
 
 .hero-bg .grid {
@@ -1499,14 +1504,7 @@ body[data-page="phygitals"] .nav-panel .btn-primary {
 }
 
 .honest-col.real {
-  border-color: rgba(48, 216, 255, 0.3);
-  background:
-    radial-gradient(
-      90% 100% at 100% 0%,
-      rgba(48, 216, 255, 0.1),
-      transparent 60%
-    ),
-    var(--panel);
+  border-color: rgba(48, 216, 255, 0.15);
 }
 
 .honest-k {
@@ -1985,7 +1983,7 @@ body[data-page="phygitals"] .nav-panel .btn-primary {
 }
 
 .bounds-col.you {
-  border-color: rgba(194, 67, 254, 0.35);
+  border-color: rgba(194, 67, 254, 0.18);
 }
 
 .bounds-k {
@@ -2099,7 +2097,6 @@ body[data-page="phygitals"] .nav-panel .btn-primary {
 .proj {
   max-width: 480px;
   margin: 0 auto;
-  box-shadow: 0 40px 100px -40px rgba(48, 216, 255, 0.35);
 }
 
 .proj-cover {
@@ -2409,7 +2406,7 @@ body[data-page="phygitals"] .nav-panel .btn-primary {
   inset: -1px;
   z-index: -1;
   border-radius: inherit;
-  border: 1px solid rgba(194, 67, 254, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   background: rgba(194, 67, 254, 0.08);
   opacity: 0;
 }
@@ -3224,6 +3221,11 @@ body[data-page="phygitals"] .cta {
   transition: border-color 0.4s var(--e2);
 }
 
+/* H3-3: ...except a box you can click, which keeps the quicker hover from the cards block */
+.js .sec.landed a.card[data-a] {
+  transition: border-color 0.15s ease;
+}
+
 /* accents: pulse rings on live indicators, once a section has landed */
 @keyframes ping {
   from {
@@ -3419,7 +3421,7 @@ body[data-page="phygitals"] .brand-mark {
 }
 
 body.scrolled .nav-links {
-  background: rgba(15, 13, 23, 0.86);
+  background: rgba(15, 13, 23, 0.92);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
@@ -4235,22 +4237,31 @@ body[data-page="hub"] .page-hero .display {
   overflow: hidden;
 }
 
-/* B6: the hero grid behind the model — 64px cells in dark ink, fading from the centre */
+/* H3-6: the grid runs across the whole light section, behind the heading and around the
+   viewer, and again inside the viewer at twice the strength, fading from the centre */
+#teardown {
+  background-image:
+    linear-gradient(rgba(18, 13, 36, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18, 13, 36, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: center top;
+}
+
 .td-canvas::before {
   content: "";
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(18, 13, 36, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(18, 13, 36, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(18, 13, 36, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18, 13, 36, 0.1) 1px, transparent 1px);
   background-size: 64px 64px;
   -webkit-mask-image: radial-gradient(
-    ellipse 70% 70% at 50% 50%,
+    ellipse 75% 75% at 50% 50%,
     #000 10%,
     transparent 75%
   );
   mask-image: radial-gradient(
-    ellipse 70% 70% at 50% 50%,
+    ellipse 75% 75% at 50% 50%,
     #000 10%,
     transparent 75%
   );
