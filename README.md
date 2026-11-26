@@ -171,10 +171,9 @@ Nothing full width is fixed to the top: the brand and the Start a project group 
 with the page, and only the centre menu pill stays put (on Builds, the "On this page" pill
 rides under it). Below 1024px the pill becomes a floating menu button.
 
-`server/` holds the one piece that cannot be static: `brief.mjs` emails every contact-form
-brief to contact@myriadflow.com. It is not part of the site build — deploy it anywhere that
-runs Node and can reach the myriadflow.com mail account, then set `data-endpoint` on
-`#briefForm` to its URL. Until that is set, the form falls back to a pre-filled email.
+The contact form has no endpoint yet: `#briefForm` carries an empty `data-endpoint`, so
+`src/main.js` falls back to a pre-filled email. Giving it a real one means a small endpoint
+off the static host, because a mail API key cannot be shipped in the page.
 
 ```bash
 pnpm install
@@ -196,10 +195,12 @@ Images come from the design canvas and live in `public/img/`; the per-page logo 
 
 ### Open items
 
-- Deploy `server/brief.mjs` and point `data-endpoint` on `#briefForm` at it; until then the
-  form falls back to a pre-filled email. It has never been run against a live mailbox.
-- Set the real publication date on the Terms and the Privacy Policy — both currently read
-  26 November 2026.
+- Give the contact form an endpoint and set `data-endpoint` on `#briefForm`: a serverless
+  function that calls Resend (or similar) and forwards the brief with its attachment.
+  GitHub Pages serves static files only, so the send has to happen off it. Until then the
+  form falls back to a pre-filled email, which loses the attachment.
+- Bump the date on the Terms and the Privacy Policy whenever either text changes — both
+  read 26 November 2026.
 - Have a lawyer licensed in Georgia review the Terms and the Privacy Policy. The open
   questions for them are listed in the legal text draft.
 - Self-host the fonts (Bai Jamjuree, Barlow and JetBrains Mono load from Google Fonts).
