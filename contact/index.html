@@ -37,108 +37,124 @@
     <!--@include nav-->
 
     <main id="main">
+      <!-- C1/C2: the hero, the routes list and the brief card are one section, so the glow
+           behind them fades out inside it instead of stopping at a hard edge. -->
       <section class="page-hero sec" id="top">
         <div class="hero-bg" aria-hidden="true">
           <i class="glow g1"></i><i class="glow g2"></i><i class="grid"></i>
         </div>
-        <div class="wrap">
-          <p class="eyebrow" data-a="up"><i class="pip"></i>Contact</p>
-          <h1 class="display" data-a="up">Tell us what <br /><span class="grad-text">you want to make.</span></h1>
-          <p class="lede" data-a="up">
-            A sentence is enough to start. Add a sketch, a photo or an existing STEP file if you have
-            one — we'll reply with the questions that actually change the outcome.
-          </p>
+        <div class="wrap contact-in">
+          <div class="contact-head">
+            <p class="eyebrow" data-a="up">Contact</p>
+            <h1 class="display" data-a="up">Tell us what<br /><span class="accent-grey">you want to make.</span></h1>
+            <p class="lede" data-a="up">
+              A sentence is enough to start. Add a sketch, a photo or an existing STEP file if you
+              have one — we'll reply with the questions that actually change the outcome.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <nav class="routes" aria-label="Ways to reach us">
+              <a class="route" href="https://discord.gg/38jktRtuY7" target="_blank" rel="noopener" data-a="up">
+                <span class="route-n">01</span>
+                <span class="route-body">
+                  <span class="eyebrow">Fastest</span>
+                  <span class="route-t">Start a project in Discord</span>
+                  <span class="route-d">Private beta projects start there. Share the idea and talk it through with the team.</span>
+                </span>
+                <span class="route-go">Open Discord <span aria-hidden="true">→</span></span>
+              </a>
+              <a class="route" href="mailto:contact@myriadflow.com" data-a="up">
+                <span class="route-n">02</span>
+                <span class="route-body">
+                  <span class="eyebrow">Email</span>
+                  <span class="route-t">contact@<wbr />myriadflow.com</span>
+                  <span class="route-d">For partnerships, press, or anything that needs a longer note.</span>
+                </span>
+                <span class="route-go">Write to us <span aria-hidden="true">→</span></span>
+              </a>
+              <a class="route" href="/builds" data-a="up">
+                <span class="route-n">03</span>
+                <span class="route-body">
+                  <span class="eyebrow">Learn first</span>
+                  <span class="route-t">See how it works</span>
+                  <span class="route-d">The flow, TVASTR and a real build taken apart — or the pitch deck.</span>
+                </span>
+                <span class="route-go">Builds <span aria-hidden="true">→</span></span>
+              </a>
+            </nav>
+
+            <div class="brief card" data-a="card">
+              <header class="brief-head">
+                <h2 class="brief-t">Send a brief</h2>
+                <span class="brief-time">~2 min</span>
+              </header>
+
+              <!-- S2: every brief is emailed to contact@myriadflow.com. Set `data-endpoint`
+                   to the form handler's URL (server/brief.mjs) to switch the form from the
+                   mailto fallback to a real POST. -->
+              <form class="brief-form" id="briefForm" data-endpoint="" novalidate>
+                <div class="field field-prompt">
+                  <label for="bf-prompt">What do you want to make? <em>· required</em></label>
+                  <textarea id="bf-prompt" name="prompt" rows="3" required data-story="ideas-ph" data-placeholder="a palm-sized desk object that shows my focus mode"></textarea>
+                </div>
+
+                <fieldset class="field">
+                  <legend>What you have</legend>
+                  <div class="chips-pick">
+                    <label><input type="radio" name="have" value="idea" checked /><span>An idea</span></label>
+                    <label><input type="radio" name="have" value="sketch" /><span>A sketch</span></label>
+                    <label><input type="radio" name="have" value="prototype" /><span>A prototype</span></label>
+                    <label><input type="radio" name="have" value="product" /><span>A finished product</span></label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="field">
+                  <legend>Interested in</legend>
+                  <div class="chips-pick">
+                    <label><input type="radio" name="want" value="manufacturing" checked /><span>Manufacturing</span></label>
+                    <label><input type="radio" name="want" value="phygitals" /><span>Phygitals</span></label>
+                    <label><input type="radio" name="want" value="both" /><span>Both</span></label>
+                  </div>
+                </fieldset>
+
+                <div class="field-row">
+                  <div class="field">
+                    <label for="bf-name">Name</label>
+                    <input id="bf-name" name="name" type="text" autocomplete="name" placeholder="Your name" />
+                  </div>
+                  <div class="field">
+                    <label for="bf-email">Email <em>· required</em></label>
+                    <input id="bf-email" name="email" type="email" autocomplete="email" placeholder="you@studio.com" required />
+                  </div>
+                </div>
+
+                <label class="attach">
+                  <svg class="attach-ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.5l-8.6 8.6a5.5 5.5 0 0 1-7.8-7.8l8.6-8.6a3.7 3.7 0 0 1 5.2 5.2l-8.6 8.6a1.8 1.8 0 0 1-2.6-2.6l7.9-7.9" /></svg>
+                  <span class="attach-t" id="bf-file-name">Attach a sketch, photo or STEP file</span>
+                  <span class="attach-opt">optional</span>
+                  <input id="bf-file" name="file" type="file" accept="image/*,.pdf,.step,.stp,.stl,.3mf" />
+                </label>
+
+                <!-- spam trap: left empty by people, filled in by bots -->
+                <div class="hp" aria-hidden="true">
+                  <label for="bf-company">Company</label>
+                  <input id="bf-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+                </div>
+
+                <button class="btn btn-primary brief-send" type="submit">Send brief</button>
+                <p class="field-hint">Or skip the form and <a href="https://discord.gg/38jktRtuY7" target="_blank" rel="noopener">start in Discord</a>.</p>
+
+                <p class="brief-msg" id="briefMsg" role="status" aria-live="polite"></p>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="sec block" id="routes">
+      <section class="sec next" aria-labelledby="next-k">
         <div class="wrap">
-          <div class="routes">
-            <article class="card route" data-a="card">
-              <p class="route-n">01</p>
-              <p class="eyebrow">Fastest</p>
-              <h2 class="h3 big">Start a project in Discord</h2>
-              <p>Private beta projects start there. Share the idea and talk it through with the team.</p>
-              <a class="btn btn-primary" href="https://discord.gg/38jktRtuY7" target="_blank" rel="noopener">Open Discord <span aria-hidden="true">→</span></a>
-            </article>
-            <article class="card route" data-a="card">
-              <p class="route-n">02</p>
-              <p class="eyebrow">Email</p>
-              <h2 class="h3 big">contact@<wbr />myriadflow.com</h2>
-              <p>For partnerships, press, or anything that needs a longer note.</p>
-              <a class="btn btn-ghost" href="mailto:contact@myriadflow.com">Write to us <span aria-hidden="true">→</span></a>
-            </article>
-            <article class="card route" data-a="card">
-              <p class="route-n">03</p>
-              <p class="eyebrow">Learn first</p>
-              <h2 class="h3 big">See how it works</h2>
-              <p>The flow, TVASTR and a real build taken apart — or the pitch deck.</p>
-              <a class="btn btn-ghost" href="/builds">Builds <span aria-hidden="true">→</span></a>
-            </article>
-          </div>
-
-          <div class="brief card" data-a="card">
-            <header class="brief-head">
-              <div>
-                <p class="eyebrow"><i class="pip"></i>Send a brief</p>
-                <h2 class="h2">What do you want to make?</h2>
-              </div>
-              <span class="chip">~2 min</span>
-            </header>
-
-            <!-- TODO (open item): no handler yet. Until `data-endpoint` is set to a real
-                 POST endpoint, main.js falls back to opening a pre-filled email. -->
-            <form class="brief-form" id="briefForm" data-endpoint="" novalidate>
-              <div class="field field-prompt">
-                <label for="bf-prompt">Your idea <em>·  required</em></label>
-                <textarea id="bf-prompt" name="prompt" rows="3" required data-story="ideas-ph" data-placeholder="a palm-sized desk object that shows my focus mode"></textarea>
-              </div>
-
-              <fieldset class="field">
-                <legend>What you have</legend>
-                <div class="chips-pick">
-                  <label><input type="radio" name="have" value="idea" checked /><span>An idea</span></label>
-                  <label><input type="radio" name="have" value="sketch" /><span>A sketch</span></label>
-                  <label><input type="radio" name="have" value="prototype" /><span>A prototype</span></label>
-                  <label><input type="radio" name="have" value="product" /><span>A finished product</span></label>
-                </div>
-              </fieldset>
-
-              <fieldset class="field">
-                <legend>Interested in</legend>
-                <div class="chips-pick">
-                  <label><input type="radio" name="want" value="manufacturing" checked /><span>Manufacturing</span></label>
-                  <label><input type="radio" name="want" value="phygitals" /><span>Phygitals</span></label>
-                  <label><input type="radio" name="want" value="both" /><span>Both</span></label>
-                </div>
-              </fieldset>
-
-              <div class="field-row">
-                <div class="field">
-                  <label for="bf-name">Name</label>
-                  <input id="bf-name" name="name" type="text" autocomplete="name" placeholder="Your name" />
-                </div>
-                <div class="field">
-                  <label for="bf-email">Email <em>· required</em></label>
-                  <input id="bf-email" name="email" type="email" autocomplete="email" placeholder="you@studio.com" required />
-                </div>
-              </div>
-
-              <div class="field">
-                <label for="bf-file">Attach a sketch, photo or STEP file <em>· optional</em></label>
-                <input id="bf-file" name="file" type="file" accept="image/*,.pdf,.step,.stp,.stl,.3mf" />
-                </div>
-
-              <div class="brief-foot">
-                <button class="btn btn-primary" type="submit">Send brief</button>
-                <p class="field-hint">Or skip the form and <a href="https://discord.gg/38jktRtuY7" target="_blank" rel="noopener">start in Discord</a>.</p>
-              </div>
-
-              <p class="brief-msg" id="briefMsg" role="status" aria-live="polite"></p>
-            </form>
-          </div>
-
-          <h2 class="h3 big next-k" data-a="up">What happens next</h2>
+          <h2 class="eyebrow next-k" id="next-k" data-a="up">What happens next</h2>
           <ol class="next-steps">
             <li data-a="up"><span class="next-n">01</span><b>We read it</b><span>A person on the team reads every brief — no automated funnel.</span></li>
             <li data-a="up"><span class="next-n">02</span><b>We ask what matters</b><span>Who uses it, what it must do, where it lives, what it should cost.</span></li>

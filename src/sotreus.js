@@ -446,11 +446,10 @@ function buildSotreus() {
     },
     hud(state) {
       const [name, info] = INFO[state.focus] || INFO.null;
-      const now = Math.round(rssi[rssi.length - 1] ?? -74);
       return {
         parts: "15",
         explode: `${Math.round(state.explode * 100)}%`,
-        rssi: String(now),
+        rssi: "-74",
         modeNote: state.mode === "sense" ? "Local sensing: Wi-Fi scan + on-device logic" : "Short-range P2P over LoRa — in bring-up",
         partName: name,
         partInfo: info,
@@ -586,11 +585,12 @@ export function create(slide, host, build, opts = {}) {
 
   function sync() {
     const on = (sel, test) => slide.querySelectorAll(sel).forEach((b) => b.classList.toggle("is-on", test(b)));
+    /* B6: exactly one view is marked at a time — Assembled on load. Tour runs the camera
+       rather than choosing a view, so it keeps its outline and is never filled. */
     on("[data-act=assemble]", () => state.explodeT === 0 && !state.focus && !state.xray);
-    on("[data-act=explode]", () => state.explodeT === 1 && !state.focus);
-    on("[data-act=xray]", () => state.xray);
-    on("[data-act=tour]", () => state.tour);
-    on("[data-focus]", (b) => b.dataset.focus === state.focus);
+    on("[data-act=explode]", () => state.explodeT === 1 && !state.focus && !state.xray);
+    on("[data-act=xray]", () => state.xray && !state.focus);
+    on("[data-focus]", (b) => b.dataset.focus === state.focus && !state.xray);
     on("[data-mode]", (b) => b.dataset.mode === state.mode);
   }
 

@@ -167,6 +167,14 @@ Shared chrome (head, nav, closing CTA, footer, action pill) lives once in `parti
 pulled in at build time by `<!--@include name-->`, resolved by a small plugin in
 `vite.config.js`.
 
+Nothing full width is fixed to the top: the brand and the Start a project group scroll away
+with the page, and only the centre menu pill stays put (on Builds, the "On this page" pill
+rides under it). Below 1024px the pill becomes a floating menu button.
+
+The contact form has no endpoint yet: `#briefForm` carries an empty `data-endpoint`, so
+`src/main.js` falls back to a pre-filled email. Giving it a real one means a small endpoint
+off the static host, because a mail API key cannot be shipped in the page.
+
 ```bash
 pnpm install
 pnpm dev
@@ -187,10 +195,15 @@ Images come from the design canvas and live in `public/img/`; the per-page logo 
 
 ### Open items
 
-- Point the contact form at a real endpoint (`data-endpoint` on `#briefForm`); until then it
-  falls back to a pre-filled email.
-- Per-page OG images at `/og/`, self-hosted fonts, and the violet and pink logo marks.
-- Have a lawyer review the Terms and the Privacy Policy.
+- Give the contact form an endpoint and set `data-endpoint` on `#briefForm`: a serverless
+  function that calls Resend (or similar) and forwards the brief with its attachment.
+  GitHub Pages serves static files only, so the send has to happen off it. Until then the
+  form falls back to a pre-filled email, which loses the attachment.
+- Bump the date on the Terms and the Privacy Policy whenever either text changes — both
+  read 26 November 2026.
+- Have a lawyer licensed in Georgia review the Terms and the Privacy Policy. The open
+  questions for them are listed in the legal text draft.
+- Self-host the fonts (Bai Jamjuree, Barlow and JetBrains Mono load from Google Fonts).
 
 ## Get involved
 
