@@ -97,14 +97,6 @@ for (const a of document.querySelectorAll(".nav-links a, .nav-panel a:not(.btn)"
 const MOVED = new Set(["flow", "journey", "tvastr", "launchpad", "record", "execution", "teardown"]);
 if (here === "/" && MOVED.has(location.hash.slice(1))) location.replace(`/builds${location.hash}`);
 
-/* The nav floats over the hero and turns to glass once the page starts scrolling. */
-const nav = document.getElementById("nav");
-if (nav) {
-  const glass = () => nav.classList.toggle("is-stuck", window.scrollY > 24);
-  glass();
-  window.addEventListener("scroll", glass, { passive: true });
-}
-
 /* Marks the link whose section is being read. Used by the legal TOC and the Builds sub-nav. */
 function scrollSpy(links, rootMargin) {
   const map = new Map([...links].map((a) => [a.hash.slice(1), a]));
@@ -127,12 +119,12 @@ function scrollSpy(links, rootMargin) {
 const subnav = document.getElementById("subnav");
 if (subnav) scrollSpy(subnav.querySelectorAll("a"), "-35% 0px -60% 0px");
 
-/* The action pill waits until the hero has left, and steps aside for the closing CTA —
-   both of those carry the same two buttons. */
+/* S4: the action pill waits until the hero has left, and steps aside only once the closing
+   section's own buttons are on screen — not when the section merely touches the bottom edge. */
 const fab = document.querySelector("[data-fab]");
 if (fab) {
   const covered = new Set();
-  const zones = document.querySelectorAll(".hero, .page-hero, .legal-hero, .cta");
+  const zones = document.querySelectorAll(".hero, .page-hero, .legal-hero, .cta .cta-row");
   const io = new IntersectionObserver(
     (entries) => {
       for (const e of entries) e.isIntersecting ? covered.add(e.target) : covered.delete(e.target);
@@ -144,16 +136,55 @@ if (fab) {
   zones.forEach((z) => io.observe(z));
 }
 
-/* Send a brief. With no endpoint configured yet, fall back to a pre-filled email. */
+/* S2: every brief is emailed to contact@myriadflow.com. The form posts to the handler at
+   data-endpoint (server/brief.mjs); with no endpoint set it falls back to a pre-filled
+   email so a brief is never lost. A honeypot field and a per-browser cooling-off period
+   keep the obvious bots out. */
 const brief = document.getElementById("briefForm");
 if (brief) {
   const msg = document.getElementById("briefMsg");
+  const file = document.getElementById("bf-file");
+  const fileName = document.getElementById("bf-file-name");
+  const ATTACH = "Attach a sketch, photo or STEP file";
+  const MAX_FILE = 20 * 1024 * 1024;
+  const WAIT = 60_000;
+
+  file?.addEventListener("change", () => {
+    const f = file.files?.[0];
+    msg.classList.remove("is-err");
+    if (f && f.size > MAX_FILE) {
+      file.value = "";
+      fileName.textContent = ATTACH;
+      msg.classList.add("is-err");
+      msg.textContent = "That file is over 20 MB — send a link to it instead.";
+      return;
+    }
+    fileName.textContent = f ? f.name : ATTACH;
+  });
+
+  /* one brief a minute from this browser; the handler keeps its own limit too */
+  const tooSoon = () => {
+    try {
+      return Date.now() - Number(localStorage.getItem("mf-brief-sent") || 0) < WAIT;
+    } catch {
+      return false;
+    }
+  };
+
   brief.addEventListener("submit", async (e) => {
     e.preventDefault();
     msg.classList.remove("is-err");
+    if (brief.elements.company?.value) return; /* a bot filled the honeypot */
     if (!brief.reportValidity()) return;
+    if (tooSoon()) {
+      msg.classList.add("is-err");
+      msg.textContent = "Just a moment — that brief is already on its way.";
+      return;
+    }
+
     const data = new FormData(brief);
     const endpoint = brief.dataset.endpoint;
+    const words = String(data.get("prompt") || "").trim().split(/\s+/).slice(0, 6).join(" ");
     if (!endpoint) {
       const body = [
         data.get("prompt"),
@@ -161,19 +192,29 @@ if (brief) {
         `What I have: ${data.get("have")}`,
         `Interested in: ${data.get("want")}`,
         `Name: ${data.get("name") || "—"}`,
+        `Email: ${data.get("email")}`,
       ].join("\n");
-      const file = data.get("file");
-      location.href = `mailto:contact@myriadflow.com?subject=${encodeURIComponent("Brief from the site")}&body=${encodeURIComponent(body)}`;
-      msg.textContent = file?.name
-        ? `Your email client is opening — please attach ${file.name} before sending.`
+      const attached = data.get("file");
+      location.href = `mailto:contact@myriadflow.com?subject=${encodeURIComponent(`New brief: ${words}`)}&body=${encodeURIComponent(body)}`;
+      msg.textContent = attached?.name
+        ? `Your email client is opening — please attach ${attached.name} before sending.`
         : "Your email client is opening with the brief filled in.";
       return;
     }
+
+    const send = brief.querySelector('button[type="submit"]');
+    if (send) send.disabled = true;
     try {
       const res = await fetch(endpoint, { method: "POST", body: data });
       if (!res.ok) throw new Error(res.status);
+      try {
+        localStorage.setItem("mf-brief-sent", String(Date.now()));
+      } catch {
+        /* private browsing: the handler's own rate limit still applies */
+      }
       brief.innerHTML = '<p class="brief-msg">Thanks — we\'ll reply by email.</p>';
     } catch {
+      if (send) send.disabled = false;
       msg.classList.add("is-err");
       msg.innerHTML = 'That didn\'t send. Please email <a href="mailto:contact@myriadflow.com">contact@myriadflow.com</a>.';
     }

@@ -38,7 +38,8 @@
     <!--@include nav-->
 
     <nav class="subnav" id="subnav" aria-label="On this page">
-      <div class="wrap subnav-in">
+      <div class="subnav-in">
+        <span class="subnav-k" aria-hidden="true">On this page</span>
         <a href="#flow">The flow</a>
         <a href="#journey">Creator journey</a>
         <a href="#tvastr">TVASTR</a>
@@ -58,11 +59,12 @@
         </div>
         <div class="wrap">
           <div class="hero-copy">
-            <p class="eyebrow" data-a="up"><i class="pip"></i>Manufacturing</p>
+            <p class="eyebrow" data-a="up">Manufacturing</p>
             <h1 class="display" data-a="up">From a sentence<br /><span class="accent">to a shipped product.</span></h1>
             <p class="lede" data-a="up">
-              How vibe manufacturing works on MyriadFlow: the flow, the engine behind it, a real
-              build taken apart, and the path from prototype to production.
+              Describe what you want. Our agents turn it into a spec, parametric CAD and
+              print-ready files; real prototypes and tests decide what works; then a pilot batch
+              and production.
             </p>
             <div class="cta-row" data-a="up">
               <a class="btn btn-primary" href="https://discord.gg/38jktRtuY7" target="_blank" rel="noopener">Start a project</a>
@@ -104,8 +106,8 @@
       <!-- 01 · THE FLOW ---------------------------------------------------- -->
       <section class="sec block" id="flow">
         <div class="wrap">
-          <header class="sec-head center">
-            <p class="eyebrow" data-a="up"><i class="pip"></i>01 / The flow</p>
+          <header class="sec-head">
+            <p class="eyebrow" data-a="up">01 / The flow</p>
             <h2 class="h2 quote" data-a="up">
               Intent-led, agent-assisted creation of <span class="accent-grey">physical products.</span>
             </h2>
@@ -174,8 +176,8 @@
       <section class="sec block" id="journey">
         <div class="wrap">
           <header class="sec-head">
-            <p class="eyebrow" data-a="up"><i class="pip"></i>02 / The creator journey</p>
-            <h2 class="h2" data-a="up">From spark <span class="accent-grey">to proof.</span></h2>
+            <p class="eyebrow" data-a="up">02 / The creator journey</p>
+            <h2 class="h2" data-a="up">From spark <span class="accent">to proof.</span></h2>
             <p class="sec-lede" data-a="up">
               It begins with an idea, not an empty engineering canvas. MyriadFlow asks only the
               questions that change the outcome — who uses it, what it must do, where it lives, what
@@ -238,8 +240,8 @@
       <section class="sec block" id="tvastr">
         <div class="wrap">
           <header class="sec-head">
-            <p class="eyebrow" data-a="up"><i class="pip"></i>03 / TVASTR · Manufacturing intelligence</p>
-            <h2 class="h2" data-a="up">The engine that turns <span class="accent-grey">a brief into a build.</span></h2>
+            <p class="eyebrow" data-a="up">03 / TVASTR · Manufacturing intelligence</p>
+            <h2 class="h2" data-a="up">The engine that turns<br /><span class="accent-grey">a brief into a build.</span></h2>
             <p class="sec-lede" data-a="up">
               Named for the Vedic maker and fashioner of forms, TVASTR turns a brief into structured
               specifications, parametric design, feasibility checks, prototype jobs, test reports and
@@ -298,14 +300,14 @@ shell = (
 
           <div class="bounds">
             <div class="bounds-col" data-a="card">
-              <p class="bounds-k"><i class="pip"></i>TVASTR can</p>
+              <p class="bounds-k">TVASTR can</p>
               <ul>
                 <li>Ask clarifying questions</li><li>Draft a spec</li><li>Generate parametric parts</li>
                 <li>Check geometry and materials</li><li>Prepare a print job</li><li>Observe results and propose revisions</li>
               </ul>
             </div>
             <div class="bounds-col you" data-a="card">
-              <p class="bounds-k"><i class="pip"></i>You approve</p>
+              <p class="bounds-k">You approve</p>
               <ul>
                 <li>Designs</li><li>Spending</li><li>Machine starts</li><li>Production commitments</li><li>Campaign terms</li><li>Major changes</li>
               </ul>
@@ -323,11 +325,13 @@ shell = (
       <!-- 04 · CASE STUDY: TEARDOWN (white) -------------------------------- -->
       <section class="sec block white" id="teardown">
         <div class="wrap">
-          <header class="sec-head">
-            <p class="eyebrow" data-a="up"><i class="pip"></i>04 / Case study · Teardown</p>
-            <h2 class="h2" data-a="up">Sotreus Edge, <span class="accent">taken apart.</span></h2>
-            <p class="sec-lede" data-a="up">Modelled from the build photos · drag to orbit</p>
-          </header>
+          <div class="head-row">
+            <header class="sec-head">
+              <p class="eyebrow" data-a="up">04 / Case study · Teardown</p>
+              <h2 class="h2" data-a="up">Sotreus Edge, <span class="accent-grey">taken apart.</span></h2>
+            </header>
+            <p class="head-note" data-a="up">Modelled from the build photos · drag to orbit</p>
+          </div>
 
           <div class="td" data-a="card" data-model3d="teardown">
             <aside class="td-l" aria-label="Teardown: parts and selection">
@@ -367,23 +371,27 @@ shell = (
 
       <!-- 05 · THE LAUNCHPAD ----------------------------------------------- -->
       <section class="sec block" id="launchpad">
-        <div class="wrap launch-grid">
-          <div class="launch-copy">
-            <p class="eyebrow" data-a="up"><i class="pip"></i>05 / The launchpad</p>
-            <h2 class="h2" data-a="up">Build momentum around <span class="accent-grey">the proof.</span></h2>
+        <div class="wrap">
+          <header class="sec-head">
+            <p class="eyebrow" data-a="up">05 / The launchpad</p>
+            <h2 class="h2" data-a="up">Build momentum around<br /><span class="accent-grey">the proof.</span></h2>
             <p class="sec-lede" data-a="up">
               A good project page shows more than a polished render. It makes the promise, the
               prototype, the remaining risks and the path to delivery legible — so supporters back
               evidence, not hype.
             </p>
-            <ol class="states">
-              <li data-a="left"><b>Idea</b><span>Problem, intended user, concept.</span><em>Follow · join the waitlist</em></li>
-              <li data-a="left"><b>Prototype</b><span>Working demo, photos, test notes, revisions.</span><em>Give feedback · request a pilot unit</em></li>
-              <li data-a="left"><b>Campaign</b><span>Funding goal, unit economics, timeline, risks.</span><em>Back the project</em></li>
-              <li data-a="left"><b>Pilot run</b><span>Supplier quotes, design freeze, sample checks.</span><em>Track milestones</em></li>
-              <li data-a="left"><b>Product</b><span>Availability, delivery and support.</span><em>Order · review · recommend</em></li>
-            </ol>
-          </div>
+          </header>
+
+          <div class="launch-grid">
+            <div class="launch-copy">
+              <ol class="states">
+                <li data-a="left"><b>Idea</b><span>Problem, intended user, concept.</span><em>Follow · join the waitlist</em></li>
+                <li data-a="left"><b>Prototype</b><span>Working demo, photos, test notes, revisions.</span><em>Give feedback · request a pilot unit</em></li>
+                <li data-a="left"><b>Campaign</b><span>Funding goal, unit economics, timeline, risks.</span><em>Back the project</em></li>
+                <li data-a="left"><b>Pilot run</b><span>Supplier quotes, design freeze, sample checks.</span><em>Track milestones</em></li>
+                <li data-a="left"><b>Product</b><span>Availability, delivery and support.</span><em>Order · review · recommend</em></li>
+              </ol>
+            </div>
 
           <div class="launch-visual">
             <article class="proj card" data-a="card" data-story="proj" role="img" aria-label="A sample project page for a fictional studio: a tested prototype, 72 percent of its pilot run backed by 318 people, with design freeze and supplier quotes done and sample checks still open">
@@ -425,8 +433,7 @@ shell = (
               <p>
                 Preorders, reservations, rewards or community backing — chosen per project. Before a
                 campaign opens, the creator states the minimum viable batch, per-unit cost, tooling and
-                test needs, contingency and timing. If a goal is missed or a prototype fails, the page
-                says what happens next.
+                test needs, contingency and timing.
               </p>
             </div>
             <div class="note" data-a="card">
@@ -438,6 +445,7 @@ shell = (
               </p>
             </div>
           </div>
+          </div>
         </div>
       </section>
 
@@ -445,8 +453,8 @@ shell = (
       <section class="sec block" id="record">
         <div class="wrap record-grid">
           <div class="record-copy">
-            <p class="eyebrow" data-a="up"><i class="pip"></i>06 / One record</p>
-            <h2 class="h2" data-a="up">One record across <span class="accent-grey">the whole lifecycle.</span></h2>
+            <p class="eyebrow" data-a="up">06 / One record</p>
+            <h2 class="h2" data-a="up">One record across<br /><span class="accent">the whole lifecycle.</span></h2>
             <p class="sec-lede" data-a="up">
               Not a chat here, a CAD folder there, a campaign page and a supplier spreadsheet
               somewhere else. Every project keeps a versioned record that ties intent to decisions
@@ -470,7 +478,7 @@ shell = (
       <section class="sec block" id="execution">
         <div class="wrap">
           <header class="sec-head">
-            <p class="eyebrow" data-a="up"><i class="pip"></i>07 / Execution</p>
+            <p class="eyebrow" data-a="up">07 / Execution</p>
             <h2 class="h2" data-a="up">Start with <span class="accent-grey">one reliable flow.</span></h2>
             <p class="sec-lede" data-a="up">
               The destination is a launchpad for hardware ideas of every kind. The first build proves

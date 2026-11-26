@@ -42,8 +42,8 @@
           <i class="glow g1"></i><i class="glow g2"></i><i class="grid"></i>
         </div>
         <div class="wrap">
-          <p class="eyebrow" data-a="up"><i class="pip"></i>Hub</p>
-          <h1 class="display" data-a="up">Everything we've <br /><span class="grad-text">put in writing.</span></h1>
+          <p class="eyebrow" data-a="up">Hub</p>
+          <h1 class="display" data-a="up">Everything we've<br /><span class="accent-grey">put in writing.</span></h1>
           <p class="lede" data-a="up">
             The deck we present, the pages that explain the flow, and the documents that say how we
             work. More lands here as we publish it.
@@ -54,15 +54,26 @@
       <section class="sec block" id="resources">
         <div class="wrap">
           <div class="res-grid">
-            <a class="card res" data-a="card" href="/resources/pitch/" target="_blank" rel="noopener">
-              <span class="res-k">Deck</span>
-              <h2 class="h3 big">The pitch deck</h2>
-              <p>
-                Vibe manufacturing in 34 slides: why now, the flow, TVASTR, the Sotreus Edge taken
-                apart in 3D, and where this goes. Press <kbd>F</kbd> for full screen.
-              </p>
-              <span class="res-go">Open the deck <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></span>
-            </a>
+            <!-- C3: the deck is a wide card with its own cover panel -->
+            <article class="card res res-wide" data-a="card">
+              <div class="res-copy">
+                <span class="res-k">Deck</span>
+                <h2 class="h3 big">The pitch deck</h2>
+                <p>
+                  Vibe manufacturing in 34 slides: why now, the flow, TVASTR, the Sotreus Edge taken
+                  apart in 3D, and where this goes. Press <kbd>F</kbd> for full screen.
+                </p>
+                <a class="btn btn-primary res-open" href="/resources/pitch/" target="_blank" rel="noopener"
+                  >Open the deck <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a
+                >
+              </div>
+              <div class="res-cover" aria-hidden="true">
+                <div class="res-slide">
+                  <span class="res-slide-k">Vibe manufacturing · 01 / 34</span>
+                  <span class="res-slide-t">Vibe<br /><span class="grad-text">Manufacturing</span></span>
+                </div>
+              </div>
+            </article>
 
             <a class="card res" data-a="card" href="/builds">
               <span class="res-k">Explainer</span>
